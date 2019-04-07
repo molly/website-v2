@@ -1,5 +1,8 @@
 body {
 	background-color: #FFFFFF;
+	color: #000000;
+	font-family: "Roboto", sans-serif;
+	font-size: 1em;
 }
 
 .navigation {
@@ -7,10 +10,10 @@ body {
 	background-color: #ddd;
 }
 
-.molly-and-max{
+.molly-and-max {
 	position: absolute;
 	left: 50px;
-	top: 70px;
+	top: 75px;
 	z-index: 1
 }
 
@@ -19,11 +22,25 @@ body {
 }
 
 .welcome {
-	height: 350px;
-	padding-left: 370px;
+	height: 375px;
+	padding-left: 475px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.welcome .subtitle {
+	font-size: 1.2em;
 }
 
 .asdf {
 	height: 1000px;
 	background-color: #96B78A;
+}
+
+h1 {
+	font-family: "Playfair Display", serif;
+	font-size: 2.5em;
+	font-weight: 400;
+	margin-top: 0;
 }
