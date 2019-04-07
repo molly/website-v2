@@ -1,0 +1,29 @@
+body {
+	background-color: #FFFFFF;
+}
+
+.navigation {
+	height: 50px;
+	background-color: #ddd;
+}
+
+.molly-and-max{
+	position: absolute;
+	left: 50px;
+	top: 70px;
+	z-index: 1
+}
+
+.molly-and-max img {
+	max-height: 500px;
+}
+
+.welcome {
+	height: 350px;
+	padding-left: 370px;
+}
+
+.asdf {
+	height: 1000px;
+	background-color: #96B78A;
+}
