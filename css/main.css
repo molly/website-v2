@@ -3,39 +3,51 @@ body {
 	color: #000000;
 	font-family: "Roboto", sans-serif;
 	font-size: 1em;
+	font-weight: 300;
+	line-height: 1.5;
 }
 
+/* ----- NAVIGATION --------------- */
+
 .navigation {
-	height: 50px;
-	background-color: #ddd;
+	padding: 5px;
+	display: flex;
+	justify-content: flex-end;
+	text-transform: uppercase;
 }
+
+.navigation a {
+	color: #000000;
+	text-decoration: none;
+	font-size: 0.85em;
+	padding: 0 5px;
+}
+
+.navigation div {
+	padding: 0 10px;
+}
+
+/* ----- WELCOME CONTENT ---------- */
+/* PORTRAIT ILLUSTRATION */
 
 .molly-and-max {
 	position: absolute;
 	left: 50px;
 	top: 75px;
-	z-index: 1
+	z-index: 1;
 }
 
 .molly-and-max img {
 	max-height: 500px;
 }
 
+/* CONTENT */
 .welcome {
 	height: 375px;
-	padding-left: 475px;
+	padding: 0 50px 0 500px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-}
-
-.welcome .subtitle {
-	font-size: 1.2em;
-}
-
-.asdf {
-	height: 1000px;
-	background-color: #96B78A;
 }
 
 h1 {
@@ -43,4 +55,16 @@ h1 {
 	font-size: 2.5em;
 	font-weight: 400;
 	margin-top: 0;
+}
+
+.welcome .subtitle {
+	font-size: 1.3em;
+	max-width: 600px;
+}
+
+/* ----- BODY CONTENT ------------- */
+.asdf {
+	height: 1000px;
+	background-color: #96B78A;
+	box-shadow: 0 0 1px 0px #96B78A;
 }
