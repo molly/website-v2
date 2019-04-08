@@ -31,9 +31,8 @@ body {
 /* PORTRAIT ILLUSTRATION */
 
 .molly-and-max {
-	position: absolute;
-	left: 50px;
-	top: 75px;
+	float: left;
+  margin: 20px 0 0 70px;
 	z-index: 1;
 }
 
@@ -44,7 +43,7 @@ body {
 /* CONTENT */
 .welcome {
 	height: 375px;
-	padding: 0 50px 0 500px;
+	padding: 0 50px 0 50px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

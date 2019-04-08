@@ -6,3 +6,4 @@ Created with
 * [normalize.css](https://github.com/necolas/normalize.css/)
 * [rellax.js](https://github.com/dixonandmoe/rellax)
 * [FontAwesome](https://fontawesome.com/)
+* Portions of [underscore.js](https://underscorejs.org/)
