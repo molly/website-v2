@@ -1,10 +1,10 @@
 body {
-	background-color: #FFFFFF;
-	color: #000000;
-	font-family: "Roboto", sans-serif;
-	font-size: 1em;
-	font-weight: 300;
-	line-height: 1.5;
+  background-color: #FFFFFF;
+  color: #000000;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 a {
@@ -14,64 +14,64 @@ a {
 /* ----- NAVIGATION --------------- */
 
 .navigation {
-	padding: 5px;
-	display: flex;
-	justify-content: flex-end;
-	text-transform: uppercase;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  text-transform: uppercase;
 }
 
 .navigation a {
-	color: #000000;
-	text-decoration: none;
-	font-size: 0.85em;
-	padding: 0 5px;
+  color: #000000;
+  text-decoration: none;
+  font-size: 0.85em;
+  padding: 0 5px;
 }
 
 .navigation div {
-	padding: 0 10px;
+  padding: 0 10px;
 }
 
 /* ----- WELCOME CONTENT ---------- */
 /* PORTRAIT ILLUSTRATION */
 
 .molly-and-max {
-	float: left;
-	z-index: 1;
+  float: left;
+  z-index: 1;
 }
 
 .molly-and-max img {
-	max-height: 500px;
+  max-height: 500px;
   padding: 50px 70px 50px 50px;
 }
 
 /* CONTENT */
 .welcome {
-	height: 375px;
-	padding-right: 50px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  height: 375px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h1 {
-	font-family: "Playfair Display", serif;
-	font-size: 2.5em;
-	font-weight: 400;
-	margin-top: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
+  font-weight: 400;
+  margin-top: 0;
 }
 
 .welcome .subtitle {
-	font-size: 1.3em;
-	max-width: 600px;
+  font-size: 1.3em;
+  max-width: 600px;
 }
 
 /* ----- BODY CONTENT ------------- */
 .content, footer {
-	background-color: #96B78A;
+  background-color: #96B78A;
 }
 
 .content {
-	box-shadow: 0 0 1px 0px #96B78A;
+  box-shadow: 0 0 1px 0px #96B78A;
   padding: 50px;
 }
 
@@ -83,50 +83,50 @@ footer {
 
 /* ----- SMALL SCREENS------------- */
 @media screen and (max-width: 900px) {
-	.molly-and-max img {
-		max-height: 350px;
-	}
+  .molly-and-max img {
+    max-height: 350px;
+  }
 
-	.welcome {
-		height: 300px;
-	}
+  .welcome {
+    height: 300px;
+  }
 
-	h1 {
-		font-size: 2em;
-	}
+  h1 {
+    font-size: 2em;
+  }
 }
 
 /* ----- MOBILE ------------------- */
 @media screen and (max-width: 600px){
-	.navigation {
-		flex-direction: column;
-		align-items: center;
-	}
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+  }
 
-	.navigation a {
-		font-size: 1em;
-	}
+  .navigation a {
+    font-size: 1em;
+  }
 
-	.navigation .external-links {
-		padding-top: 10px;
-	}
+  .navigation .external-links {
+    padding-top: 10px;
+  }
 
-	.molly-and-max {
-		float: none;
-		text-align: center;
-		margin: 10px 0;
-	}
+  .molly-and-max {
+    float: none;
+    text-align: center;
+    margin: 10px 0;
+  }
 
   .molly-and-max img {
     max-height: 200px;
     padding: 0;
   }
 
-	.welcome {
-		height: auto;
-		padding: 0 10px 20px 10px;
-		text-align: center;
-	}
+  .welcome {
+    height: auto;
+    padding: 0 10px 20px 10px;
+    text-align: center;
+  }
 
   h1 {
     font-size: 1.8em;
