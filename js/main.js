@@ -76,9 +76,9 @@ var debouncedAdjustRellax = debounce(adjustRellax, 500);
 
 function addRellax(illustration, rellax) {
   illustration.classList.add('rellax');
-  illustration.setAttribute('data-rellax-speed', '2');
+  illustration.setAttribute('data-rellax-speed', '1');
   return new Rellax('.rellax', {
-    speed: -5
+    speed: -2
   });
 }
 

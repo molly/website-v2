@@ -32,18 +32,18 @@ body {
 
 .molly-and-max {
 	float: left;
-  margin: 20px 0 0 70px;
 	z-index: 1;
 }
 
 .molly-and-max img {
 	max-height: 500px;
+  padding: 50px 70px 0px 50px;
 }
 
 /* CONTENT */
 .welcome {
 	height: 375px;
-	padding: 0 50px 0 50px;
+	padding-right: 50px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -66,6 +66,7 @@ h1 {
 	height: 1000px;
 	background-color: #96B78A;
 	box-shadow: 0 0 1px 0px #96B78A;
+  padding: 50px;
 }
 
 /* ----- SMALL SCREENS------------- */
@@ -76,10 +77,6 @@ h1 {
 
 	.welcome {
 		height: 300px;
-		padding: 0 50px 0 350px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 	}
 
 	h1 {
@@ -103,14 +100,28 @@ h1 {
 	}
 
 	.molly-and-max {
-		position: static;
+		float: none;
 		text-align: center;
-		padding: 10px 0;
+		margin: 10px 0;
 	}
+
+  .molly-and-max img {
+    max-height: 200px;
+    padding: 0;
+  }
 
 	.welcome {
 		height: auto;
 		padding: 0 10px 20px 10px;
 		text-align: center;
 	}
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .welcome .subtitle {
+    font-size: 1.3em;
+    max-width: auto;
+  }
 }
