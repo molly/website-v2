@@ -7,6 +7,10 @@ body {
 	line-height: 1.5;
 }
 
+a {
+  color: #000000;
+}
+
 /* ----- NAVIGATION --------------- */
 
 .navigation {
@@ -37,7 +41,7 @@ body {
 
 .molly-and-max img {
 	max-height: 500px;
-  padding: 50px 70px 0px 50px;
+  padding: 50px 70px 50px 50px;
 }
 
 /* CONTENT */
@@ -62,11 +66,19 @@ h1 {
 }
 
 /* ----- BODY CONTENT ------------- */
-.content {
-	height: 1000px;
+.content, footer {
 	background-color: #96B78A;
+}
+
+.content {
 	box-shadow: 0 0 1px 0px #96B78A;
   padding: 50px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.7em;
 }
 
 /* ----- SMALL SCREENS------------- */
