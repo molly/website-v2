@@ -97,7 +97,7 @@ function removeRellax(illustration, rellax) {
   var illustrationElement = document.getElementById('molly-and-max');
   var rellax;
 
-  // Add Rellax on mount if window is > 900px
+  // Add Rellax on mount if window is > 600px
   if (window.innerWidth > 600) {
     rellax = addRellax(illustrationElement, rellax)
   }
