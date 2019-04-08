@@ -63,8 +63,55 @@ h1 {
 }
 
 /* ----- BODY CONTENT ------------- */
-.asdf {
+.content {
 	height: 1000px;
 	background-color: #96B78A;
 	box-shadow: 0 0 1px 0px #96B78A;
+}
+
+/* ----- SMALL SCREENS------------- */
+@media screen and (max-width: 900px) {
+	.molly-and-max img {
+		max-height: 350px;
+	}
+
+	.welcome {
+		height: 300px;
+		padding: 0 50px 0 350px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	h1 {
+		font-size: 2em;
+	}
+}
+
+/* ----- MOBILE ------------------- */
+@media screen and (max-width: 600px){
+	.navigation {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.navigation a {
+		font-size: 1em;
+	}
+
+	.navigation .external-links {
+		padding-top: 10px;
+	}
+
+	.molly-and-max {
+		position: static;
+		text-align: center;
+		padding: 10px 0;
+	}
+
+	.welcome {
+		height: auto;
+		padding: 0 10px 20px 10px;
+		text-align: center;
+	}
 }
