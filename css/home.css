@@ -53,6 +53,10 @@ h1 {
 
 /* ----- SMALL SCREENS------------- */
 @media screen and (max-width: 900px) {
+  h1 {
+    font-size: 2em;
+  }
+
   .molly-and-max {
     shape-outside: url('../images/mollyandmax-350px.png');
     height: 400px;
@@ -72,6 +76,10 @@ h1 {
 
 /* ----- MOBILE ------------------- */
 @media screen and (max-width: 600px){
+   h1 {
+    font-size: 1.8em;
+  }
+
   .molly-and-max {
     float: none;
     text-align: center;
