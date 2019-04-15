@@ -16,8 +16,21 @@ a {
 .navigation {
   padding: 5px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+.navigation .logo {
+  font-family: "Playfair Display", serif;
+
+}
+
+.navigation .links {
+  display: flex;
   text-transform: uppercase;
+}
+
+.home .navigation {
+  justify-content: flex-end;
 }
 
 .navigation a {
@@ -28,7 +41,8 @@ a {
 }
 
 .navigation div {
-  padding: 0 10px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 /* ----- FOOTER ------------------- */
@@ -37,4 +51,38 @@ footer {
   text-align: center;
   padding: 10px 0;
   font-size: 0.7em;
+}
+
+
+/* ----- SMALL SCREENS------------- */
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+/* ----- MOBILE ------------------- */
+@media screen and (max-width: 600px){
+  .navigation {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .navigation .logo {
+    font-size: 1.5em;
+  }
+
+  .navigation a {
+    font-size: 1em;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
 }
