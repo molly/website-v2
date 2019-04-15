@@ -141,6 +141,7 @@ dd {
   .navigation {
     align-items: center;
     flex-direction: column;
+    padding: 5px 5px 0px 5px;
   }
 
   .navigation a {
