@@ -11,6 +11,10 @@ a {
   color: #000000;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+}
+
 .force-full-height {
   min-height: 100vh;
 }
@@ -24,9 +28,10 @@ a {
   align-items: baseline;
 }
 
-.navigation .logo {
-  font-family: "Playfair Display", serif;
+.navigation .logo h1 {
   font-size: 1.5em;
+  font-weight: normal;
+  margin: 0;
 }
 
 .navigation .links {
@@ -79,6 +84,49 @@ footer {
 .force-full-height footer {
   position: absolute;
   bottom: 0;
+}
+
+/* ----- RESUME ------------------- */
+.resume h3 {
+  margin: 0 0 5px 0;
+}
+
+.resume-block {
+  margin-bottom: 30px;
+}
+
+.resume-sub-block {
+  margin-bottom: 15px;
+}
+
+dl {
+  font-size: 0.85em;
+  margin: 5px 0 0 15px;
+}
+
+dt {
+  font-weight: 400;
+}
+
+dd ~ dt {
+  margin-top: 10px;
+}
+
+dd {
+  margin-inline-start: 20px;
+}
+
+.line-with-year {
+  display: flex;
+  justify-content: space-between;
+}
+
+.normal-weight {
+  font-weight: 300;
+}
+
+.year {
+  font-style: italic;
 }
 
 /* ----- SMALL SCREENS------------- */
