@@ -11,31 +11,41 @@ a {
   color: #000000;
 }
 
+.force-full-height {
+  min-height: 100vh;
+}
+
 /* ----- NAVIGATION --------------- */
 
 .navigation {
-  padding: 5px;
+  padding: 5px 5px 50px 5px;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .navigation .logo {
   font-family: "Playfair Display", serif;
-
+  font-size: 1.5em;
 }
 
 .navigation .links {
   display: flex;
+  align-items: baseline;
   text-transform: uppercase;
 }
 
 .home .navigation {
   justify-content: flex-end;
+  padding: 5px 5px 5px 5px;
 }
 
 .navigation a {
   color: #000000;
   text-decoration: none;
+}
+
+.navigation .links a {
   font-size: 0.85em;
   padding: 0 5px;
 }
@@ -45,14 +55,31 @@ a {
   padding-left: 10px;
 }
 
+/* ----- CONTENT ------------------ */
+.content-box {
+  max-width: 800px;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.home .content-box {
+  max-width: 1000px;
+}
+
 /* ----- FOOTER ------------------- */
 
 footer {
+  width: 100%;
   text-align: center;
   padding: 10px 0;
   font-size: 0.7em;
 }
 
+.force-full-height footer {
+  position: absolute;
+  bottom: 0;
+}
 
 /* ----- SMALL SCREENS------------- */
 @media screen and (max-width: 900px) {
@@ -66,10 +93,6 @@ footer {
   .navigation {
     align-items: center;
     flex-direction: column;
-  }
-
-  .navigation .logo {
-    font-size: 1.5em;
   }
 
   .navigation a {

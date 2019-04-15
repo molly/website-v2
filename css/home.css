@@ -48,11 +48,7 @@ h1 {
 }
 
 .content-box {
-  max-width: 1000px;
-  box-sizing: border-box;
-  padding: 20px 50px;
   text-align: justify;
-  margin: auto;
 }
 
 /* ----- SMALL SCREENS------------- */
