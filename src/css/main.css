@@ -22,10 +22,11 @@ h1, h2, h3, h4, h5, h6 {
 /* ----- NAVIGATION --------------- */
 
 .navigation {
+  min-height: 41px;
   padding: 5px 5px 50px 5px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-end;
 }
 
 .navigation .logo h1 {
