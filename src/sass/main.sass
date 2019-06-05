@@ -49,11 +49,14 @@ h1, h2, h3, h4, h5, h6
     padding-right: 10px
     padding-left: 10px
 
-  &.home
-    justify-content: flex-end
-    padding: 5px 5px 5px 5px
+.home .navigation
+  justify-content: flex-end
+  padding: 5px 5px 5px 5px
 
 // ----- CONTENT ------------------
+
+.home .content-box
+  max-width: 1000px
 
 .content-box
   max-width: 800px
@@ -61,20 +64,17 @@ h1, h2, h3, h4, h5, h6
   box-sizing: border-box
   margin: auto
 
-  &.home
-    max-width: 1000px
-
 // ----- FOOTER -------------------
+
+.force-full-height footer
+    position: absolute
+    bottom: 0
 
 footer
   width: 100%
   text-align: center
   padding: 10px 0
   font-size: 0.7em
-
-  &.force-full-height
-    position: absolute
-    bottom: 0
 
 // ----- RESUME -------------------
 
