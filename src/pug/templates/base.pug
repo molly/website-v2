@@ -10,9 +10,10 @@ html(class=`no-js ${htmlClass}`, lang='en')
 
     div(class=pageWrapperClass)
       nav.navigation
-        .logo
-          h1
-            a(href="/") Molly White
+        unless htmlClass === 'home'
+          .logo
+            h1
+              a(href="/") Molly White
 
         include ../includes/navigation.pug
 

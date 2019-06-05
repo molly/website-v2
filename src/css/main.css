@@ -23,6 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navigation {
   min-height: 41px;
+  line-height: 36px;
   padding: 5px 5px 50px 5px;
   display: flex;
   justify-content: space-between;
