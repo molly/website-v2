@@ -1,0 +1,39 @@
+extends ../templates/base.pug
+    
+block body
+  .welcome-container
+    #molly-and-max.molly-and-max
+      img(src='images/mollyandmax.png', alt='Illustration of Molly White holding her cat Max.')
+    section.welcome
+      h1 My name is Molly White.
+      span.subtitle I build software and lead teams in Boston, Massachusetts.
+  section.content
+    .content-box
+      p
+        | I am a software developer and tech lead at 
+        a(href='https://www.hubspot.com/') HubSpot
+        | , a marketing, sales, and service software company based in Cambridge, Massachusetts. I enjoy building healthy, effective teams and creating the frontend experience for HubSpot's developer tools and integrations.
+      p
+        | I am passionate about supporting members of underrepresented groups in technology, both in- and outside of my professional career. This applies both to people who work in or wish to work in technology, but also to those who simply wish to exist online without facing harassment or other abuse.
+      p
+        | In my free time, I can usually be found on the Internet, hanging out at home with my two cats, or both. I used to usually have a foster cat (or litter of kittens) staying with me, but since recently adopting a second one of my fosters, I am limited for space to take on more animals, even temporarily.
+      p
+        | I am a longtime editor of the English Wikipedia under the username 
+        a(href='https://en.wikipedia.org/wiki/User:GorillaWarfare') GorillaWarfare
+        | . I am an administrator and am currently serving my third term on the 
+        a(href='https://en.wikipedia.org/wiki/Wikipedia:Arbitration_Committee') Arbitration Committee
+        | . I care deeply about providing an open-access resource for high-quality, verifiable information, and feel that it is a particularly important project given the current political climate and alarming spread of misinformation online.
+      p
+        | I have a lot of thoughts and opinions, which I sometimes put on 
+        a(href='https://twitter.com/molly0x57') Twitter
+        | . Longer-form thoughts and opinions go on my 
+        a(href='https://blog.mollywhite.net') blog
+        | , which I'm hoping to use more regularly.
+  
+block footer
+  |  Illustration © Cam Schroeder 2018.
+
+block pre-javascript
+  script(src='js/rellax.min.js')
+block post-javascript
+  script(src='js/home.js')
