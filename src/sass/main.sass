@@ -1,0 +1,130 @@
+@import tokens
+
+body
+  background-color: $background-color
+  color: $body-font-color
+  font-family: $body-font-family, $body-font-type
+  font-size: 1em
+  font-weight: $body-font-weight
+  line-height: 1.5
+
+a
+  color: $body-font-color
+
+h1, h2, h3, h4, h5, h6
+  font-family: $display-font-family, $display-font-type
+
+.force-full-height
+  min-height: 100vh
+
+// ----- NAVIGATION ---------------
+
+.navigation
+  min-height: 41px
+  line-height: 36px
+  padding: 5px 5px 50px 5px
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  
+  .logo h1
+    font-size: 1.5em
+    font-weight: normal
+    margin: 0
+
+  a
+    color: $body-font-color
+    text-decoration: none
+
+  .links
+    display: flex
+    align-items: baseline
+    text-transform: uppercase
+
+    a
+      font-size: 0.85em
+      padding: 0 5px
+
+  div
+    padding-right: 10px
+    padding-left: 10px
+
+  &.home
+    justify-content: flex-end
+    padding: 5px 5px 5px 5px
+
+// ----- CONTENT ------------------
+
+.content-box
+  max-width: 800px
+  padding: 20px 50px
+  box-sizing: border-box
+  margin: auto
+
+  &.home
+    max-width: 1000px
+
+// ----- FOOTER -------------------
+
+footer
+  width: 100%
+  text-align: center
+  padding: 10px 0
+  font-size: 0.7em
+
+  &.force-full-height
+    position: absolute
+    bottom: 0
+
+// ----- RESUME -------------------
+
+.resume h3
+  margin: 0 0 5px 0
+
+.resume-block
+  margin-bottom: 30px
+
+.resume-sub-block
+  margin-bottom: 15px
+
+dl
+  font-size: 0.85em
+  margin: 5px 0 0 15px
+
+dt
+  font-weight: 400
+
+dd
+  ~ dt
+    margin-top: 10px
+  margin-inline-start: 20px
+
+.line-with-year
+  display: flex
+  justify-content: space-between
+
+.normal-weight
+  font-weight: 300
+
+.year
+  font-style: italic
+
+// ----- SMALL SCREENS-------------
+@media screen and (max-width: 900px)
+  h1
+    font-size: 2em
+
+// ----- MOBILE -------------------
+@media screen and (max-width: 600px)
+  .navigation
+    align-items: center
+    flex-direction: column
+    padding: 5px 5px 0px 5px
+    a
+      font-size: 1em
+    .links
+      flex-direction: column
+      align-items: center
+      padding-top: 10px
+  .line-with-year
+    flex-direction: column

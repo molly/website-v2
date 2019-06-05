@@ -1,0 +1,85 @@
+@import tokens
+
+// ----- WELCOME CONTENT ----------
+// PORTRAIT ILLUSTRATION
+
+.molly-and-max
+  float: left
+  shape-outside: url('../images/mollyandmax-500px.png')
+  shape-margin: 40px
+  margin: 50px 0 0 50px
+  width: 400px
+  height: 550px
+ 
+  img
+    max-height: 500px
+
+// CONTENT
+
+.welcome-container
+  max-width: 1000px
+  margin: auto
+
+.welcome
+  min-height: 375px
+  padding: 130px 50px 130px 500px
+  box-sizing: border-box
+
+h1
+  font-family: $display-font-family, $display-font-type
+  font-size: 2.5em
+  font-weight: 400
+  margin-top: 0
+
+.welcome .subtitle
+  font-size: 1.3em
+  max-width: 600px
+
+// ----- BODY CONTENT -------------
+
+.content, footer
+  background-color: $contrast-background-color
+
+.content
+  box-shadow: 0 0 1px 0px $contrast-background-color
+
+.content-box
+  text-align: justify
+
+// ----- SMALL SCREENS-------------
+@media screen and (max-width: 900px)
+  h1
+    font-size: 2em
+  .molly-and-max
+    shape-outside: url('../images/mollyandmax-350px.png')
+    height: 400px
+    width: 300px
+    img
+      max-height: 350px
+  .welcome
+    min-height: 300px
+    padding: 80px 50px 80px 350px
+    box-sizing: border-box
+
+// ----- MOBILE -------------------
+@media screen and (max-width: 600px)
+  h1
+    font-size: 1.8em
+  .molly-and-max
+    float: none
+    text-align: center
+    margin: 10px 0
+    height: auto
+    width: auto
+    shape-outside: none
+    shape-margin: 0
+    img
+      max-height: 200px
+      padding: 0
+  .welcome
+    min-height: auto
+    padding: 0 10px 20px 10px
+    text-align: center
+    .subtitle
+      font-size: 1.3em
+      max-width: auto
