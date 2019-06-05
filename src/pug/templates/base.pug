@@ -1,7 +1,8 @@
 - var pageWrapperClass = '';
+- var htmlClass = '';
 block vars
 doctype html
-html.home.no-js(lang='en')
+html(class=`home no-js ${htmlClass}`, lang='en')
   body
     head
       include ../includes/head.pug
