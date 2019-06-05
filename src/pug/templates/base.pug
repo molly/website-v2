@@ -8,8 +8,12 @@ html(class=`home no-js ${htmlClass}`, lang='en')
       include ../includes/head.pug
       block head
 
-
     div(class=pageWrapperClass)
+      unless htmlClass === 'home'
+        .logo
+        h1
+          a(href="/") Molly White
+          
       include ../includes/navigation.pug
 
       block body
