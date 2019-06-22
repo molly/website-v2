@@ -8,7 +8,7 @@
     "build:html": "pug --pretty src/pug/pages --out dist && pug --pretty src/pug/blog --out dist/blog",
     "build:css": "mkdir dist/css && cp -r src/sass/*.css dist/css && sass src/sass/:dist/css",
     "build:js": "mkdir dist/js && cp -r src/js/* dist/js",
-    "build:misc": "cp -r src/misc/* dist/ && mkdir dist/images && cp -r src/images/* dist/images",
+    "build:misc": "cp -r src/misc/* dist/ && mkdir dist/images && cp -r src/images/* dist/images && mv dist/images/icons/favicon.ico dist/",
     "build": "npm run clean && npm run build:html && npm run build:css && npm run build:js && npm run build:misc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
