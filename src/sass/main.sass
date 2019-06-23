@@ -1,13 +1,16 @@
 @import tokens
 
+.home
+  body
+    background-color: $background-color
+
 body
-  background-color: $background-color
   color: $body-font-color
   font-family: $body-font-family, $body-font-type
   font-size: 1em
   font-weight: $body-font-weight
   line-height: 1.5
-
+  
 a
   color: $body-font-color
 
@@ -16,10 +19,12 @@ h1, h2, h3, h4, h5, h6
 
 .force-full-height
   min-height: 100vh
+  margin-bottom: -36px
 
 // ----- NAVIGATION ---------------
 
 .navigation
+  background-color: $main-color
   min-height: 41px
   line-height: 36px
   padding: 5px 5px 50px 5px
@@ -66,11 +71,8 @@ h1, h2, h3, h4, h5, h6
 
 // ----- FOOTER -------------------
 
-.force-full-height footer
-    position: absolute
-    bottom: 0
-
 footer
+  height: 36px
   width: 100%
   text-align: center
   padding: 10px 0
