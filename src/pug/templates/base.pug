@@ -1,4 +1,3 @@
-- var pageWrapperClass = '';
 - var htmlClass = '';
 block vars
 doctype html
@@ -8,7 +7,7 @@ html(class=`no-js ${htmlClass}`, lang='en')
       include ../includes/head.pug
       block head
 
-    div(class=pageWrapperClass)
+    .force-full-height
       nav.navigation
         unless htmlClass === 'home'
           .logo

@@ -15,6 +15,9 @@ h1, h2, h3, h4, h5, h6
   font-family: $display-font-family, $display-font-type
 
 .force-full-height
+  display: flex
+  flex-direction: column
+  align-content: stretch 
   min-height: 100vh
 
 // ----- NAVIGATION ---------------
@@ -65,10 +68,6 @@ h1, h2, h3, h4, h5, h6
   margin: auto
 
 // ----- FOOTER -------------------
-
-.force-full-height footer
-    position: absolute
-    bottom: 0
 
 footer
   width: 100%
