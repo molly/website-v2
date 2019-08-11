@@ -1,23 +1,18 @@
 block vars
 doctype html
-html(class=`no-js`, lang='en')
+html(class=`no-js blog`, lang='en')
   body
     head
       include ../includes/head.pug
+      link(rel='stylesheet', href='/css/blog.css')
       block head
 
-    nav.navigation
-      unless htmlClass === 'home'
-        .logo
-          h1
-            a(href="/") Molly White
-
+    nav.blog-navigation
       include ../includes/blog_navigation.pug
 
     block body
 
     footer
-      include ../includes/footer.pug
       block footer
 
     block pre-javascript

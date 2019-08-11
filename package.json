@@ -6,10 +6,11 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "build:html": "pug --pretty src/pug/pages --out dist && pug --pretty src/pug/blog --out dist/blog",
-    "build:css": "mkdir dist/css && cp -r src/sass/*.css dist/css && sass src/sass/:dist/css",
+    "build:css": "rimraf dist/css && mkdir dist/css && cp -r src/sass/*.css dist/css && sass src/sass/:dist/css",
     "build:js": "mkdir dist/js && cp -r src/js/* dist/js",
     "build:misc": "cp -r src/misc/* dist/ && mkdir dist/images && cp -r src/images/* dist/images && mv dist/images/icons/favicon.ico dist/",
     "build": "npm run clean && npm run build:html && npm run build:css && npm run build:js && npm run build:misc",
+    "serve": "http-server ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/molly/website-v2#readme",
   "devDependencies": {
+    "http-server": "^0.11.1",
     "pug-cli": "^1.0.0-alpha6",
     "rimraf": "^2.6.3",
     "sass": "^1.20.3"
