@@ -17,6 +17,10 @@ a
 h1, h2, h3, h4, h5, h6
   font-family: $display-font-family, $display-font-type
 
+*:focus
+  outline: none
+  background-color: $light-green-semi-opaque
+
 .force-full-height
   min-height: 100vh
   margin-bottom: -36px
@@ -67,7 +71,14 @@ h1, h2, h3, h4, h5, h6
   max-width: 800px
   padding: 20px 50px
   box-sizing: border-box
-  margin: auto
+  margin: 0 auto 50px auto
+
+.in-text-image
+  margin: 10px 0
+  text-align: center
+  
+  img
+    max-width: 500px
 
 // ----- FOOTER -------------------
 
@@ -111,6 +122,31 @@ dd
 
 .year
   font-style: italic
+
+// ----- TWITTER ------------------
+.faq-question
+  display: inline-block
+  margin: 0
+
+.faq-answer
+  margin-left: 20px
+
+.faq-accordions
+  text-align: left
+  margin: 20px
+
+.accordion
+  margin: 10px 0
+
+  &:hover
+    cursor: pointer
+    text-decoration: underline
+
+.accordion-panel
+  text-align: justify
+  overflow: hidden
+  max-height: 0
+  transition: max-height 0.3s ease-out
 
 // ----- SMALL SCREENS-------------
 @media screen and (max-width: 900px)
