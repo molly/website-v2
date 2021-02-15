@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/molly/website-v2#readme",
   "devDependencies": {
-    "http-server": "^0.11.1",
+    "http-server": "^0.12.3",
     "pug-cli": "^1.0.0-alpha6",
-    "rimraf": "^2.6.3",
-    "sass": "^1.20.3"
+    "rimraf": "^3.0.2",
+    "sass": "^1.32.7"
   }
 }
