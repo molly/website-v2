@@ -10,7 +10,6 @@
     "build:js": "mkdir dist/js && cp -r src/js/* dist/js",
     "build:misc": "cp -r src/misc/* dist/ && mkdir dist/images && cp -r src/images/* dist/images && mv dist/images/icons/favicon.ico dist/",
     "build": "npm run clean && npm run build:html && npm run build:css && npm run build:js && npm run build:misc",
-    "serve": "http-server ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,7 +23,6 @@
   },
   "homepage": "https://github.com/molly/website-v2#readme",
   "devDependencies": {
-    "http-server": "^0.12.3",
     "pug-cli": "^1.0.0-alpha6",
     "rimraf": "^3.0.2",
     "sass": "^1.32.7"
