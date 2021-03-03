@@ -17,7 +17,10 @@ block body
         a(href=article.href) "#{article.title}"
         |.  #{article.author} in 
         i #{article.work}
-        |, #{article.formattedDate}.
+        if article.formattedDate
+          |, #{article.formattedDate}.
+        else
+          |.
         
         if article.quote
           blockquote(cite=article.href) #{article.quote}
