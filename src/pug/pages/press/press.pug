@@ -13,12 +13,15 @@ block body
     h3 Press
     
     each article in articles
-      div(class=article.tags)
-        a(href=article.href) "#{article.title}".
-        |  #{article.author} in 
+      div(class=['article'].concat(article.tags.map(function(t) { return "tag-" + t })))
+        a(href=article.href) "#{article.title}"
+        |.  #{article.author} in 
         i #{article.work}
         |, #{article.formattedDate}.
         
+        if article.quote
+          blockquote(cite=article.href) #{article.quote}
+
         div(class="tags")
           each tag in article.tags
             a(class="tag") #{tag}

@@ -7,8 +7,9 @@ var articles = [
     date: "2021-03-03",
     work: "Slate",
     href: "https://slate.com/technology/2021/03/wikipedia-code-of-conduct-harassment.html",
-    tags: ["harassment"]
-  }
+    quote: "In February, Molly White, age 27, received yet another creepy message... For White, the threat was one more example of the harassment she has received because she is one of Wikipedia's most prolific female contributors.",
+    tags: ["wikipedia", "harassment"]
+  },
 ];
 
 articles.sort(function (a, b) {
@@ -16,6 +17,7 @@ articles.sort(function (a, b) {
 });
 articles.forEach(function (a)  {
   a.formattedDate = moment(a.date).format('MMMM D, YYYY');
+  a.tags.sort();
 });
 
 exports.articles = articles;

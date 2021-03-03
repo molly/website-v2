@@ -153,8 +153,31 @@ dd
 
 // ----- PRESS --------------------
 .press
+  .article
+    padding-left: 10px
+    border-left: 2px solid $light-green
+
   .tag
     font-size: .8em
+    background-color: $light-green-semi-opaque
+    padding: 2px
+    margin-right: 5px
+    border-radius: 2px
+
+blockquote
+  font-size: .9em
+  font-style: italic
+  margin-left: 20px
+
+  &:before
+    color: #ccc
+    content: "\201C"
+    font-size: 4em
+    line-height: 0.1em
+    margin-right: 0.25em
+    vertical-align: -0.4em
+
+
 
 // ----- SMALL SCREENS-------------
 @media screen and (max-width: 900px)
