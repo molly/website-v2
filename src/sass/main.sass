@@ -24,6 +24,10 @@ h1, h2, h3, h4, h5, h6
   outline: none
   background-color: $light-green-semi-opaque
 
+.external-links
+  *:focus
+    background-color: transparent
+
 .force-full-height
   min-height: 100vh
   margin-bottom: -36px
@@ -38,7 +42,7 @@ h1, h2, h3, h4, h5, h6
   display: flex
   justify-content: space-between
   align-items: flex-end
-  
+
   .logo h1
     font-size: 1.5em
     font-weight: normal
@@ -79,7 +83,7 @@ h1, h2, h3, h4, h5, h6
 .in-text-image
   margin: 10px 0
   text-align: center
-  
+
   img
     width: 100%
     max-width: 500px
@@ -115,7 +119,7 @@ dt
 dd
   ~ dt
     margin-top: 10px
-  margin-inline-start: 20px
+    margin-inline-start: 20px
 
 .line-with-year
   display: flex
@@ -210,8 +214,6 @@ blockquote
     margin-right: 0.25em
     vertical-align: -0.4em
 
-
-
 // ----- SMALL SCREENS-------------
 @media screen and (max-width: 900px)
   h1
@@ -229,7 +231,7 @@ blockquote
       flex-direction: column
       align-items: center
       padding-top: 10px
-  
+
   .content-box
     padding: 20px
 
