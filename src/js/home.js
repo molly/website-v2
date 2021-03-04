@@ -3,19 +3,22 @@
 // underscore.js is licensed under the MIT license
 // https://github.com/jashkenas/underscore/blob/master/LICENSE
 
-var restArguments = function(func, startIndex) {
+var restArguments = function (func, startIndex) {
   startIndex = startIndex == null ? func.length - 1 : +startIndex;
-  return function() {
+  return function () {
     var length = Math.max(arguments.length - startIndex, 0),
-        rest = Array(length),
-        index = 0;
+      rest = Array(length),
+      index = 0;
     for (; index < length; index++) {
       rest[index] = arguments[index + startIndex];
     }
     switch (startIndex) {
-      case 0: return func.call(this, rest);
-      case 1: return func.call(this, arguments[0], rest);
-      case 2: return func.call(this, arguments[0], arguments[1], rest);
+      case 0:
+        return func.call(this, rest);
+      case 1:
+        return func.call(this, arguments[0], rest);
+      case 2:
+        return func.call(this, arguments[0], arguments[1], rest);
     }
     var args = Array(startIndex + 1);
     for (index = 0; index < startIndex; index++) {
@@ -26,21 +29,21 @@ var restArguments = function(func, startIndex) {
   };
 };
 
-var delay = restArguments(function(func, wait, args) {
-  return setTimeout(function() {
+var delay = restArguments(function (func, wait, args) {
+  return setTimeout(function () {
     return func.apply(null, args);
   }, wait);
 });
 
-var debounce = function(func, wait, immediate) {
+var debounce = function (func, wait, immediate) {
   var timeout, result;
 
-  var later = function(context, args) {
+  var later = function (context, args) {
     timeout = null;
     if (args) result = func.apply(context, args);
   };
 
-  var debounced = restArguments(function(args) {
+  var debounced = restArguments(function (args) {
     if (timeout) clearTimeout(timeout);
     if (immediate) {
       var callNow = !timeout;
@@ -53,7 +56,7 @@ var debounce = function(func, wait, immediate) {
     return result;
   });
 
-  debounced.cancel = function() {
+  debounced.cancel = function () {
     clearTimeout(timeout);
     timeout = null;
   };
@@ -77,7 +80,7 @@ function addRellax(illustration, rellax) {
   illustration.classList.add('rellax');
   illustration.setAttribute('data-rellax-speed', '1');
   return new Rellax('.rellax', {
-    speed: -2
+    speed: -2,
   });
 }
 
@@ -85,23 +88,25 @@ function removeRellax(illustration, rellax) {
   illustration.classList.remove('rellax');
   illustration.removeAttribute('data-rellax-speed');
   if (rellax) {
-    rellax.destroy()
-  };
+    rellax.destroy();
+  }
   return null;
 }
 
-(function() {
+(function () {
   var illustrationElement = document.getElementById('molly-and-max');
   if (illustrationElement) {
     var rellax;
 
     // Add Rellax on mount if window is > 600px
     if (window.innerWidth > 600) {
-      rellax = addRellax(illustrationElement, rellax)
+      rellax = addRellax(illustrationElement, rellax);
     }
 
     // If window resizes, add or remove Rellax if needed (debounced)
     var resizeTimeout;
-    window.addEventListener('resize', function() { debouncedAdjustRellax(illustrationElement, rellax)});
+    window.addEventListener('resize', function () {
+      debouncedAdjustRellax(illustrationElement, rellax);
+    });
   }
 })();

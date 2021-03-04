@@ -1,3 +1,6 @@
-(function() {
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+(function () {
+  document.documentElement.className = document.documentElement.className.replace(
+    /\bno-js\b/,
+    'js',
+  );
 })();
