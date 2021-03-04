@@ -52,5 +52,8 @@ block body
           div(class="tags")
             span.tags= article.tags.join(', ')
 
+block pre-javascript
+  script(src='js/polyfills/classlist-polyfill.js')
+  script(src='js/polyfills/url-search-params-polyfill.js')
 block post-javascript
   script(src='js/press.js')

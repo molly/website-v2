@@ -29,7 +29,6 @@ function getTagsListFromUrl(url = null) {
 function onTagClick(tag) {
   // Mark button as active or inactive
   var buttonEl = document.getElementsByClassName('tag tag-' + tag)[0];
-  buttonEl.classList.toggle('active');
 
   // Set URL param
   var url = new URL(window.location);
