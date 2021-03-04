@@ -1,0 +1,14 @@
+{
+  "env": {
+      "browser": true
+  },
+  "extends": ["prettier", "eslint:recommended"],
+  "plugins": ["prettier"],
+  "parserOptions": {
+      "ecmaVersion": 12
+  },
+  "rules": {
+      "prettier/prettier": ["error"]
+  },
+  "ignorePatterns": ["*.min.js"]
+}

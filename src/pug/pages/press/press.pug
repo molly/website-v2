@@ -9,34 +9,48 @@ block body
       | Wikipedia—foremost to teach people how it works, but also to discuss the challenges we face
       | as a project, particularly when it comes to diversity of editors and content. I have also
       | discussed topics including online harassment and technology more generally.
-    
+
     h3 Press and other mentions
-    
+
+    .tags-list 
+      span.title 
+        b Filter by tag
+      div
+        for tag in tags 
+          button(class=["tag", 'tag-' + tag], onclick='onTagClick("' + tag + '")') #{tag}
+
     each article in articles
-      div(class=['article'].concat(article.tags.map(function(t) { return "tag-" + t })))
-        a(href=article.href) "#{article.title}"
+      div(class='article', data-tags=article.tags.join(','))
+        div.title
+          a(href=article.href) "#{article.title}"
 
-        if article.parenthetical 
-          |  (#{article.parenthetical})
+          if article.parenthetical 
+            |  (#{article.parenthetical})
         
-        if article.parenthetical || !article.title.match(/[.?!]$/m)
-          |. 
-        else 
-          | 
+          if article.parenthetical || !article.title.match(/[.?!]$/m)
+            |. 
 
-        if article.author
-          | #{article.author} #{article.preposition} 
+        div.byline
+          if article.author
+            | #{article.author} #{article.preposition} 
+            
+          if article.work
+            if !article.workItalics
+              | #{article.work}. 
+            else
+              i #{article.work}. 
           
-        if !article.workItalics
-          | #{article.work}
-        else
-          i #{article.work}
+          if article.publisher 
+            |  #{article.publisher}.
 
-        if article.formattedDate
-          |, #{article.formattedDate}.
-        else
-          |.
-        
-        div(class="tags")
-          each tag in article.tags
-            a(class="tag") #{tag}
+          if article.formattedDate
+            |  #{article.formattedDate}.
+          else
+            |
+          
+        if article.tags
+          div(class="tags")
+            span.tags= article.tags.join(', ')
+
+block post-javascript
+  script(src='js/press.js')

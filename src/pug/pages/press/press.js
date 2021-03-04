@@ -6,6 +6,7 @@ var articleDefaults = {
   date: '1970-01-01',
   formattedDate: null,
   work: null,
+  publisher: null,
   workItalics: true,
   preposition: 'in',
   parenthetical: null,
@@ -37,7 +38,9 @@ var articles = [
     title: "Twitter's 'Birdwatch' Aims to Crowdsource Fight Against Misinformation",
     author: 'Shannon Bond',
     date: '2021-02-10',
-    work: 'NPR',
+    work: 'Morning Edition',
+    publisher: 'NPR',
+    preposition: 'on',
     parenthetical: 'Radio show',
     href:
       'https://www.npr.org/2021/02/10/965839888/twitters-birdwatch-aims-to-crowdsource-fight-against-misinformations',
@@ -64,7 +67,8 @@ var articles = [
     title: "Wikipedia At 20: The Promises And Pitfalls Of The 'Free Encyclopedia'",
     author: 'Carmen Baskauf and Lucy Nalpathanchil',
     date: '2021-01-28',
-    work: 'WNPR',
+    work: 'Where We Live',
+    publisher: 'WNPR',
     preposition: 'on',
     parenthetical: 'Radio show',
     href: 'https://www.wnpr.org/post/wikipedia-20-promises-and-pitfalls-free-encyclopedia',
@@ -81,8 +85,7 @@ var articles = [
   {
     title: 'Celebrating 20 years of Wikipedia',
     date: '2021-01-18',
-    work: 'World Wide Web Foundation',
-    workItalics: false,
+    publisher: 'World Wide Web Foundation',
     href: 'https://webfoundation.org/2021/01/celebrating-20-years-of-wikipedia/',
     tags: [TAGS.WIKIPEDIA, TAGS.BREAKING_NEWS],
   },
@@ -95,10 +98,21 @@ var articles = [
     tags: [TAGS.WIKIPEDIA, TAGS.BREAKING_NEWS],
   },
   {
+    title: 'The world relies on Wikipedia. Wikipedia relies on you.',
+    author: 'Pats Pena',
+    date: '2020-11-30',
+    preposition: 'for',
+    publisher: 'The Wikimedia Foundation',
+    href:
+      'https://wikimediafoundation.org/news/2020/11/30/the-world-relies-on-wikipedia-wikipedia-relies-on-you/',
+    tags: [TAGS.WIKIPEDIA, TAGS.DISINFORMATION],
+  },
+  {
     title: 'How Wikipedia is preparing for Election Day',
     author: 'Sara Morrison',
     date: '2020-11-02',
-    work: "Vox's Recode",
+    work: 'Recode',
+    publisher: 'Vox',
     href:
       'https://www.vox.com/recode/2020/11/2/21541880/wikipedia-presidential-election-misinformation-social-media',
     tags: [TAGS.WIKIPEDIA, TAGS.BREAKING_NEWS, TAGS.HARASSMENT, TAGS.DISINFORMATION],
@@ -127,6 +141,7 @@ var articles = [
     author: 'Rachael Allen',
     date: '2020-04-11',
     work: 'The Lily',
+    publisher: 'The Washington Post',
     href:
       'https://www.thelily.com/wikipedia-is-a-world-built-by-and-for-men-rosie-stephenson-goodnight-is-changing-that/',
     tags: [TAGS.WIKIPEDIA, TAGS.GENDER_GAP],
@@ -149,10 +164,22 @@ var articles = [
     tags: [TAGS.WIKIPEDIA, TAGS.TECHNOLOGY],
   },
   {
+    title:
+      "Identifying Women's Experiences With and Strategies for Mitigating Negative Effects of Online Harassment",
+    author: 'Jessica Vitak, Kalyani Chadha, Linda Steiner, and Zahra Ashktorab',
+    date: '2017-02',
+    work:
+      "CSCW '17: Proceedings of the 2017 ACM Conference on Computer Supported Cooperative Work and Social Computing",
+    publisher: 'Association for Computing Machinery',
+    href: 'https://dl.acm.org/doi/10.1145/2998181.2998337',
+    tags: [TAGS.TWITTER, TAGS.HARASSMENT],
+  },
+  {
     title: 'Privacy and Harassment on the Internet',
     author: 'Katherine Maher',
     date: '2016-10-29',
     work: 'MozFest 2016',
+    publisher: 'Mozilla',
     workItalics: false,
     preposition: 'at',
     parenthetical: 'Talk',
@@ -168,13 +195,27 @@ var articles = [
       'https://www.theatlantic.com/technology/archive/2015/10/how-wikipedia-is-hostile-to-women/411619/',
     tags: [TAGS.WIKIPEDIA, TAGS.ARBITRATION, TAGS.HARASSMENT],
   },
+  {
+    title:
+      "The 'Five Horsemen' Of Wikipedia Paid The Price For Getting Between Trolls And Their Victims",
+    author: 'Lauren C. Williams',
+    date: '2015-03-06',
+    work: 'ThinkProgress',
+    href:
+      'https://archive.thinkprogress.org/the-five-horsemen-of-wikipedia-paid-the-price-for-getting-between-trolls-and-their-victims-9c835aeafdc8/',
+    tags: [TAGS.WIKIPEDIA, TAGS.ARBITRATION],
+  },
 ];
 
 articles = articles.map(function (a) {
   var updatedArticle = Object.assign({}, articleDefaults, a);
   var m = moment(updatedArticle.date);
   if (m.year() !== 1970) {
-    updatedArticle.formattedDate = m.format('MMMM D, YYYY');
+    if (updatedArticle.date.match(/^\d{4}-\d{1,2}-\d{1,2}$/m)) {
+      updatedArticle.formattedDate = m.format('MMMM D, YYYY');
+    } else if (updatedArticle.date.match(/^\d{4}-\d{1,2}$/m)) {
+      updatedArticle.formattedDate = m.format('MMMM YYYY');
+    }
   }
   updatedArticle.tags.sort();
   return updatedArticle;
@@ -185,4 +226,8 @@ articles.sort(function (a, b) {
   return moment(b.date) - moment(a.date);
 });
 
+var tagsList = Object.values(TAGS);
+tagsList.sort();
+
 exports.articles = articles;
+exports.tags = tagsList;
