@@ -9,12 +9,13 @@ html(class=`no-js ${htmlClass}`, lang='en')
 
     div(class='force-full-height')
       nav.navigation
-        unless htmlClass === 'home'
-          .logo
-            h1
-              a(href="/") Molly White
+        .navigation-wrapper
+          unless htmlClass === 'home'
+            .logo
+              h1
+                a(href="/") Molly White
 
-        include ../includes/navigation.pug
+          include ../includes/navigation.pug
 
       block body
 
