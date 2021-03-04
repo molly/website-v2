@@ -5,18 +5,19 @@ block vars
 
 block body
   .content-box
-    p I sometimes speak to journalists because I feel it is important to educate the public about 
-      | Wikipedia—foremost to teach people how it works, but also to discuss the challenges we face
-      | as a project, particularly when it comes to diversity of editors and content. I have also
-      | discussed topics including online harassment and technology more generally.
+    p I feel it is important for the public to understand Wikipedia—foremost
+      |  how it works, but also the challenges we face as a project,
+      |  particularly when it comes to diversity of editors and
+      |  content. I also sometimes speak about online harassment and
+      |  technology more generally.
 
     h3 Press and other mentions
 
-    .tags-list 
-      span.title 
+    .tags-list
+      span.title
         b Filter by tag
       div
-        for tag in tags 
+        for tag in tags
           button(class=["tag", 'tag-' + tag], onclick='onTagClick("' + tag + '")', aria-pressed="false") #{tag}
 
     div.articles(aria-live="polite")
@@ -25,30 +26,30 @@ block body
           div.title
             a(href=article.href) "#{article.title}"
 
-            if article.parenthetical 
+            if article.parenthetical
               |  (#{article.parenthetical})
-          
+
             if article.parenthetical || !article.title.match(/[.?!]$/m)
-              |. 
+              |.
 
           div.byline
             if article.author
-              | #{article.author} #{article.preposition} 
-              
+              | #{article.author} #{article.preposition}
+
             if article.work
               if !article.workItalics
-                | #{article.work}. 
+                | #{article.work}.
               else
-                i #{article.work}. 
-            
-            if article.publisher 
+                i #{article.work}.
+
+            if article.publisher
               |  #{article.publisher}.
 
             if article.formattedDate
               |  #{article.formattedDate}.
             else
               |
-            
+
           if article.tags
             div(class="tags")
               span.tags= article.tags.join(', ')
