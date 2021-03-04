@@ -17,40 +17,41 @@ block body
         b Filter by tag
       div
         for tag in tags 
-          button(class=["tag", 'tag-' + tag], onclick='onTagClick("' + tag + '")') #{tag}
+          button(class=["tag", 'tag-' + tag], onclick='onTagClick("' + tag + '")', aria-pressed="false") #{tag}
 
-    each article in articles
-      div(class='article', data-tags=article.tags.join(','))
-        div.title
-          a(href=article.href) "#{article.title}"
+    div.articles(aria-live="polite")
+      each article in articles
+        div(class='article', data-tags=article.tags.join(','))
+          div.title
+            a(href=article.href) "#{article.title}"
 
-          if article.parenthetical 
-            |  (#{article.parenthetical})
-        
-          if article.parenthetical || !article.title.match(/[.?!]$/m)
-            |. 
+            if article.parenthetical 
+              |  (#{article.parenthetical})
+          
+            if article.parenthetical || !article.title.match(/[.?!]$/m)
+              |. 
 
-        div.byline
-          if article.author
-            | #{article.author} #{article.preposition} 
+          div.byline
+            if article.author
+              | #{article.author} #{article.preposition} 
+              
+            if article.work
+              if !article.workItalics
+                | #{article.work}. 
+              else
+                i #{article.work}. 
             
-          if article.work
-            if !article.workItalics
-              | #{article.work}. 
-            else
-              i #{article.work}. 
-          
-          if article.publisher 
-            |  #{article.publisher}.
+            if article.publisher 
+              |  #{article.publisher}.
 
-          if article.formattedDate
-            |  #{article.formattedDate}.
-          else
-            |
-          
-        if article.tags
-          div(class="tags")
-            span.tags= article.tags.join(', ')
+            if article.formattedDate
+              |  #{article.formattedDate}.
+            else
+              |
+            
+          if article.tags
+            div(class="tags")
+              span.tags= article.tags.join(', ')
 
 block pre-javascript
   script(src='js/polyfills/classlist-polyfill.js')

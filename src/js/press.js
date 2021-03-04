@@ -4,6 +4,7 @@
     for (var i = 0; i < initialUrlTags.length; i++) {
       var buttonEl = document.getElementsByClassName('tag tag-' + initialUrlTags[i])[0];
       buttonEl.classList.add('active');
+      buttonEl.setAttribute('aria-pressed', true);
     }
     filter();
   }
@@ -29,6 +30,13 @@ function getTagsListFromUrl(url = null) {
 function onTagClick(tag) {
   // Mark button as active or inactive
   var buttonEl = document.getElementsByClassName('tag tag-' + tag)[0];
+  if (buttonEl.classList.contains('active')) {
+    buttonEl.classList.remove('active');
+    buttonEl.setAttribute('aria-pressed', false);
+  } else {
+    buttonEl.classList.add('active');
+    buttonEl.setAttribute('aria-pressed', true);
+  }
 
   // Set URL param
   var url = new URL(window.location);
