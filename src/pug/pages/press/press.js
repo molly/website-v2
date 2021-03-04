@@ -1,3 +1,4 @@
+require('url-search-params-polyfill');
 var moment = require('moment');
 
 var articleDefaults = {
