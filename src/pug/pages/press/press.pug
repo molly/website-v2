@@ -10,21 +10,33 @@ block body
       | as a project, particularly when it comes to diversity of editors and content. I have also
       | discussed topics including online harassment and technology more generally.
     
-    h3 Press
+    h3 Press and other mentions
     
     each article in articles
       div(class=['article'].concat(article.tags.map(function(t) { return "tag-" + t })))
         a(href=article.href) "#{article.title}"
-        |.  #{article.author} in 
-        i #{article.work}
+
+        if article.parenthetical 
+          |  (#{article.parenthetical})
+        
+        if article.parenthetical || !article.title.match(/[.?!]$/m)
+          |. 
+        else 
+          | 
+
+        if article.author
+          | #{article.author} #{article.preposition} 
+          
+        if !article.workItalics
+          | #{article.work}
+        else
+          i #{article.work}
+
         if article.formattedDate
           |, #{article.formattedDate}.
         else
           |.
         
-        if article.quote
-          blockquote(cite=article.href) #{article.quote}
-
         div(class="tags")
           each tag in article.tags
             a(class="tag") #{tag}

@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/molly/website-v2#readme",
   "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
     "moment": "^2.29.1",
     "pug-cli": "^1.0.0-alpha6",
     "rimraf": "^3.0.2",
