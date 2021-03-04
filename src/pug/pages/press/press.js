@@ -147,6 +147,15 @@ var articles = [
     tags: [TAGS.WIKIPEDIA, TAGS.GENDER_GAP],
   },
   {
+    title: 'How Wikipedia’s volunteers became the web’s best weapon against misinformation',
+    author: 'Alex Pasternack',
+    date: '2020-03-07',
+    work: 'FastCompany',
+    href:
+      'https://www.fastcompany.com/90471667/how-wikipedia-volunteers-became-the-webs-best-weapon-against-misinformation',
+    tags: [TAGS.WIKIPEDIA, TAGS.DISINFORMATION, TAGS.TECHNOLOGY, TAGS.TWITTER],
+  },
+  {
     title: 'The Culture War Has Finally Come For Wikipedia',
     author: 'Joseph Bernstein',
     date: '2019-06-27',
@@ -194,16 +203,6 @@ var articles = [
     href:
       'https://www.theatlantic.com/technology/archive/2015/10/how-wikipedia-is-hostile-to-women/411619/',
     tags: [TAGS.WIKIPEDIA, TAGS.ARBITRATION, TAGS.HARASSMENT],
-  },
-  {
-    title:
-      "The 'Five Horsemen' Of Wikipedia Paid The Price For Getting Between Trolls And Their Victims",
-    author: 'Lauren C. Williams',
-    date: '2015-03-06',
-    work: 'ThinkProgress',
-    href:
-      'https://archive.thinkprogress.org/the-five-horsemen-of-wikipedia-paid-the-price-for-getting-between-trolls-and-their-victims-9c835aeafdc8/',
-    tags: [TAGS.WIKIPEDIA, TAGS.ARBITRATION],
   },
 ];
 
