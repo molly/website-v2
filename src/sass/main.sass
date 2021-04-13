@@ -203,10 +203,7 @@ dd
       font-size: .9em
       font-style: italic
       color: $dark-grey
-
-    &.hidden
-      display: none
-
+    
 blockquote
   font-size: .9em
   font-style: italic
@@ -219,6 +216,9 @@ blockquote
     line-height: 0.1em
     margin-right: 0.25em
     vertical-align: -0.4em
+  
+.error
+  font-style: italic
 
 // ----- SMALL SCREENS-------------
 @media screen and (max-width: 900px)
@@ -249,3 +249,44 @@ blockquote
 
   .faq-accordions
     margin: 10px 0
+
+// ----- LOADING -------------------
+#loading
+  text-align: center
+
+.loading-ring
+  display: inline-block
+  position: relative
+  width: 40px
+  height: 40px
+
+  div
+    box-sizing: border-box
+    display: block
+    position: absolute
+    width: 32px
+    height: 32px
+    margin: 8px
+    border: 4px solid $light-green
+    border-radius: 50%
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+    border-color: $light-green transparent transparent transparent
+
+    &:nth-child(1)
+      animation-delay: -0.45s
+
+    &:nth-child(2)
+      animation-delay: -0.3s
+
+    &:nth-child(3)
+      animation-delay: -0.15s
+
+@keyframes lds-ring
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)
+
+*[aria-hidden='true']
+  display: none

@@ -1,0 +1,30 @@
+extends ../templates/base.pug
+
+block vars
+  - var htmlClass = 'press';
+
+block body
+  .content-box
+    p I feel it is important for the public to understand Wikipedia—foremost
+      |  how it works, but also the challenges we face as a project,
+      |  particularly when it comes to diversity of editors and
+      |  content. I also sometimes speak about technology, diversity, and
+      |  online harassment, both in and outside of the context of Wikipedia.
+
+    h3 Press and other mentions
+
+    .tags-list(aria-hidden='true')
+      span.title
+        b Filter by tag
+      div.tags
+
+    .articles(aria-live="polite",  aria-busy='true')
+      #loading(aria-label='Loading', aria-hidden='false')
+        include ../includes/loading.pug
+      #articlesContainer
+
+block pre-javascript
+  script(src='js/polyfills/classlist-polyfill.js')
+  script(src='js/polyfills/url-search-params-polyfill.js')
+block post-javascript
+  script(src='js/press-2.js')

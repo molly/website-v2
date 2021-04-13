@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist/*",
-    "build:press": "pug --pretty src/pug/pages/press/press.pug -O src/pug/pages/press/press.js --out dist/",
-    "build:html": "pug --pretty src/pug/pages/*.pug --out dist && pug --pretty src/pug/blog --out dist/blog && npm run build:press",
+    "build:html": "pug --pretty src/pug/pages/*.pug --out dist && pug --pretty src/pug/blog --out dist/blog",
     "build:css": "rimraf dist/css && mkdir dist/css && cp -r src/sass/*.css dist/css && sass src/sass/:dist/css",
     "build:js": "mkdir dist/js && cp -r src/js/* dist/js",
     "build:misc": "cp -r src/misc/* dist/ && mkdir dist/images && cp -r src/images/* dist/images && cp src/images/icons/favicon.ico dist/",
@@ -29,6 +28,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "moment": "^2.29.1",
+    "prettier": "^2.2.1",
     "pug-cli": "^1.0.0-alpha6",
     "rimraf": "^3.0.2",
     "sass": "^1.32.7"

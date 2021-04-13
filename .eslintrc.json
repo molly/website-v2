@@ -1,6 +1,6 @@
 {
     "env": {
-        "node": true,
+        "browser": true,
         "commonjs": true
     },
     "extends": ["prettier", "eslint:recommended"],
