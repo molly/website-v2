@@ -22,15 +22,18 @@ h1, h2, h3, h4, h5, h6
 
 *:focus
   outline: none
-  background-color: $light-green-semi-opaque
 
-.external-links
-  *:focus
-    background-color: transparent
+a:focus, button:focus
+  background-color: $light-green-semi-opaque
 
 .force-full-height
   min-height: 100vh
   margin-bottom: -36px
+
+fieldset
+  padding: 0
+  border: none
+  outline: none
 
 // ----- NAVIGATION ---------------
 
@@ -160,65 +163,6 @@ dd
   overflow: hidden
   max-height: 0
   transition: max-height 0.3s ease-out
-
-// ----- PRESS --------------------
-.press
-  h3
-    margin-bottom: 5px
-
-  .tags-list
-    border: 1px solid $grey
-    margin: 20px 0 20px 0
-    padding: 10px
-    position: relative
-
-    .title
-      padding: 0 5px
-      background-color: $white
-      font-size: .8em
-      position: absolute
-      top: -10px
-
-  button.tag
-    font-size: .8em
-    background-color: $light-green-semi-opaque
-    padding: 3px
-    margin-right: 5px
-    border-radius: 2px
-    border: 0
-
-    &:hover
-      cursor: pointer
-      background-color: $light-green
-
-    &.active
-      background-color: $light-green
-
-  .article
-    padding-left: 10px
-    border-left: 2px solid $light-green
-    margin-bottom: 20px
-
-    .tags
-      font-size: .9em
-      font-style: italic
-      color: $dark-grey
-
-    &.hidden
-      display: none
-
-blockquote
-  font-size: .9em
-  font-style: italic
-  margin-left: 20px
-
-  &:before
-    color: $grey
-    content: "\201C"
-    font-size: 4em
-    line-height: 0.1em
-    margin-right: 0.25em
-    vertical-align: -0.4em
 
 // ----- SMALL SCREENS-------------
 @media screen and (max-width: 900px)

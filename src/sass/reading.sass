@@ -1,0 +1,118 @@
+@import tokens
+
+.reading
+  h3
+    margin-bottom: 5px
+
+  label
+    display: block
+    font-weight: 400
+
+  // FILTERS
+  .filters
+    margin: 20px 0 20px 0
+
+  .filter-box
+    border: 1px solid $grey
+    padding: 10px
+    position: relative
+    font-size: .8em
+
+    .title
+      padding: 0 5px
+      background-color: $white
+      position: absolute
+      top: -10px
+      left: 5px
+      font-weight: bold
+
+    button.tag
+      background-color: $light-green-semi-opaque
+      padding: 3px
+      margin: 0 5px 5px 0
+      border-radius: 2px
+      border: 0
+
+      &:active, &:focus, &:hover
+        cursor: pointer
+        background-color: $light-green
+
+      &[aria-pressed="true"]
+        background-color: $light-green
+    
+    .search-form
+      margin: 5px 0
+      max-width: 500px
+
+      .search-group
+        display: flex
+        justify-content: space-between
+
+      input[type="search"]
+        flex-grow: 1
+        margin-right: 5px
+        border-radius: 0
+        border-width: 1px
+    
+      button[type="submit"]
+        border: 1px solid $black
+        border-radius: 0
+
+  // BELOW FILTERBOX
+  .filter-subtext
+    display: flex
+    justify-content: space-between
+    font-size: .8em
+    font-style: italic
+    margin-top: 5px
+
+    button.sort-order
+      background-color: transparent
+      border: none
+      padding: 0
+      font-weight: 300
+      font-style: italic
+
+      &:hover, &:focus, &:active
+        cursor: pointer
+        background-color: $light-green-semi-opaque
+
+  // ARTICLES
+  .article
+    padding-left: 10px
+    border-left: 2px solid $light-green
+    margin-bottom: 20px
+
+    .tags
+      font-size: .9em
+      font-style: italic
+      color: $dark-grey
+
+    &.hidden
+      display: none
+
+  blockquote
+    font-size: .9em
+    font-style: italic
+    margin-left: 20px
+
+    &:before
+      color: $grey
+      content: "\201C"
+      font-size: 4em
+      line-height: 0.1em
+      margin-right: 0.25em
+      vertical-align: -0.4em
+
+  // PAGINATION
+  #paginator
+    button
+      background-color: transparent
+      border: none
+
+      &:hover, &:focus, &:active
+        cursor: pointer
+        background-color: $light-green-semi-opaque
+
+      &[aria-pressed]
+        background-color: $light-green
