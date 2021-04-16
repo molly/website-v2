@@ -1,5 +1,3 @@
-- var importPrefix = '';
-
 meta(charset='utf-8')
 meta(property='og:title', content='Molly White')
 meta(property='og:image', content='https://www.mollywhite.net/images/mollyandmax.png')
@@ -11,12 +9,12 @@ meta(property='og:description', content='Molly White is a software developer and
 meta(name='description', content='Molly White is a software developer and tech lead based in Boston, Massachusetts.')
 meta(name='viewport', content='width=device-width, initial-scale=1')
 title Molly White
-link(rel='apple-touch-icon', sizes='180x180', href=importPrefix + '/images/icons/apple-touch-icon.png')
-link(rel='icon', type='image/png', sizes='32x32', href=importPrefix + '/images/icons/favicon-32x32.png')
-link(rel='icon', type='image/png', sizes='16x16', href=importPrefix + '/images/icons/favicon-16x16.png')
-link(rel='manifest', href=importPrefix + '/site.webmanifest')
-link(rel='stylesheet', href=importPrefix + '/css/normalize.css')
-link(rel='stylesheet', href=importPrefix + '/css/main.css')
-link(rel='stylesheet', href=importPrefix + '/css/home.css')
+link(rel='apple-touch-icon', sizes='180x180', href=`${importPrefix || ''}/images/icons/apple-touch-icon.png`)
+link(rel='icon', type='image/png', sizes='32x32', href=`${importPrefix || ''}/images/icons/favicon-32x32.png`)
+link(rel='icon', type='image/png', sizes='16x16', href=`${importPrefix || ''}/images/icons/favicon-16x16.png`)
+link(rel='manifest', href=`${importPrefix || ''}/site.webmanifest`)
+link(rel='stylesheet', href=`${importPrefix || ''}/css/normalize.css`)
+link(rel='stylesheet', href=`${importPrefix || ''}/css/main.css`)
+link(rel='stylesheet', href=`${importPrefix || ''}/css/home.css`)
 link(href='https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300&family=Playfair+Display&display=swap', rel='stylesheet')
 meta(name='theme-color', content='#96B78A')
