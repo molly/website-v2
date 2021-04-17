@@ -1,9 +1,9 @@
 @import tokens
 
 .reading
-  h3
+  h3, h4
     margin-bottom: 5px
-
+  
   label
     display: block
     font-weight: 400
@@ -173,6 +173,26 @@
       display: inline
       margin: 0 0 0 5px
       padding: 0
+
+  // READING LISTS
+  .reading-section
+    .currently-reading
+      margin: 10px 0 0 10px
+
+      b
+        display: block
+        font-size: .8em
+      
+      .others
+        font-size: .8em
+        font-style: italic
+
+    .book
+      margin: 10px 0 0 0
+
+    .book-cover
+      max-width: 100px
+    
 
   // ----- MOBILE -------------------
   @media screen and (max-width: 600px)
