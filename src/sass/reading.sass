@@ -87,6 +87,7 @@
     border-left: 2px solid $light-green
     margin-bottom: 20px
 
+  .article, .book
     .tags
       font-size: .9em
       font-style: italic
@@ -107,6 +108,33 @@
       line-height: 0.1em
       margin-right: 0.25em
       vertical-align: -0.4em
+
+  // BOOKS
+  .book
+    display: flex
+
+    .book-cover
+      border: 1px solid $grey
+      max-width: 150px
+      margin-right: 10px
+
+    a:focus
+      background-color: transparent
+    
+    .subtitle
+      font-size: .8em
+      
+    .byline, .reading-info
+      font-size: .9em
+
+    .status, .reading-dates
+      display: inline-block
+    
+    .status
+      padding: 0 5px
+      margin-right: 5px
+      font-size: .8em
+      background-color: $mid-grey
 
   // PAGINATION
   #paginator
