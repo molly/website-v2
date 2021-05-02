@@ -112,7 +112,6 @@
   // BOOKS
   .book
     display: flex
-    margin-bottom: 20px
 
     .book-cover
       max-width: 150px
@@ -130,14 +129,16 @@
     .byline, .reading-info
       font-size: .9em
 
-    .status, .reading-dates
+    .reading-dates
       display: inline-block
     
-    .status
-      padding: 0 5px
-      margin-right: 5px
-      font-size: .8em
-      background-color: $mid-grey
+  // STATUS
+  .status
+    display: inline-block
+    padding: 0 5px
+    margin-right: 5px
+    font-size: .8em
+    background-color: $mid-grey
 
   // PAGINATION
   #paginator
@@ -181,8 +182,7 @@
     .currently-reading
       margin: 10px 0 0 10px
 
-      b
-        display: block
+      .status
         font-size: .9em
       
       .others
