@@ -154,26 +154,11 @@
         background-color: $light-green
 
   // DI&B page
-  .details, .related-reading
-    padding-left: 10px
-    font-size: .85em
-  
   .summary
     padding-left: 10px
 
   .weekOf
     font-style: italic
-
-  .related-reading
-    margin-top: 5px
-
-    .header
-      padding-left: 5px
-
-    ul
-      display: inline
-      margin: 0 0 0 5px
-      padding: 0
 
   // READING LISTS
   .reading-section
@@ -195,6 +180,23 @@
     .book-cover
       max-width: 100px
     
+  // ----- MISC ---------------------
+  .details, .related-reading
+    padding-left: 10px
+
+  .details, .related-reading, .target-articles
+    font-size: .85em
+
+  .related-reading
+    margin-top: 5px
+
+    .header
+      padding-left: 5px
+    
+  .related-reading, .target-articles
+    ul
+      display: inline
+      padding: 0
 
   // ----- MOBILE -------------------
   @media screen and (max-width: 600px)
