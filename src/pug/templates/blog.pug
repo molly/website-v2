@@ -1,12 +1,14 @@
 block vars
 doctype html
 html(class=`no-js blog`, lang='en')
-  body
-    head
-      include ../includes/head.pug
-      link(rel='stylesheet', href='/css/blog.css')
-      block head
+  head
+    include ../includes/head.pug
+    link(rel='stylesheet', href='/css/blog.css')
+    include ../mixins/titleAndDescription.pug
+    +titleAndDescription("Blog")
+    block head
 
+  body
     nav.blog-navigation
       include ../includes/blog_navigation.pug
 

@@ -3,6 +3,10 @@ extends ../templates/base.pug
 block vars
   - var htmlClass = 'home';
 
+block head 
+  include ../mixins/titleAndDescription.pug
+  +titleAndDescription(null, 'Molly White is a software developer and tech lead based in Massachusetts.')
+
 block body
   .welcome-section
     .welcome-container

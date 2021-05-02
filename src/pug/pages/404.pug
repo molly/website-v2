@@ -3,6 +3,10 @@ extends ../templates/base.pug
 block vars
   - var htmlClass = 'four-oh-four';
 
+block head 
+  include ../mixins/titleAndDescription.pug
+  +titleAndDescription('404')
+
 block body
   .content-box
     | You're all kinds of lost.

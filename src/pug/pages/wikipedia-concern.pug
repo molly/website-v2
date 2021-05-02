@@ -3,6 +3,11 @@ extends ../templates/base.pug
 block vars
   - var htmlClass = 'twitter';
 
+
+block head 
+  include ../mixins/titleAndDescription.pug
+  +titleAndDescription('Wikipedia concern FAQ', 'FAQ for those who have a Wikipedia-related concern, complaint, or question.')
+
 block body
   .content-box
     p

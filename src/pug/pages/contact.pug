@@ -3,6 +3,10 @@ extends ../templates/base.pug
 block vars
   - var htmlClass = 'contact';
 
+block head 
+  include ../mixins/titleAndDescription.pug
+  +titleAndDescription('Contact', 'Contact information for Molly White, a software engineer and Wikipedia editor.')
+
 block body
   .content-box
     p

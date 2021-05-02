@@ -3,6 +3,10 @@ extends ../templates/base.pug
 block vars
   - var htmlClass = 'resume';
 
+block head 
+  include ../mixins/titleAndDescription.pug
+  +titleAndDescription('Resume', 'The resume for Molly White, a software engineer and team leader based in Massachusetts.')
+
 block body
   section.content-box
     .resume-block
