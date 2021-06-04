@@ -35,10 +35,14 @@ setTimeout(function () {
   }
 
   // Open any panel specified in URL
-  // This hash may also be referring to a FAQ section (not an accordion)
+  // This hash may also be referring to a FAQ section (not an accordion), in which case
+  // just apply the highlighting
   var hash = window.location.hash ? window.location.hash.slice(1) : null;
   var accordion = accordions.namedItem(hash);
   if (accordion) {
     toggleAccordion.call(accordion);
+  } else {
+    var item = document.getElementById(hash);
+    item.classList.add('active');
   }
 });
