@@ -1,0 +1,7 @@
+mixin accordion(header, id)
+  h4.faq-question.accordion(id=id, role='button', tabindex=0, aria-expanded=false, aria-controls='#' + id + '-answer')
+    i.fas.fa-angle-right
+    | &nbsp;#{header}
+  .accordion-panel(id=id + '-answer', role='region', aria-hidden=true, aria-controlledby='#' + id)
+    .faq-answer
+      block

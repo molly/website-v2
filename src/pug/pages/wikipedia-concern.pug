@@ -53,64 +53,49 @@ block body
         | If you really want to go above and beyond, before posting your question, check if it fits into any of these categories of complaints:
 
       .faq-accordions
-        h4.faq-question.accordion#bias(role='button', tabindex=0, aria-expanded=false, aria-controls='#bias-answer')
-          i.fas.fa-angle-right
-          |  [Article] is biased!
-        .accordion-panel#bias-answer(role='region', aria-hidden=true, aria-controlledby="#bias")
-          .faq-answer
-            p
-              | When this comes up, the first thing I'm going to do is make sure you're familiar with 
-              a(href='https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view') Wikipedia's policy on neutral point of view
-              |. Specifically, that Wikipedia articles must "represent fairly, proportionately, and, as far as possible, without editorial bias, 
-              em all the significant views that have been published by reliable sources on a topic
-              | ". If you come with this complaint, I'm going to ask whether you mean that
-              ol(type='a')
-                li there are other significant views published by reliable sources (which you can provide) that present a different viewpoint that needs to be represented in the article
-                li the article does not accurately reflect the current sources that are being used
-                li
-                  | the article doesn't represent 
-                  em your
-                  |  view on the subject, and you can't find or aren't sure if reliable sources are available that reflect that view.
-            p
-              | If you mean a or b, I definitely am interested in hearing what you have to say. If you mean c: Wikipedia only reflects what is published in reliable sources, and so if your view is not supported by sourcing, the Wikipedia article won't be changed to incorporate it.
-            
-            p
-              | You may also find this essay illuminating: 
-              a(href='https://en.wikipedia.org/wiki/Wikipedia:NPOV_means_neutral_editing,_not_neutral_content') "NPOV means neutral editing, not neutral content"
-              |.
+        include ../mixins/faq-accordion.pug
+        +accordion('[Article] is biased!', 'bias')
+          p
+            | When this comes up, the first thing I'm going to do is make sure you're familiar with 
+            a(href='https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view') Wikipedia's policy on neutral point of view
+            |. Specifically, that Wikipedia articles must "represent fairly, proportionately, and, as far as possible, without editorial bias, 
+            em all the significant views that have been published by reliable sources on a topic
+            | ". If you come with this complaint, I'm going to ask whether you mean that
+            ol(type='a')
+              li there are other significant views published by reliable sources (which you can provide) that present a different viewpoint that needs to be represented in the article
+              li the article does not accurately reflect the current sources that are being used
+              li
+                | the article doesn't represent 
+                em your
+                |  view on the subject, and you can't find or aren't sure if reliable sources are available that reflect that view.
+          p
+            | If you mean a or b, I definitely am interested in hearing what you have to say. If you mean c: Wikipedia only reflects what is published in reliable sources, and so if your view is not supported by sourcing, the Wikipedia article won't be changed to incorporate it.
+          
+          p
+            | You may also find this essay illuminating: 
+            a(href='https://en.wikipedia.org/wiki/Wikipedia:NPOV_means_neutral_editing,_not_neutral_content') "NPOV means neutral editing, not neutral content"
+            |.
         
-        h4.faq-question.accordion#biased-sources(role='button', tabindex=0, aria-expanded=false, aria-controls='#biased-sources-answer')
-          i.fas.fa-angle-right
-          |  [Article] only uses sources that are biased towards the [left/center/right]!
-        .accordion-panel#biased-sources-answer(role='region', aria-hidden=true, aria-controlledby="#biased-sources")
-          .faq-answer
-            p
-              | Some people are under the impression that sources with a point of view are unusable on Wikipedia, which is not the case. From the 
-              a(href='https://en.wikipedia.org/wiki/Wikipedia:Reliable_sources#Biased_or_opinionated_sources') reliable sources policy
-              |: "Wikipedia articles are required to present a neutral point of view. However, reliable sources are not required to be neutral, unbiased, or objective."
-            
-            p
-              | However, we do try to accurately reflect the balance of viewpoints represented in reliable sources, so if you have reliable sources that take a different slant that you think should also be represented in the article, we'd love to hear about them on the article talk page.
+        +accordion('[Article] only uses sources that are biased towards the [left/center/right]!', 'biased-sources')
+          p
+            | Some people are under the impression that sources with a point of view are unusable on Wikipedia, which is not the case. From the 
+            a(href='https://en.wikipedia.org/wiki/Wikipedia:Reliable_sources#Biased_or_opinionated_sources') reliable sources policy
+            |: "Wikipedia articles are required to present a neutral point of view. However, reliable sources are not required to be neutral, unbiased, or objective."
+          
+          p
+            | However, we do try to accurately reflect the balance of viewpoints represented in reliable sources, so if you have reliable sources that take a different slant that you think should also be represented in the article, we'd love to hear about them on the article talk page.
 
-        h4.faq-question.accordion#feminist(role='button', tabindex=0, aria-expanded=false, aria-controls='#feminist-answer')
-            i.fas.fa-angle-right
-            |  You're a [feminist|leftist], you're not allowed to write about [the manosphere|the right]!
-        .accordion-panel#feminist-answer(role='region', aria-hidden=true, aria-controlledby="#feminist")
-          .faq-answer
-            p
-              | I have also gotten this in the other direction (e.g. "you're a feminist, you're not allowed to write about feminism!"), but due to my editing interests I mostly get the complaint about writing about things I am politically or ideologically opposed to. Wikipedia disallows 
-              a(href='https://en.wikipedia.org/wiki/Wikipedia:Advocacy') advocacy
-              |, that is, "using Wikipedia to promote personal beliefs or agendas at the expense of Wikipedia's goals and core content policies, including verifiability and neutral point of view." However, Wikipedia editors are not expected to be completely bereft of opinions. I carefully adhere to the policies on reliable sourcing, neutral point of view, etc. and I personally am particularly careful in my editing in these areas because I know it attracts a lot of outside scrutiny.
+        +accordion('You\'re a [feminist|leftist], you\'re not allowed to write about [the manosphere|the right]!', 'feminist')
+          p
+            | I have also gotten this in the other direction (e.g. "you're a feminist, you're not allowed to write about feminism!"), but due to my editing interests I mostly get the complaint about writing about things I am politically or ideologically opposed to. Wikipedia disallows 
+            a(href='https://en.wikipedia.org/wiki/Wikipedia:Advocacy') advocacy
+            |, that is, "using Wikipedia to promote personal beliefs or agendas at the expense of Wikipedia's goals and core content policies, including verifiability and neutral point of view." However, Wikipedia editors are not expected to be completely bereft of opinions. I carefully adhere to the policies on reliable sourcing, neutral point of view, etc. and I personally am particularly careful in my editing in these areas because I know it attracts a lot of outside scrutiny.
         
-        h4.faq-question.accordion#defamatory(role='button', tabindex=0, aria-expanded=false, aria-controls='#defamatory-answer')
-          i.fas.fa-angle-right
-          |  An article to which you have contributed is defaming its subject!
-        .accordion-panel#defamatory-answer(role='region', aria-hidden=true, aria-controlledby="#defamatory")
-          .faq-answer
-            p
-              | Please specify which statement in the article is not supported by the sourcing used in the page, or provide reliable sourcing that contradicts the statement. If you feel the statement is true, but is given too much prominence in the article, please explain your evaluation. If the statement is true and given prominence that is proportionate to its coverage in reliable sources, but you still think the statement is "defamatory" and ought to be removed, please a) read up a bit about what 
-              a(href='https://en.wikipedia.org/wiki/Defamation') defamation
-              |  actually means, and b) recognize that Wikipedia articles are not meant to be puff pieces for their subjects. If a person/company/organization/etc. has received significant coverage for an unpleasant reason, that will still be included in their page.
+        +accordion('An article to which you have contributed is defaming its subject!', 'defamatory')
+          p
+            | Please specify which statement in the article is not supported by the sourcing used in the page, or provide reliable sourcing that contradicts the statement. If you feel the statement is true, but is given too much prominence in the article, please explain your evaluation. If the statement is true and given prominence that is proportionate to its coverage in reliable sources, but you still think the statement is "defamatory" and ought to be removed, please a) read up a bit about what 
+            a(href='https://en.wikipedia.org/wiki/Defamation') defamation
+            |  actually means, and b) recognize that Wikipedia articles are not meant to be puff pieces for their subjects. If a person/company/organization/etc. has received significant coverage for an unpleasant reason, that will still be included in their page.
 
     +faq('You have done something so terrible that I want to report you for it, not talk to you about it!', 'report')
       p
