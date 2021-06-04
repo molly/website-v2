@@ -1,0 +1,7 @@
+mixin faq(question, anchor)
+  h3.faq-question
+    a.faq-link(href='#' + anchor, aria-label="Permalink to this section")
+      i.fas.fa-link
+    a(id=anchor)= question
+  .faq-answer
+    block
