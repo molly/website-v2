@@ -14,17 +14,17 @@ block body
       | You're probably here because you tweeted at or emailed me about a Wikipedia article I helped to write. I get a lot of emails and tweets about my activities there, and so have made this page both as an FAQ of sorts for common questions/complaints, but also to set some boundaries on how I am willing to engage.
     p
       | For various reasons, 
-      b I prefer to handle Wikipedia-related matters on-wiki.
-      |  For one, I have found that people like to use ostensible concerns about the quality or integrity of Wikipedia to harass me when they really have no particular interest in the website at all. Secondly, it is far more transparent for other people who have questions about an article to have these discussions on the article talk page, rather than privately via email or deep in my Twitter mentions. It also allows other Wikipedia editors to give their input.
+      b I prefer to handle specific Wikipedia-related matters on-wiki.
+      |  Although I do enjoy talking about Wikipedia on social media, when it comes to specific concerns or questions about an article I prefer to take it on-wiki. For one, I have found that people like to use ostensible concerns about the quality or integrity of Wikipedia to harass me when they really have no particular interest in the website at all. Secondly, it is far more transparent for other people who have questions about an article to have these discussions on the article talk page, rather than privately via email or deep in my Twitter mentions. It also allows other Wikipedia editors to give their input.
     p
-      | I am always happy to discuss any concerns you might have with my editing or the articles I write, but please raise them in the proper location. 
+      | I am always happy to discuss any concerns you might have with my editing or the articles I write, but please raise them on-wiki. 
       a(href='https://en.wikipedia.org/w/index.php?title=Special:CreateAccount') Creating an account
       |  on Wikipedia is 
       a(href='https://en.wikipedia.org/wiki/Wikipedia:Why_create_an_account%3F') quick, free, and does not require you to provide any personal information
       |  (although it is recommended you provide your email address so you can recover your account if you forget the password).
 
     include ../mixins/faq.pug
-    +faq('You wrote [some article] and I have a complaint!', 'check-author')
+    +faq('You wrote [some article] and I have a complaint', 'check-author')
       p
         | Before going any further, have you checked that I have actually been a major contributor to the article? For one, it is extremely rare for a Wikipedia article to have a sole author&mdash;while there is often a core group of contributors to an article, generally pages are collaborations. If you believe I wrote an article solely because you saw a banner like this at the bottom of the page:
       .in-text-image
@@ -32,7 +32,7 @@ block body
       p
         | please click on the "Last edited..." link to view the page history and at least check whether I've contributed substantially to the page, or if that is just showing because I'm the last person to edit the page, even though my contribution may have been something minor like reverting vandalism.
 
-    +faq('I have verified that you substantially contributed to [some article] and I have a complaint about it!', 'complaint')
+    +faq('I have verified that you substantially contributed to [some article] and I have a complaint about it', 'complaint')
       p
         | Please describe your concern in a new section on the talk page of the article. Feel free to get my attention by including the template&#32;
         code {{ping|GorillaWarfare}}
@@ -54,7 +54,7 @@ block body
 
       .faq-accordions
         include ../mixins/faq-accordion.pug
-        +accordion('[Article] is biased!', 'bias')
+        +accordion('[Article] is biased', 'bias')
           p
             | When this comes up, the first thing I'm going to do is make sure you're familiar with 
             a(href='https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view') Wikipedia's policy on neutral point of view
@@ -76,7 +76,7 @@ block body
             a(href='https://en.wikipedia.org/wiki/Wikipedia:NPOV_means_neutral_editing,_not_neutral_content') "NPOV means neutral editing, not neutral content"
             |.
         
-        +accordion('[Article] only uses sources that are biased towards the [left/center/right]!', 'biased-sources')
+        +accordion('[Article] only uses sources that are biased towards the [left|right]', 'biased-sources')
           p
             | Some people are under the impression that sources with a point of view are unusable on Wikipedia, which is not the case. From the 
             a(href='https://en.wikipedia.org/wiki/Wikipedia:Reliable_sources#Biased_or_opinionated_sources') reliable sources policy
@@ -85,19 +85,19 @@ block body
           p
             | However, we do try to accurately reflect the balance of viewpoints represented in reliable sources, so if you have reliable sources that take a different slant that you think should also be represented in the article, we'd love to hear about them on the article talk page.
 
-        +accordion('You\'re a [feminist|leftist], you\'re not allowed to write about [the manosphere|the right]!', 'feminist')
+        +accordion('You\'re a [feminist|leftist], you\'re not allowed to write about [the manosphere|the right]', 'feminist')
           p
             | I have also gotten this in the other direction (e.g. "you're a feminist, you're not allowed to write about feminism!"), but due to my editing interests I mostly get the complaint about writing about things I am politically or ideologically opposed to. Wikipedia disallows 
             a(href='https://en.wikipedia.org/wiki/Wikipedia:Advocacy') advocacy
             |, that is, "using Wikipedia to promote personal beliefs or agendas at the expense of Wikipedia's goals and core content policies, including verifiability and neutral point of view." However, Wikipedia editors are not expected to be completely bereft of opinions. I carefully adhere to the policies on reliable sourcing, neutral point of view, etc. and I personally am particularly careful in my editing in these areas because I know it attracts a lot of outside scrutiny.
         
-        +accordion('An article to which you have contributed is defaming its subject!', 'defamatory')
+        +accordion('An article to which you have contributed is defaming its subject', 'defamatory')
           p
             | Please specify which statement in the article is not supported by the sourcing used in the page, or provide reliable sourcing that contradicts the statement. If you feel the statement is true, but is given too much prominence in the article, please explain your evaluation. If the statement is true and given prominence that is proportionate to its coverage in reliable sources, but you still think the statement is "defamatory" and ought to be removed, please a) read up a bit about what 
             a(href='https://en.wikipedia.org/wiki/Defamation') defamation
             |  actually means, and b) recognize that Wikipedia articles are not meant to be puff pieces for their subjects. If a person/company/organization/etc. has received significant coverage for an unpleasant reason, that will still be included in their page.
 
-    +faq('You have done something so terrible that I want to report you for it, not talk to you about it!', 'report')
+    +faq('I want to report you', 'report')
       p
         | With limited exceptions, dispute resolution is handled on-wiki. Feel free to open a discussion about me/my conduct/whatever your concern may be by following the instructions at 
         a(href='https://en.wikipedia.org/wiki/Wikipedia:Dispute_resolution') the page describing types of dispute resolution
@@ -107,6 +107,9 @@ block body
   
       p
         | Occasionally people want to go directly to the Arbitration Committee with concerns about me, for some reason. While you're certainly welcome to do so, I should point out that if that is the first place you are bringing the issue, it's not likely to be accepted. Arbitration cases are regularly declined because people have not tried other forms of dispute resolution first, and so you would be better off just following the steps at the dispute resolution page.
+
+    +faq('Were you paid to edit [article]?', 'paid')
+      p No. I don't, and have never, edited Wikipedia articles for pay. All of my editing is unpaid and on a volunteer basis.
 
     +faq('Will you write an article about me/my business?', 'requested-article')
       p
