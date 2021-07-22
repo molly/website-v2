@@ -4,6 +4,12 @@
   h3, h4
     margin-bottom: 5px
 
+    a
+      color: $light-green-text
+
+      &:hover
+        color: $black
+
   label
     display: block
     font-weight: 400
@@ -167,8 +173,11 @@
   .reading-section
     margin-bottom: 40px
 
+    .reading-section-body
+      margin-left: 20px
+
     .currently-reading
-      margin: 10px 0 0 10px
+      margin-top: 10px
 
       .status
         font-size: .9em
@@ -211,3 +220,6 @@
   @media screen and (max-width: 600px)
     .details, .related-reading
       padding-left: 0
+
+    .reading-section .reading-section-body
+      margin-left: 0px

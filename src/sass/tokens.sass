@@ -1,3 +1,5 @@
+@use "sass:color"
+
 // Fonts
 $display-font-family: "Playfair Display"
 $display-font-type: "serif"
@@ -15,7 +17,8 @@ $mid-grey: #EBEBEB
 $grey: #CCCCCC
 $dark-grey: #666666
 $light-green: #96B78A
-$light-green-semi-opaque: rgb(150, 183, 138, 0.5) 
+$light-green-semi-opaque: rgb(150, 183, 138, 0.5)
+$light-green-text: color.scale($light-green, $lightness: -25%)
 
 $background-color: $light-green
 $body-font-color: $black
