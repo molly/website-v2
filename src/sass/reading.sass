@@ -1,6 +1,6 @@
 @import tokens
 
-.reading
+.reading, .wikipedia-writing
   h3, h4
     margin-bottom: 5px
   
@@ -86,6 +86,31 @@
     padding-left: 10px
     border-left: 2px solid $light-green
     margin-bottom: 20px
+
+  .article.flex
+    display: flex
+
+    .left
+      flex: 1
+
+    .right
+      display: flex
+      align-items: flex-end
+      flex-direction: column
+      width: 150px
+      margin-left: 20px
+
+      .image
+        max-width: 150px
+        max-height: 150px
+
+        img
+          max-width: 100%
+          max-height: 100%
+      
+      .caption
+        font-size: .85em
+        text-align: right
 
   .article, .book
     .tags
@@ -211,3 +236,43 @@
   @media screen and (max-width: 600px)
     .details, .related-reading
       padding-left: 0
+
+  // ----- WIKIPEDIA WRITING --------
+.wikipedia-writing
+  .details
+    padding-left: 0 !important
+
+  .icons
+    display: flex
+    align-items: center
+    color: $dark-grey
+    margin-bottom: 5px
+
+    .icon, .icon-image
+      margin-right: 5px
+
+    .icon-image
+      width: 16px
+      height: 16px
+   
+    .icon-image, .icon-image a
+      display: flex
+      justify-content: center
+      align-items: center
+
+      a, img
+        max-height: 100%
+  
+  .checkboxes
+    display: flex
+
+    .checkbox-group
+      display: flex
+      align-items: center
+      margin-right: 10px
+
+      input
+        margin-right: 5px
+
+      label
+        display: inline
