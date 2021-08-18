@@ -275,16 +275,20 @@
       a, img
         max-height: 100%
   
-  .checkboxes
+  .checkboxes-wrapper
     display: flex
+    justify-content: space-between
 
-    .checkbox-group
+    .checkboxes
       display: flex
-      align-items: center
-      margin-right: 10px
 
-      input
-        margin-right: 5px
+      .checkbox-group
+        display: flex
+        align-items: center
+        margin-right: 10px
 
-      label
-        display: inline
+        input
+          margin-right: 5px
+
+        label
+          display: inline
