@@ -1,6 +1,7 @@
-button#expand-navigation-toggle 
+button#expand-navigation-toggle(aria-controls="navigation-links") 
   i.fas.fa-bars
-.links
+  span.sr-only Expand navigation
+.links#navigation-links(role="region")
   .internal-links
     a(href='/press') Press
     a(href='/wikipedia-work') Wikipedia
