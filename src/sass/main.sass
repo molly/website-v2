@@ -115,6 +115,18 @@ fieldset
     width: 100%
     max-width: 500px
 
+.sr-only
+  border: 0 !important
+  clip: rect(1px, 1px, 1px, 1px) !important
+  -webkit-clip-path: inset(50%) !important
+  clip-path: inset(50%) !important
+  height: 1px !important
+  overflow: hidden !important
+  padding: 0 !important
+  position: absolute !important
+  width: 1px !important
+  white-space: nowrap !important
+
 // ----- FOOTER -------------------
 
 .copyright-footer
@@ -192,17 +204,38 @@ dd
   max-height: 0
   transition: max-height 0.3s ease-out
 
-.sr-only
-  border: 0 !important
-  clip: rect(1px, 1px, 1px, 1px) !important
-  -webkit-clip-path: inset(50%) !important
-  clip-path: inset(50%) !important
-  height: 1px !important
-  overflow: hidden !important
-  padding: 0 !important
-  position: absolute !important
-  width: 1px !important
-  white-space: nowrap !important
+// ----- PROJECTS -------------------
+.projects
+  .content-box
+    max-width: 1000px
+    padding-bottom: 100px
+
+  .project
+    margin-top: 50px
+
+    h3
+      margin: 0
+
+    .metadata, .link
+      font-size: .8em
+
+    .contents-block
+      display: flex
+      margin-top: 10px
+
+      .contents
+        flex: 1
+        padding-right: 20px
+
+      .image, .image img
+        max-width: 400px
+
+// ----- LARGER SCREENS--------------
+@media screen and (min-width: 701px)
+  .navigation a.separator::after
+    content: '|'
+    color: $grey
+    padding: 0 5px 0 15px
 
 // ----- SMALLER SCREENS-------------
 @media screen and (max-width: 700px)
@@ -239,6 +272,16 @@ dd
 
   .faq-accordions
     margin: 10px 0
+
+  .projects .project .contents-block
+    flex-direction: column
+
+@media screen and (max-width: 700px) and (min-width: 481px)
+  .internal-links
+    width: 60%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
 
 // ----- MOBILE -------------------
 @media screen and (max-width: 480px)
@@ -278,6 +321,10 @@ dd
 
         a
           padding: 0 15px
+
+  .projects
+    .image, .image img
+      max-width: 100%
 
 // ----- NO JS ---------------------
 .no-js

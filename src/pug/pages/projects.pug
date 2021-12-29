@@ -1,0 +1,102 @@
+extends ../templates/base.pug
+
+block vars
+  - var htmlClass = 'projects';
+
+block head 
+  include ../mixins/titleAndDescription.pug
+  +titleAndDescription('Projects', 'A collection of projects that Molly White created in her spare time.')
+
+block body
+  .content-box
+    h2 Projects
+    include ../mixins/project.pug
+    p
+      | I open-source all the software I build in my free time. A partial list of my projects is below; the rest can be viewed on&nbsp;
+      a(href="https://github.com/molly" target="_blank") my Github profile 
+      |.
+
+    .project
+      .contents-block
+        .contents 
+          h3 Web3 is going just great
+          .metadata
+            div 
+              a(href="https://web3isgoinggreat.com/") web3isgoinggreat.com
+            div
+              | 2021 • React; JavaScript &amp; TypeScript; Firestore &amp; Cloud Functions
+            div
+              a(href="https://github.com/molly/web3-is-going-great", target="_blank") Source
+          p A timeline website outlining some of the flaws in projects that fall under the umbrella of web3—cryptocurrencies, distributed finance, NFTs, etc.
+        .image 
+          a(href="https://web3isgoinggreat.com/", target="_blank")
+            img(src='/images/web3.png', alt="Website screenshot of web3isgoinggreat.com")
+      
+    .project
+      .contents-block
+        .contents 
+          h3 gh-dork
+          .metadata
+            span 2021 • Python •&nbsp;
+            a(href="https://github.com/molly/gh-dork", target="_blank") Source
+          p
+            | A CLI dorking tool for use on Github (public or enterprise). Loosely based on&nbsp;
+            a(href="https://github.com/techgaun/github-dorks") another popular dorking tool
+            |, it adds support for running queries against lists of users, and optimizes searches to minimize waits caused by Github's API limits.
+
+    .project
+      .contents-block
+        .contents 
+          h3 Static timeline generator
+          .metadata
+            div
+              | 2021 • JavaScript, EJS, Sass •&nbsp;
+              a(href="https://github.com/molly/static-timeline-generator", target="_blank") Source
+          p A static site generator to allow people to create their own timelines like the Wikimedia Timeline without having to know or write much HTML, CSS, or JavaScript.
+        .image 
+          a(href="https://github.com/molly/static-timeline-generator", target="_blank")
+            img(src='/images/timeline.png', alt="Website screenshot of an example timeline created with the generator")
+    
+    .project
+      .contents-block
+        .contents 
+          h3 Reading list
+          .metadata
+            div
+              | 2021 • JavaScript, pug •&nbsp;
+              a(href="https://github.com/molly/reading-list", target="_blank") Source
+          p 
+            | A project that powers the dynamic portions of my website: my&nbsp;
+            a(href="/reading") reading lists
+            |, 
+            a(href="/press") press page
+            |, and&nbsp;
+            a(href="/wikipedia-work") Wikipedia article list
+            |.
+        .image 
+          a(href="/wikipedia-work", target="_blank")
+            img(src='/images/reading-list.png', alt="Website screenshot of my Wikipedia article list")
+    
+    .project
+      .contents-block
+        .contents 
+          h3 Massachusetts COVID-19 data scraper
+          .metadata
+            div
+              | 2020 • Python •&nbsp;
+              a(href="https://github.com/molly/wikipedia-covid-ma", target="_blank") Source
+          p
+            | A tool to scrape and format daily COVID-19 data published by the state of Massachusetts for use in the&nbsp;
+            a(href="https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Massachusetts" target="_blank") COVID-19 pandemic in Massachusetts 
+            |  Wikipedia article.
+    
+    .project
+      .contents-block
+        .contents 
+          h3 Twitter bot framework
+          .metadata
+            div
+              | 2015 • Python •&nbsp;
+              a(href="https://github.com/molly/twitterbot_framework", target="_blank") Source
+          p
+            | A very simple framework to get people started creating Twitter bots in Python.

@@ -1,0 +1,14 @@
+mixin project(title, date, image, alt, link, source_link)
+  .project
+    .title-block
+      h3= title 
+      .metadata
+        span= date + ', '
+        a(href=source_link, target="_blank") source
+        
+    .contents-block
+      .contents 
+        block 
+      .image 
+        a(href=link)
+          img(src='/images/' + image, alt=alt)
