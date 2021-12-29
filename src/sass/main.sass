@@ -72,6 +72,24 @@ fieldset
     max-width: 1000px
     margin: 0 auto
 
+    #expand-navigation-toggle
+      display: none // Only show on mobile
+      -webkit-appearance: none
+      -moz-appearance: none
+      background: transparent
+      border: none
+      padding: 10px
+      cursor: pointer
+      position: absolute
+      top: 0
+      right: 0
+
+      i
+        font-size: 1.2em
+
+        &.fa-times
+          font-size: 1em
+
 .home .navigation
   padding: 5px 5px 5px 5px
 
@@ -224,9 +242,48 @@ dd
 
 // ----- MOBILE -------------------
 @media screen and (max-width: 480px)
-  .internal-links
-    display: flex
-    flex-direction: column
+  body
+    font-size: 1.1em
 
-    a
-      text-align: center
+  .navigation
+    min-height: 30px
+    padding-bottom: 5px
+    border-bottom: 1px solid $mid-grey
+
+    &.expanded .links
+      max-height: 20em
+
+    .navigation-wrapper #expand-navigation-toggle
+      display: block
+
+    .links
+      max-height: 0px
+      overflow-y: hidden
+      transition: max-height 0.3s
+      width: 100%
+
+      .internal-links
+        display: flex
+        flex-direction: column
+        width: 100%
+
+        a
+          display: block
+          text-align: center
+          padding: 5px 0
+
+      .external-links
+        text-align: center
+        padding: 10px 0
+
+        a
+          padding: 0 15px
+
+// ----- NO JS ---------------------
+.no-js
+  #expand-navigation-toggle
+    display: none
+
+  @media screen and (max-width: 480px)
+    .navigation .links
+      display: block
