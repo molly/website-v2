@@ -20,6 +20,9 @@ b
 h1, h2, h3, h4, h5, h6
   font-family: $display-font-family, $display-font-type
 
+h2
+  font-size: 1.3em
+
 *:focus
   outline: none
 
@@ -43,10 +46,13 @@ fieldset
   line-height: 36px
   padding: 5px 5px 50px 5px
 
-  .logo h1
-    font-size: 1.5em
-    font-weight: $body-font-weight-heavier
-    margin: 0
+  .logo
+    flex-shrink: 0
+
+    h1
+      font-size: 1.5em
+      font-weight: $body-font-weight-heavier
+      margin: 0
 
   a
     color: $body-font-color
@@ -54,7 +60,9 @@ fieldset
 
   .links
     display: flex
+    flex-wrap: wrap
     align-items: baseline
+    justify-content: flex-end
     text-transform: uppercase
 
     a
@@ -68,7 +76,6 @@ fieldset
   .navigation-wrapper
     display: flex
     justify-content: space-between
-    align-items: flex-end
     max-width: 1000px
     margin: 0 auto
 
@@ -231,14 +238,14 @@ dd
         max-width: 400px
 
 // ----- LARGER SCREENS--------------
-@media screen and (min-width: 701px)
+@media screen and (min-width: 751px)
   .navigation a.separator::after
     content: '|'
     color: $grey
     padding: 0 5px 0 15px
 
 // ----- SMALLER SCREENS-------------
-@media screen and (max-width: 700px)
+@media screen and (max-width: 750px)
   h1
     font-size: 2em
 
