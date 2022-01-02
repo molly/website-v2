@@ -42,8 +42,6 @@ fieldset
 
 .navigation
   background-color: $main-color
-  min-height: 41px
-  line-height: 36px
   padding: 5px 5px 50px 5px
 
   .logo
@@ -59,6 +57,7 @@ fieldset
     text-decoration: none
 
   .links
+    font-size: 0.9em
     display: flex
     flex-wrap: wrap
     align-items: baseline
@@ -69,7 +68,14 @@ fieldset
       font-size: 0.85em
       padding: 0 5px
 
-  div
+    .internal-links
+      display: flex
+
+    .separated
+      border-right: 1px solid $grey
+      padding: 0 5px
+
+  .internal-links, .external-links
     padding-right: 10px
     padding-left: 10px
 
@@ -237,13 +243,6 @@ dd
       .image, .image img
         max-width: 400px
 
-// ----- LARGER SCREENS--------------
-@media screen and (min-width: 751px)
-  .navigation a.separator::after
-    content: '|'
-    color: $grey
-    padding: 0 5px 0 15px
-
 // ----- SMALLER SCREENS-------------
 @media screen and (max-width: 750px)
   h1
@@ -265,6 +264,10 @@ dd
       align-items: center
       padding-top: 10px
 
+      .separated
+        padding: 0
+        border: none
+
   .home .navigation .navigation-wrapper
     justify-content: center
 
@@ -285,8 +288,7 @@ dd
 
 @media screen and (max-width: 700px) and (min-width: 481px)
   .internal-links
-    width: 60%
-    display: flex
+    width: 300px
     flex-wrap: wrap
     justify-content: center
 
@@ -313,7 +315,6 @@ dd
       width: 100%
 
       .internal-links
-        display: flex
         flex-direction: column
         width: 100%
 

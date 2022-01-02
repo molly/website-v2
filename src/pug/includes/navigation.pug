@@ -3,13 +3,17 @@ button#expand-navigation-toggle(aria-controls="navigation-links")
   span.sr-only Expand navigation
 .links#navigation-links(role="region")
   .internal-links
-    a(href="/projects") Code
-    a.separator(href='/wikipedia-work') Wikipedia
-    a(href='https://blog.mollywhite.net') Writing
-    a.separator(href='/reading') Reading
-    a(href='/resume') Resume
-    a.separator(href='/press') Press
-    a(href='/contact') Contact
+    .separated
+      a(href="/projects") Code
+      a(href='/wikipedia-work') Wikipedia
+    .separated
+      a(href='https://blog.mollywhite.net') Writing
+      a(href='/reading') Reading
+    .separated
+      a(href='/resume') Resume
+      a(href='/press') Press
+    .separated
+      a(href='/contact') Contact
   .external-links
     a(href='https://twitter.com/molly0xFFF', aria-label='Twitter')
       i.fab.fa-twitter(aria-hidden='true', title='Twitter')
