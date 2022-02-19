@@ -1,0 +1,25 @@
+extends ../templates/base.pug
+
+block vars
+  - var htmlClass = 'crypto-disclosure';
+
+block head 
+  include ../mixins/titleAndDescription.pug
+  +titleAndDescription('Disclosures', 'Disclosures for articles I write about cryptocurrencies and related topics.')
+
+block body
+  .content-box
+    h2 Disclosures
+    p I strongly believe in clear disclosures by journalists and others writing about cryptocurrencies and related topics.
+    p I own no cryptocurrencies or NFTs. I have no particular financial interest in whether web3 takes off or not, though I have plenty of non-financial interests; after all, I do have to live on this planet, and I spend enough time engaging with the tech industry and online to care about the futures of both.
+    p 
+      | I am not paid to write about cryptocurrencies or related topics, nor am I paid to create my 
+      a(href='http://web3isgoinggreat.com/' target="_blank") Web3 Is Going Great project
+      | . I don't post sponsored content on that website, its associated Twitter account, this website, my blog, my personal Twitter account, or anywhere else.
+      sup [1]
+      |  A few generous people have sent money to me via Twitter tips with comments about Web3 Is Going Great; I have earmarked that money for cloud hosting costs, which I otherwise pay out of pocket. I don't run ads or otherwise make money in any way off the project or my blog.
+    p I hold no long or short positions pertaining to cryptocurrencies or crypto-related companies. I do have some investments in the stock market and other traditional forms of finance, which I pay someone much smarter about and more interested in finance than I am to handle.
+    p For those who think it is crucial to have interacted with crypto to write about it: 1) you are wrong, but 2) you will be pleased to know that I went through the process of signing up for a Coinbase account and buying one popular cryptocurrency and one shitcoin towards the end of 2021, around when I was starting my deeper research into this space. I sold all of them a week and a half later and closed the account. I made a whopping profit of $16.90 off the whole endeavor (pre-tax).
+
+    p 
+      small 1. This will not change. No, I won't promote your project regardless of whether there is money changing hands, so please don't ask.
