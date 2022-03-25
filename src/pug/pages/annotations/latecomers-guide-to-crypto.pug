@@ -5,8 +5,19 @@ block vars
 
 block head 
   include ../../mixins/titleAndDescription.pug
-  +titleAndDescription('The Edited Latecomer\'s Guide to Crypto', '')
-  
+  +titleAndDescription('The Edited Latecomer\'s Guide to Crypto', 'A group of cryptocurrency researchers and critics annotate the irresponsible cryptocurrency puff piece that was originally published in the New York Times.')
+  meta(name="author" content="Molly White, Matt Binder, Grady Booch, Amy Castor, Stephen Diehl, Dirty Bubble Media, Dr. Catherine Flick, David Gerard, Geoffrey Huntley, Bennett Tomlin, Neil Turkewitz, Ed Zitron, and some anonymous contributors")
+  meta(property='og:image', content='https://mollywhite.net/storage/latecomers-guide-fb.webp')
+  meta(property='og:image:alt', content='The (Edited) Latecomer\'s Guide to Crypto')
+  meta(property="og:image:width" content="654")
+  meta(property="og:image:height" content="234")
+  meta(property='og:url', content='https://www.mollywhite.net/annotations/latecomers-guide-to-crypto')
+  meta(name="twitter:card", content="summary")
+  meta(name="twitter:creator" content="@molly0xfff")
+  meta(name="twitter:title", content="The Edited Latecomer's Guide to Crypto")
+  meta(name="twitter:description" content="A group of cryptocurrency researchers and critics annotate the irresponsible cryptocurrency puff piece that was originally published in the New York Times.")
+  meta(name="twitter:image", content="https://mollywhite.net/storage/latecomers-guide-twitter.webp")
+  meta(name="twitter:image:alt" content="The (Edited) Latecomer\'s Guide to Crypto")
 
 block body
   .title-block

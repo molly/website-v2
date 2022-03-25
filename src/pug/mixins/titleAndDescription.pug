@@ -1,6 +1,6 @@
 mixin titleAndDescription(title, description)
-  title= title ? title + " – Molly White" : "Molly White"
-  meta(property='og:title', content=title ? title + " – Molly White" : "Molly White")
+  title= title || "Molly White"
+  meta(property='og:title', content=title || "Molly White")
   if description
     meta(property='og:description', content=description)
     meta(name='description', content=description)
