@@ -1,0 +1,17 @@
+block vars
+doctype html
+html(class=`no-js ${htmlClass}`, lang='en')
+  head
+    include ../includes/head.pug
+    link(rel='stylesheet', href='/css/reviews.css')
+    block head
+
+  body
+    block body
+
+
+    block pre-javascript
+    script(src='https://kit.fontawesome.com/de718e8b04.js' crossorigin='anonymous')
+    script(src='/js/reviews.js')
+    script(src='/js/accordion.js')
+    block post-javascript

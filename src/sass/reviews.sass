@@ -1,0 +1,231 @@
+$highlight: #fff589
+
+.review
+  body
+    font-family: Georgia, 'Times New Roman', Times, serif
+
+  h2, h3, h4, h5
+    font-family: Arial, Helvetica, sans-serif
+    margin: 0
+
+  h3
+    text-transform: uppercase
+
+  a:hover
+    background-color: transparent
+    text-decoration: none
+
+  .title-block
+    margin: 10px
+    text-align: center
+
+    .title-image
+      max-width: 320px
+      margin: 0 auto
+
+      img
+        max-width: 100%
+
+  .byline
+    font-family: Arial, Helvetica, sans-serif
+    font-size: 80%
+    max-width: 500px
+    margin: 0 auto
+
+    &:not(:first-child)
+      margin-top: 15px
+
+  .intro, .outro
+    max-width: 800px
+    padding: 0 10px
+
+  .intro
+    margin: 0 auto 30px auto
+
+  .outro
+    margin: 20px auto 50px auto
+
+  .group
+    display: flex
+    width: 100%
+
+    &.first
+      border-top: 1px solid #ddd
+
+      .left, .right
+        .content
+          padding-top: 20px
+
+    &.last
+      border-bottom: 1px solid #ddd
+
+    .left
+      flex: 2
+
+    .right
+      flex: 3
+
+    .left, .right
+      display: flex
+
+      .content
+        background-color: inherit
+        box-shadow: none
+        padding: 0 20px 26.4px 20px
+
+        &.empty
+          padding: 0
+
+    .right
+      background-color: #f0f0f0
+
+      .content
+        font-size: 90%
+
+  .content
+    h3, h4
+      font-family: Arial, Helvetica, sans-serif
+      margin: 0 0 20px 0
+
+    p
+      margin-top: 0
+      margin-block-start: 0
+
+      &:last-child
+        margin-bottom: 0
+        margin-block-end: 0
+
+    ul, ol
+      margin: 0
+      padding-inline-start: 1em
+
+  mark
+    background-color: transparentize($highlight, 0.4)
+
+    &:hover
+      cursor: pointer
+      background-color: $highlight
+
+  mark[data-annotation-id]
+    &::after
+      content: attr(data-annotation-id)
+      content: attr(data-annotation-id) / "" // Hide to screenreaders
+      display: inline-block
+      position: relative
+      border-radius: 50%
+      border: 1px solid #000
+      width: 10px
+      height: 10px
+      font-size: 10px
+      line-height: 10px
+      padding: 1px
+      text-align: center
+      margin-left: 3px
+      margin-right: 2px
+      bottom: 2px
+
+  .content
+    > .annotation, .content, .annotation-group
+      &:not(:first-child)
+        margin-top: 10px
+
+  .annotation
+    background-color: white
+    padding: 10px
+    border: 1px solid #ddd
+
+  .annotation[role="comment"][data-annotation-id], .annotation-group[role="comment"][data-annotation-id]
+    &::after
+      content: attr(data-annotation-id)
+      content: attr(data-annotation-id) / "" // Hide to screenreaders
+      font-family: Georgia, 'Times New Roman', Times, serif
+      background-color: #fff
+      display: inline-block
+      position: absolute
+      border-radius: 50%
+      border: 1px solid #ddd
+      width: 14px
+      height: 14px
+      font-size: 14px
+      line-height: 12px
+      padding: 3px
+      text-align: center
+      left: -8px
+      top: -8px
+
+  .annotation[role="comment"], .annotation-group[role="comment"]
+    position: relative
+
+  .annotation-group .annotation
+    &:not(:first-child)
+      border-top-width: 0
+
+  .annotation.selected,
+  .annotation-group.selected .annotation
+    border-color: #999
+    background-color: lighten($highlight,20%)
+
+  .commenter
+    font-family: Arial, Helvetica, sans-serif
+    font-size: 80%
+    color: #999
+
+  .no-margin
+    margin: 0 !important
+
+  .small-print
+    font-size: 70%
+
+  // Larger than 1000px
+  @media screen and (min-width: 1001px)
+    .group
+      .left, .right
+        .content
+          padding-left: 40px
+          padding-right: 40px
+
+  // Larger than 750px
+  @media screen and (min-width: 751px)
+    .group
+      .left, .right
+        .content
+          max-width: 800px
+
+      .left .content
+        float: right
+
+  // Smaller than 750px
+  @media screen and (max-width: 750px)
+    .group
+      flex-direction: column
+
+      .left, .right
+        .content
+          padding-left: 40px
+          padding-right: 40px
+
+      .left .content
+        padding-top: 26.4px
+
+    .annotation
+      font-family: Arial, Helvetica, sans-serif
+      font-size: 90%
+
+    .content > .annotation, .annotation-group
+      margin-top: 20px
+
+  // Smaller than 480px
+  @media screen and (max-width: 480px)
+    .group
+      .left, .right
+        .content
+          padding-left: 20px
+          padding-right: 20px
+
+@for $i from 2 through 10
+  .annotation-group .annotation:nth-child(#{$i})
+    margin-left: #{10 * ($i - 1)}px
+
+.no-js.review mark:hover
+  cursor: auto !important
+  background-color: transparentize($highlight, 0.4) !important
