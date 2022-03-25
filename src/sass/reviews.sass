@@ -238,9 +238,12 @@ $highlight: #fff589
           padding-left: 20px
           padding-right: 20px
 
+.annotation-group .annotation.thread
+  margin-left: 10px
+
 @for $i from 2 through 10
-  .annotation-group .annotation:nth-child(#{$i})
-    margin-left: #{10 * ($i - 1)}px
+  .annotation-group .annotation.thread-#{$i}
+    margin-left: #{10 * ($i)}px
 
 .no-js.review mark:hover
   cursor: auto !important
