@@ -5,7 +5,7 @@ block vars
 
 block head 
   include ../../mixins/titleAndDescription.pug
-  +titleAndDescription('The Edited Latecomer\'s Guide to Crypto', 'A group of cryptocurrency researchers and critics annotate the irresponsible cryptocurrency puff piece that was originally published in the New York Times.')
+  +titleAndDescription('The (Edited) Latecomer\'s Guide to Crypto', 'A group of cryptocurrency researchers and critics annotate the irresponsible cryptocurrency puff piece that was originally published in the New York Times.')
   meta(name="author" content="Molly White, Matt Binder, Grady Booch, Amy Castor, Stephen Diehl, Dirty Bubble Media, Dr. Catherine Flick, David Gerard, Geoffrey Huntley, Bennett Tomlin, Neil Turkewitz, Ed Zitron, and some anonymous contributors")
   meta(property='og:image', content='https://mollywhite.net/storage/latecomers-guide-fb.webp')
   meta(property='og:image:alt', content='The (Edited) Latecomer\'s Guide to Crypto')
@@ -14,10 +14,71 @@ block head
   meta(property='og:url', content='https://www.mollywhite.net/annotations/latecomers-guide-to-crypto')
   meta(name="twitter:card", content="summary")
   meta(name="twitter:creator" content="@molly0xfff")
-  meta(name="twitter:title", content="The Edited Latecomer's Guide to Crypto")
+  meta(name="twitter:title", content="The (Edited) Latecomer's Guide to Crypto")
   meta(name="twitter:description" content="A group of cryptocurrency researchers and critics annotate the irresponsible cryptocurrency puff piece that was originally published in the New York Times.")
   meta(name="twitter:image", content="https://mollywhite.net/storage/latecomers-guide-twitter.webp")
   meta(name="twitter:image:alt" content="The (Edited) Latecomer\'s Guide to Crypto")
+  <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"NewsArticle",
+      "headline":"The (Edited) Latecomer's Guide to Crypto",
+      "image":[
+        "https://mollywhite.net/storage/latecomers-guide.png"
+      ],
+      "datePublished":"2022-03-25T12:00:00-04:00",
+      "author":[
+        {
+          "@type":"Person",
+          "name":"Molly White"
+        },
+        {
+          "@type":"Person",
+          "name":"Matt Binder"
+        },
+        {
+          "@type":"Person",
+          "name":"Grady Booch"
+        },
+        {
+          "@type":"Person",
+          "name":"Amy Castor"
+        },
+        {
+          "@type":"Person",
+          "name":"Stephen Diehl"
+        },
+        {
+          "@type":"Organization",
+          "name":"Dirty Bubble Media"
+        },
+        {
+          "@type":"Person",
+          "name":"Catherine Flick"
+        },
+        {
+          "@type":"Person",
+          "name":"David Gerard"
+        },
+        {
+          "@type":"Person",
+          "name":"Geoffrey Huntley"
+        },
+        {
+          "@type":"Person",
+          "name":"Bennett Tomlin"
+        },
+        {
+          "@type":"Person",
+          "name":"Neil Turkewitz"
+        },
+        {
+          "@type":"Person",
+          "name":"Ed Zitron"
+        }
+      ]
+    }
+  </script>
 
 block body
   .title-block
@@ -27,7 +88,7 @@ block body
     .byline 
       | By Kevin Roose, <a href="https://www.nytimes.com/interactive/2022/03/18/technology/cryptocurrency-crypto-guide.html">originally published</a> in <i>The New York Times</i> on March 20, 2022
     .byline 
-      | Annotations by Molly White, Matt Binder, Grady Booch, Amy Castor, Stephen Diehl, Dirty Bubble Media, Dr. Catherine Flick, David Gerard, Geoffrey Huntley, Bennett Tomlin, Neil Turkewitz, Ed Zitron, and some anonymous contributors
+      | Annotations by Molly White, Matt Binder, Grady Booch, Amy Castor, Stephen Diehl, Dirty Bubble Media, Dr. Catherine Flick, David Gerard, Geoffrey Huntley, Bennett Tomlin, Neil Turkewitz, Ed Zitron, and some anonymous contributors. Published March 25, 2022.
 
   .intro
     p
@@ -56,12 +117,12 @@ block body
       .content
         .annotation(role="comment" data-annotation-id="1" id="matt-damon-larry-david")
           .commenter Molly White
-          | Crypto skeptic Ben McKenzie has <a href="https://youtu.be/AijwGyNLtjc?t=865">argued</a> that this is a sign that the bubble has become precariously large, not that crypto has become ubiquitous: "The celebrities are a symptom of a much bigger problem... You've got all this money and you're trying to get it out to more people and get more people to buy. And if one were to compare cryptocurrency to, say, an MLM or a ponzi, then you would need ever more people to come in to keep the thing going. Celebrities are sort of the natural endpoint for that. At its biggest, you need the biggest: you need Matt Damon and Larry David and sports stars to sell it." (<i>Crypto Critics' Corner</i>, episode 51)
+          | Crypto skeptic Ben McKenzie has argued that this is a sign that the bubble has become precariously large, not that crypto has become ubiquitous: "The celebrities are a symptom of a much bigger problem... You've got all this money and you're trying to get it out to more people and get more people to buy. And if one were to compare cryptocurrency to, say, an MLM or a ponzi, then you would need ever more people to come in to keep the thing going. Celebrities are sort of the natural endpoint for that. At its biggest, you need the biggest: you need Matt Damon and Larry David and sports stars to sell it." (<a href="https://youtu.be/AijwGyNLtjc?t=865"><i>Crypto Critics' Corner</i>, episode 51</a>)
         .annotation(role="comment" data-annotation-id="2" id="miamicoin")
           | Miami's mayor also introduced "MiamiCoin" to his city. The Miami residents and everyone else who still hold the coin <a href="https://protos.com/miamicoin-crypto-mayor-francis-suarez-bitcoin-bait-switch/">have all lost money</a>, and the coin is trading well below its initial price.
         .annotation-group(role="comment" data-annotation-id="3" id="brand-nfts") 
           .annotation
-            | Roose fails to mention the many companies who have jumped <i>off</i> the bandwagon as quickly as they jumped on, after realizing that their users are not only uninterested in being sold NFTs, but actively oppose them. <a href="https://www.digitaltrends.com/gaming/canceled-gaming-nft-2022-2021">Countless video game projects</a>, <a href="https://www.glossy.co/fashion/meundies-nfts-customer-backlash/">MeUndies</a>, <a href="https://gorillazland.com/2021/06/06/3248/#nfts">The Gorillaz</a>, and the <a href="https://futurism.com/wwf-cancels-nft-project">World Wildlife Foundation</a> are just a few companies and groups who've canceled NFT projects after announcing them due to backlash from customers or supporters.
+            | Roose fails to mention the many companies who have jumped <i>off</i> the bandwagon as quickly as they jumped on, after realizing that their users are not only uninterested in being sold NFTs, but actively oppose them. <a href="https://www.digitaltrends.com/gaming/canceled-gaming-nft-2022-2021">Countless video game projects</a>, <a href="https://www.glossy.co/fashion/meundies-nfts-customer-backlash/">MeUndies</a>, <a href="https://gorillazland.com/2021/06/06/3248/#nfts">The Gorillaz</a>, and the <a href="https://futurism.com/wwf-cancels-nft-project">World Wildlife Foundation</a> are just a few companies and groups who've canceled NFT projects after announcing them, due to backlash from customers or supporters.
           .annotation.thread
             .commenter David Gerard
             | Note also: this is the <i>NYT</i> treating literally the paid marketing as news in itself.
@@ -101,8 +162,8 @@ block body
     .right
       .content 
         .annotation(role="comment" id="rooses-views")
-          p This is a statement desperately in need of some links. Although Roose has linked to his writing quite liberally throughout this article, it certainly doesn't show "extreme skepticism", nor for that matter does his optimism seem particularly cautious. This article notably doesn't seem to link to his <a href="https://www.nytimes.com/2021/08/12/technology/penguin-nft-club.html">August 2021 <i>Times</i> article about the "Pudgy Penguins" NFT project</a>, which served to lend the project legitimacy and pump the price before the group later attempted to scam a prospective buyer of the company. No follow-up was ever published—this is a recurring theme for the articles Roose writes about various crypto projects, as you will see throughout this commentary.
-          p Roose has <a href="https://web.archive.org/web/20220219172535/https://twitter.com/kevinroose/status/1495085866192027655">publicly advocated</a> for journalists who write about crypto to be able to buy and sell cryptocurrencies and NFTs, despite himself acknowledging the "strong biasing effect" it would have and that the traditional finance equivalent of this behavior is prohibited by most reputable publications. He holds the <code>cryptoroose.eth</code> <a href="https://decrypt.co/resources/ethereum-name-service-ens-explained-guide-learn">ENS domain</a> (which he <a href="https://etherscan.io/tx/0xdd58208d954f61ed181899d4380266246eb483c8e0cb6bf2d471cc4fb64708e1">bought</a> in October for $21... plus another $136 in transaction fees). He uses the wallet for transactions relating to his reporting, including the $500,000 sale of an NFT representing a <i>Times</i> article that he mentions in this piece, the receipt of some Pudgy Penguins NFTs from the creator of the project (later returned), and similar.
+          p This is a statement desperately in need of some links. Although Roose has linked to his own writing quite liberally throughout this article, it certainly doesn't show "extreme skepticism", nor for that matter does his optimism seem particularly cautious. This article notably doesn't seem to link to his <a href="https://www.nytimes.com/2021/08/12/technology/penguin-nft-club.html">August 2021 <i>Times</i> article about the "Pudgy Penguins" NFT project</a>, which served to lend the project legitimacy and pump the price before the group later attempted to scam a prospective buyer of the company. No follow-up was ever published—this is a recurring theme for the articles Roose writes about various crypto projects, as you will see throughout this commentary.
+          p Roose has <a href="https://web.archive.org/web/20220219172535/https://twitter.com/kevinroose/status/1495085866192027655">publicly advocated</a> for journalists who write about crypto to be able to buy and sell cryptocurrencies and NFTs, despite himself acknowledging the "strong biasing effect" it would have and that the traditional finance equivalent of this behavior is prohibited by most reputable publications. He holds the <code>cryptoroose.eth</code> <a href="https://decrypt.co/resources/ethereum-name-service-ens-explained-guide-learn">ENS domain</a> (which he <a href="https://etherscan.io/tx/0xdd58208d954f61ed181899d4380266246eb483c8e0cb6bf2d471cc4fb64708e1">bought</a> in October for $21... plus another $136 in transaction fees). He uses the associated wallet for transactions relating to his reporting, including the $500,000 sale of an NFT representing a <i>Times</i> article that he mentions in this piece, the receipt of some Pudgy Penguins NFTs from the creator of the project (later returned), and similar.
    
   .group 
     .left
@@ -232,7 +293,7 @@ block body
             | Surprised this is a declaration that it is inevitable, not even couched with "is poised to be a transformative force".
           .annotation.thread
             .commenter Ed Zitron 
-            p Okay, so I sort of see what he's going for here in his clumsy way. There is a libertarian bent that's sort of meshing with crypto and web3 - crypto has been absorbed into the right wing part of tech. 
+            p Okay, so I sort of see what he's going for here in his clumsy way. There is a libertarian bent that's sort of meshing with crypto and web3 — crypto has been absorbed into the right wing part of tech. 
             p The wealth could be interesting, but this is also something that is easily questioned.
           .annotation.thread-2
             .commenter Molly White
@@ -330,7 +391,7 @@ block body
         .annotation-group(role="comment" id="seasteading")
           .annotation
             .commenter Molly White
-            | How's that going so far? Also pretty weird to describe libertarian seasteading as simply "escap[ing] partisan gridlock".
+            | How's that going so far? It's also pretty weird to describe libertarian seasteading as simply "escap[ing] partisan gridlock".
           .annotation.thread
             .commenter Anonymous 1
             | Yeah, I don't recall any of the founders of these citing "partisan gridlock" as the reason for anything that motivated them.
@@ -353,7 +414,7 @@ block body
             ul 
               li "<a href="https://www.bloomberg.com/news/articles/2022-03-18/el-salvador-s-businesses-barely-bother-with-bitcoin-study-finds">El Salvador’s Companies Barely Bother With Bitcoin</a>". March 18, 2022. <i>Bloomberg</i>.
               li "<a href="https://restofworld.org/2022/el-salvador-bitcoin/">Six months in, El Salvador’s bitcoin gamble is crumbling</a>". March 15, 2022. <i>Rest of World</i>.
-            p It's difficult to tell exactly how much Bitcoin they have and what their average cost basis is. Protos attempted an <a href="https://www.protos.com/bukele-bitcoin-el-salvador-buying-the-crypto-dip-but-still-down/">analysis</a> several months ago (though it doesn't include the newest buys) that showed Bukele is down 15% on his Bitcoin purchases. The IMF also basically said "no loan if you have crypto", and they have crypto.
+            p It's difficult to tell exactly how much Bitcoin they have and what their average cost basis is. <i>Protos</i> attempted an <a href="https://www.protos.com/bukele-bitcoin-el-salvador-buying-the-crypto-dip-but-still-down/">analysis</a> several months ago (though it doesn't include the newest buys) that showed Bukele is down 15% on his Bitcoin purchases. The IMF also basically said "no loan if you have crypto", and they have crypto.
           .annotation.thread
             .commenter Ed Zitron
             | It is the HEIGHT of ignorance to not include how badly it's going there. Just an absolutely insane thing to not include, especially if you're trying to give a "sober" look at it.
@@ -362,12 +423,12 @@ block body
             | How does he mention El Salvador without talking about how corrupt and conniving the entire effort is? It's unconscionable. I can't believe Roose is truly this ignorant. He knows just what he is selling.
           .annotation.thread-3
             .commenter Anonymous 4 
-            | It's amazing in no small part because Bukele is so obviously self-serving that even Bitcoin maxis on Reddit, who have been waiting for a country to adopt bitcoin with baited breath for a decade, are like "yeah, that's a scam."
+            | It's amazing in no small part because Bukele is so obviously self-serving that even Bitcoin maxis on Reddit, who have been waiting for a country to adopt Bitcoin with bated breath for a decade, are like "yeah, that's a scam."
             
         
         .annotation-group 
           .annotation(role="comment" data-annotation-id="2" id="bitcoin-city")
-            | The <i>NBC News</i> article that Roose cites inline states, "But several analysts and experts say it's impossible for a project of that magnitude to materialize in the coming years. No technical plan for the project has been disclosed." Furthermore, the first $1 billion that Bukele hopes to raise through "volcano bonds" are earmarked for purposes unrelated to building this supposed Bitcoin City, though those bonds were just paused due to <a href="https://www.reuters.com/technology/el-salvador-postpones-bitcoin-bond-issue-expects-better-conditions-2022-03-22/">unfavorable market conditions</a>.
+            | The <i>NBC News</i> article that Roose cites inline states, "But several analysts and experts say it's impossible for a project of that magnitude to materialize in the coming years. No technical plan for the project has been disclosed." Furthermore, the first $1 billion that Bukele hopes to raise through "volcano bonds" are earmarked for purposes unrelated to building this supposed Bitcoin City. For full context to the reader, those bonds were also just paused due to <a href="https://www.reuters.com/technology/el-salvador-postpones-bitcoin-bond-issue-expects-better-conditions-2022-03-22/">unfavorable market conditions</a>—that was reported two days after this article was published, and so the omission of that specific fact shouldn't be held against Roose.
           .annotation.thread
             .commenter Anonymous 4 
             | There's a lot of army helicopter tours for his wealthy European and American friends, not a lot of road building or pipe-laying.
@@ -392,7 +453,7 @@ block body
         .annotation-group(role="comment" data-annotation-id="1" id="trump")
           .annotation
             .commenter Matt Binder
-            | Donald Trump just shouted out the Let's Go Brandon Coin at his rally yesterday. Literally promoted its web address to supporters on stage.
+            | Donald Trump just shouted out the <a href="https://www.thedailybeast.com/trumpworld-crypto-coin-sinks-after-donald-trump-gets-involved">Let's Go Brandon coin</a> at his rally yesterday. Literally promoted its web address to supporters on stage.
         .annotation-group(role="comment" data-annotation-id="2" id="partisan-allegiences")
           .annotation 
             .commenter Molly White
@@ -442,7 +503,7 @@ block body
         .annotation-group(role="comment" data-annotation-id="1" id="common-knock-on-social-media")
           .annotation 
             .commenter Anonymous 1
-            | Was this really the case? I don't recall this "collapse" scenario whatsoever, as FB has until 2022 had phenomenal growth year on year, and FB had staying power because everyone's photos were captive to their platform.
+            | Was this really the case? I don't recall this "collapse" scenario whatsoever, as Facebook has until 2022 had phenomenal growth year on year, and Facebook had staying power because everyone's photos were captive to their platform.
           .annotation.thread
             .commenter David Gerard 
             | This is a bit like the claim that everyone hated the internet in 1993.
@@ -454,9 +515,6 @@ block body
             .commenter Ed Zitron 
             p This is easily the most egregious "citation needed" yet, because I cannot think of anyone outside of a circle of complete doofuses who would have predicted this before like, 2011? 
             p It's Writing 101 to cite anything you use as an argument. Who edited this?
-          .annotation 
-            .commenter Anonymous 1
-            | This is kind of dramatic - I'd like to see the proof that a "collapse" was a commonly discussed scenario.
           .annotation 
             .commenter Anonymous 4 
             | No one in "the early 2010s" argued that social media would just go away. The prototypes of social media were already over a decade old, and the core product, micro-updates, chat functionality, and asynchronous communication, was already a deeply well proven feature for a decade before that via message boards, IRC, ICQ, and MSN messenger. The arguments revolved mostly around specific companies surviving the churn cycle of the 00s, but "will Facebook be the next Friendster?" isn't as useful for painting these un-cited critics as dinosaurs who just didn't get it.
