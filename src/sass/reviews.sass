@@ -1,4 +1,5 @@
 $highlight: #fff589
+$transparent-highlight: transparentize($highlight, 0.5)
 
 .review
   body
@@ -100,10 +101,13 @@ $highlight: #fff589
       padding-inline-start: 1em
 
   mark
-    background-color: transparentize($highlight, 0.4)
+    background-color: $transparent-highlight
 
     &:hover
       cursor: pointer
+      background-color: $highlight
+
+    &.selected
       background-color: $highlight
 
   mark[data-annotation-id]
@@ -133,6 +137,9 @@ $highlight: #fff589
     background-color: white
     padding: 10px
     border: 1px solid #ddd
+
+    &:hover
+      cursor: pointer
 
   .annotation[role="comment"][data-annotation-id], .annotation-group[role="comment"][data-annotation-id]
     &::after
@@ -245,6 +252,10 @@ $highlight: #fff589
   .annotation-group .annotation.thread-#{$i}
     margin-left: #{10 * ($i)}px
 
-.no-js.review mark:hover
-  cursor: auto !important
-  background-color: transparentize($highlight, 0.4) !important
+.no-js.review
+  mark:hover
+    cursor: auto !important
+    background-color: $transparent-highlight !important
+
+  .annotation:hover
+    cursor: auto !important

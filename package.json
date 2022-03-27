@@ -7,7 +7,7 @@
     "clean": "rimraf dist/*",
     "build:html": "pug --pretty src/pug/pages/*.pug --out dist && pug --pretty src/pug/blog --out dist/blog  && pug --pretty src/pug/pages/annotations/*.pug --out dist/annotations",
     "build:css": "rimraf dist/css && mkdir dist/css && cp -r src/sass/*.css dist/css && sass src/sass/:dist/css",
-    "build:js": "mkdir dist/js && cp -r src/js/* dist/js",
+    "build:js": "rimraf dist/js && mkdir dist/js && cp -r src/js/* dist/js",
     "build:misc": "cp -r src/misc/* dist/ && mkdir dist/images && cp -r src/images/* dist/images && cp src/images/icons/favicon.ico dist/",
     "build": "npm run clean && npm run build:html && npm run build:css && npm run build:js && npm run build:misc",
     "watch:html": "pug --pretty --watch src/pug/pages/annotations/*.pug --out dist/annotations",
