@@ -251,6 +251,54 @@ dd
       ul
         margin: 0
 
+// ----- LINK TREE ------------------
+.linktree
+  width: 100%
+  height: 100%
+
+  *
+    box-sizing: border-box
+
+  body
+    width: 100%
+    height: 100%
+    background-color: $light-green
+
+  .linktree-content
+    max-width: 680px
+    margin: 100px auto 0 auto
+    width: 100%
+    height: 100%
+    padding: 24px 12px
+
+    .wrapper
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+
+      a.linktree-link
+        display: block
+        width: 100%
+        text-align: center
+        text-decoration: none
+        line-height: 40px
+        background-color: $white
+        margin-bottom: 15px
+        border-radius: 4px
+        padding: 5px
+
+      .social-links
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+
+        a
+          color: $white
+          text-decoration: none
+          padding: 0 10px
+          font-size: 120%
+
 // ----- SMALLER SCREENS-------------
 @media screen and (max-width: 750px)
   h1
@@ -341,6 +389,9 @@ dd
   .projects .project .contents-block
     .image, .image img
       max-width: 100%
+
+  .linktree .linktree-content
+    margin: 0 auto
 
 // ----- NO JS ---------------------
 .no-js
