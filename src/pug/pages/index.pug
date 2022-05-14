@@ -5,7 +5,7 @@ block vars
 
 block head 
   include ../mixins/titleAndDescription.pug
-  +titleAndDescription(null, 'Molly White is a software developer and tech lead based in Massachusetts.')
+  +titleAndDescription(null, 'Molly White is a senior software engineer.')
 
 block body
   .welcome-section
@@ -14,7 +14,11 @@ block body
         img(src='images/mollyandmax.png', alt='Illustration of Molly White holding her cat Max.')
       section.welcome
         h1 My name is Molly White.
-        span.subtitle I build software and lead teams.
+        span.subtitle
+          span I am a senior software engineer
+          span#description
+          span .
+          
   section.content
     .content-box
       p
