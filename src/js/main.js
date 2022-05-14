@@ -1,4 +1,3 @@
-/* global Typewriter */
 (function () {
   document.documentElement.className = document.documentElement.className.replace(
     /\bno-js\b/,
