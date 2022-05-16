@@ -12,7 +12,7 @@ var DESCRIPTIONS = [
   'teller of bad jokes',
   'avid indoorsman',
   'rabbithole explorer',
-  '<a href="https://www.theinformation.com/articles/cryptos-csi-how-molly-white-became-an-absolute-nightmare-for-web3-evangelists">"absolute nightmare"</a>',
+  '<a href="https://www.theinformation.com/articles/cryptos-csi-how-molly-white-became-an-absolute-nightmare-for-web3-evangelists" target="_blank">"absolute nightmare"</a>',
   'landlubber',
   'seltzer sommelier',
   'hobbyist encyclopedist',
