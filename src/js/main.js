@@ -45,6 +45,7 @@
     'hobbyist encyclopedist',
     'dog walk enthusiast',
     'free knowledge advocate',
+    'happy camper',
   ];
 
   var descriptionTarget = document.getElementById('description');
