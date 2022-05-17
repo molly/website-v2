@@ -278,14 +278,19 @@ dd
 
       a.linktree-link
         display: block
+        box-sizing: border-box
         width: 100%
         text-align: center
         text-decoration: none
         line-height: 40px
         background-color: $white
         margin-bottom: 15px
+        border: 2px solid $white
         border-radius: 4px
         padding: 5px
+
+        &:hover
+          background: rgba(255,255,255,0.4)
 
       .social-links
         display: flex
