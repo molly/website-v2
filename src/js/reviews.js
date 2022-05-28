@@ -17,12 +17,12 @@ function makeClickHandler(isHighlight) {
       selector = event.target.getAttribute('aria-details');
       targetElement = event.target;
     } else {
-      if (event.target.classList.contains('annotation')) {
+      if (event.target.getAttribute('role') === 'comment') {
         selector = event.target.id;
         targetElement = event.target;
       } else {
         // Depending on where they click, they may have targeted a child element
-        var annotation = event.target.closest('.annotation');
+        var annotation = event.target.closest('[role="comment"]');
         targetElement = annotation;
         selector = annotation.id;
       }
