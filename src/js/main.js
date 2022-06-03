@@ -1,5 +1,6 @@
 var DESCRIPTIONS = [
   'Wikipedia editor',
+  'experienced tech lead',
   'aspiring gardener',
   'friend to all dogs',
   'cryptocurrency skeptic',
