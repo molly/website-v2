@@ -186,6 +186,13 @@ $transparent-highlight: transparentize($highlight, 0.5)
   .fine-print
     font-size: 70%
 
+  .annotation-group .annotation.thread
+    margin-left: 10px
+
+  @for $i from 2 through 10
+    .annotation-group .annotation.thread-#{$i}
+      margin-left: #{10 * ($i)}px
+
   // Larger than 1800px
   @media screen and (min-width: 1801px)
     .group
@@ -244,13 +251,6 @@ $transparent-highlight: transparentize($highlight, 0.5)
         .content
           padding-left: 20px
           padding-right: 20px
-
-.annotation-group .annotation.thread
-  margin-left: 10px
-
-@for $i from 2 through 10
-  .annotation-group .annotation.thread-#{$i}
-    margin-left: #{10 * ($i)}px
 
 .no-js.review
   mark:hover
