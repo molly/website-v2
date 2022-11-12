@@ -3,21 +3,38 @@ meta(property='og:site_name', content='Molly White')
 meta(property='og:locale', content='en_US')
 meta(property='og:type', content='profile')
 meta(name='viewport', content='width=device-width, initial-scale=1')
-link(rel='apple-touch-icon', sizes='180x180', href=`${importPrefix || ''}/images/icons/apple-touch-icon.png`)
-link(rel='icon', type='image/png', sizes='32x32', href=`${importPrefix || ''}/images/icons/favicon-32x32.png`)
-link(rel='icon', type='image/png', sizes='16x16', href=`${importPrefix || ''}/images/icons/favicon-16x16.png`)
+link(
+  rel='apple-touch-icon',
+  sizes='180x180',
+  href=`${importPrefix || ''}/images/icons/apple-touch-icon.png`
+)
+link(
+  rel='icon',
+  type='image/png',
+  sizes='32x32',
+  href=`${importPrefix || ''}/images/icons/favicon-32x32.png`
+)
+link(
+  rel='icon',
+  type='image/png',
+  sizes='16x16',
+  href=`${importPrefix || ''}/images/icons/favicon-16x16.png`
+)
 link(rel='manifest', href=`${importPrefix || ''}/site.webmanifest`)
 link(rel='stylesheet', href=`${importPrefix || ''}/css/normalize.css`)
 link(rel='stylesheet', href=`${importPrefix || ''}/css/main.css`)
 link(rel='stylesheet', href=`${importPrefix || ''}/css/home.css`)
+link(rel='me', href='https://hachyderm.io/@molly0xfff')
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display&display=swap" rel="stylesheet">
 meta(name='theme-color', content='#96B78A')
-script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-46530202-1")
+script(async, src='https://www.googletagmanager.com/gtag/js?id=UA-46530202-1')
 script.
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() {
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
 
   gtag('config', 'UA-46530202-1');
