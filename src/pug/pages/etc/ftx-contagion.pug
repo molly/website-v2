@@ -6,6 +6,23 @@ block vars
 block head
   include ../../mixins/titleAndDescription.pug
   +titleAndDescription('FTX Contagion', 'Charting the FTX collapse.')
+  meta(property='og:image', content='https://mollywhite.net/storage/ftx-contagion-social.webp')
+  meta(
+    property='og:image:alt',
+    content='A chart showing the contagion between the FTX collapse and other crypto platforms and projects'
+  )
+  meta(property='og:image:width', content='1480')
+  meta(property='og:image:height', content='740')
+  meta(property='og:url', content='https://www.mollywhite.net/etc/ftx-contagion')
+  meta(name='twitter:card', content='summary_large_image')
+  meta(name='twitter:creator', content='@molly0xfff')
+  meta(name='twitter:title', content='FTX Contagion')
+  meta(name='twitter:description', content='Charting the FTX collapse.')
+  meta(name='twitter:image', content='https://mollywhite.net/storage/ftx-contagion-social.webp')
+  meta(
+    name='twitter:image:alt',
+    content='A chart showing the contagion between the FTX collapse and other crypto platforms and projects'
+  )
 
 block body
   .content-box(style='max-width: 2000px')
