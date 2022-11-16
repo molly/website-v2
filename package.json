@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist/*",
-    "build:html": "pug --pretty src/pug/pages/*.pug --out dist && pug --pretty src/pug/blog --out dist/blog  && pug --pretty src/pug/pages/annotations/*.pug --out dist/annotations",
+    "build:html": "pug --pretty src/pug/pages/*.pug --out dist && pug --pretty src/pug/blog --out dist/blog  && pug --pretty src/pug/pages/annotations/*.pug --out dist/annotations && pug --pretty src/pug/pages/etc/*.pug --out dist/etc",
     "build:css": "rimraf dist/css && mkdir dist/css && cp -r src/sass/*.css dist/css && sass src/sass/:dist/css",
     "build:js": "rimraf dist/js && mkdir dist/js && cp -r src/js/* dist/js",
     "build:misc": "cp -r src/misc/* dist/ && mkdir dist/images && cp -r src/images/* dist/images && cp src/images/icons/favicon.ico dist/",

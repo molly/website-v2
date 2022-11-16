@@ -1,0 +1,13 @@
+extends ../../templates/base.pug
+
+block vars
+  - var htmlClass = 'ftx-contagion';
+
+block head
+  include ../../mixins/titleAndDescription.pug
+  +titleAndDescription('FTX Contagion', 'Charting the FTX collapse.')
+
+block body
+  .content-box
+    h2 FTX Contagion
+    img(src='/images/ftx-contagion.svg')
