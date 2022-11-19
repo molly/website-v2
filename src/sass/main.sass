@@ -306,10 +306,23 @@ dd
 
 // ----- ETC ------------------------
 .ftx-contagion .content-box
-  max-width: 2000px
+  margin: 0 auto
+  max-width: 1250px
 
-  img
-    width: 100%
+  .contagion
+    max-width: 1000px
+
+    img
+      width: 100%
+      min-width: 550px
+
+  .legend img
+    max-width: 250px
+
+@media screen and (min-width: 1250px)
+  .graphics-wrapper
+    display: flex
+    flex-direction: row-reverse
 
 // ----- SMALLER SCREENS-------------
 @media screen and (max-width: 750px)
