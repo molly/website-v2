@@ -38,6 +38,9 @@ fieldset
   border: none
   outline: none
 
+.small
+  font-size: 80%
+
 // ----- NAVIGATION ---------------
 
 .navigation
@@ -307,26 +310,42 @@ dd
 // ----- ETC ------------------------
 .ftx-contagion .content-box
   margin: 0 auto
-  max-width: 1200px
+  max-width: 1600px
+
+  .graphics-wrapper
+    margin-bottom: 50px
+
+  .legend
+    width: 250px
+
+    img
+      width: 100%
 
   .contagion
-    max-width: 950px
-    height: 5080px // TODO: Fix
+    min-width: 800px
 
-    object
-      width: 950px // TODO: Fix
-      height: 5053px // TODO: Fix
+  @media screen and (min-width: 901px)
+    .graphics-wrapper
+      position: relative
 
-  .legend img
-    max-width: 250px
+      .legend
+        position: absolute
+        right: 0
+        top: 0
 
-.small
-  font-size: 80%
+      .contagion
+        width: 100%
 
-@media screen and (min-width: 1200px)
-  .graphics-wrapper
-    display: flex
-    flex-direction: row-reverse
+  @media screen and (max-width: 900px)
+    .graphics-wrapper
+      display: flex
+      flex-direction: column
+
+      .legend
+        width: 200px
+
+      .contagion
+        flex: 1
 
 // ----- SMALLER SCREENS-------------
 @media screen and (max-width: 750px)
