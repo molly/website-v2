@@ -1,0 +1,736 @@
+extends ../../templates/reviews.pug
+
+block vars
+  - var htmlClass = 'review';
+
+block head
+  include ../../mixins/titleAndDescription.pug
+  +titleAndDescription('Annotated: Sam Bankman-Fried\'s "FTX Pre-Mortem Overview"', "Annotating Sam Bankman-Fried's attempts to explain the FTX collapse.")
+  meta(name='author', content='Molly White')
+  meta(property='og:image', content='')
+  meta(property='og:image:alt', content='')
+  meta(property='og:image:width', content='')
+  meta(property='og:image:height', content='')
+  meta(
+    property='og:url',
+    content='https://www.mollywhite.net/annotations/sbf-ftx-pre-mortem-overview'
+  )
+  meta(name='twitter:card', content='summary')
+  meta(name='twitter:creator', content='@molly0xfff')
+  meta(name='twitter:title', content='Annotated: Sam Bankman-Fried\'s "FTX Pre-Mortem Overview"')
+  meta(
+    name='twitter:description',
+    content='Annotating Sam Bankman-Fried\'s attempts to explain the FTX collapse.'
+  )
+  meta(name='twitter:image', content='')
+  meta(name='twitter:image:alt', content='')
+  script(type='application/ld+json').
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Annotated: Sam Bankman-Fried's \"FTX Pre-Mortem Overview\"",
+      "image": [""],
+      "datePublished": "",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Molly White"
+        }
+      ]
+    }
+
+block body
+  .title-block
+    h1 Annotated: Sam Bankman-Fried's "FTX Pre-Mortem Overview"
+    .byline
+      | By Sam Bankman-Fried, <a href="https://sambf.substack.com/p/ftx-pre-mortem-overview" target="_blank">originally published</a> on <a href="https://sambf.substack.com/" target="_blank">his Substack blog</a> on January&nbsp;12,&nbsp;2023
+    .byline
+      | Annotations by Molly White. Published January 14, 2023.
+
+  .intro
+    p Something about SBF posting his way through it. Something about how he seems to be clinging to the narrative that FTX US is okay, presumably in hopes that if that could somehow turn out to be true, he might evade the US DOJ's ire.
+
+  .group.first
+    .left
+      .content
+        | <mark data-annotation-id="1" aria-details="mid-november">In mid November, FTX International became effectively insolvent</mark>. The FTX saga, at the end of the day, is <mark data-annotation-id="2" aria-details="between-voyager-celsius">somewhere between that of Voyager and Celsius</mark>.
+    .right
+      .content
+        #mid-november.annotation(role='comment', data-annotation-id='1')
+          p It's probably a bad sign that SBF is starting right out the gate with a blatant lie. He is—once again—claiming that everything at FTX was <i>just fine</i> until disaster struck in November. In reality, November was when the general public learned that FTX had been insolvent for a while,<sup><a href="#footnote-1">1</a></sup> <sup><a href="#footnote-2">2</a></sup> propping up its balance sheet with illiquid tokens they themselves had created and extending loans of billions of dollars of customer assets to Alameda Research. Those loans, which were made possible through a backdoor in FTX's software that was added at SBF's instruction,<sup><a href="#footnote-3">3</a></sup> and which effectively extended Alameda a line of credit capped at $65 <i>billion</i>,<sup><a href="#footnote-3">3</a></sup> are never addressed in this blog post by SBF.
+          p Per the CFTC, "In approximately May and/or June 2022, Alameda was subject to a large number of such margin calls and loan recalls. It did not have sufficient liquid assets to service its loans. Instead, at the direction of Bankman-Fried, Alameda greatly increased its usage of FTX customer funds to meet its external debt obligations."<sup><a href="#footnote-1">1</a></sup> No one in their right mind would use the word "solvency" to describe this.
+        #between-voyager-celsius.annotation(role='comment', data-annotation-id='2')
+          p The only way that the FTX bankruptcy falls between Celsius and Voyager is if you are sorting them alphabetically.
+          p Celsius disclosed a $1.2&nbsp;billion hole in its balance sheet in bankruptcy filings.<sup><a href="#footnote-4">4</a></sup> The Voyager shortfall is less clear—their original bankruptcy filing estimated it at around $187&nbsp;million,<sup><a href="#footnote-5">5</a></sup> but because of their exposure to FTX it's likely the total asset value declined substantially after the FTX collapse. Regardless, their <i>total</i> liabilities are estimated at $4.9&nbsp;million.<sup><a href="#footnote-5">5</a></sup>
+          p FTX's shortfall was last explicitly estimated to be around $8&nbsp;billion, which puts FTX squarely outside of the Voyager/Celsius range. To be a little charitable, it's <i>possible</i> that SBF is subtracting the $5.5&nbsp;billion of found assets (announced by FTX legal counsel in a hearing on January 11, 2023) from his total estimated shortfall in November,<sup><a href="#footnote-6">6</a></sup> and is <i>also</i> assuming that Voyager has very few assets compared to their total liabilities. However, the current FTX legal team has not provided more up-to-date estimates of the shortfall, and it's likely to differ substantially from SBF's napkin math. In the same January 11 court hearing where they announced the asset recovery, they explicitly stated that the total shortfall remained unclear.
+
+  .group
+    .left
+      .content
+        p Three things combined together to cause the implosion:
+    .right
+      .content.empty
+  .group
+    .left
+      .content.no-margin
+        ol.alpha-paren
+          li Over the course of 2021, Alameda’s balance sheet grew to roughly <mark aria-details="net-assets" data-annotation-id="1">$100b of Net Asset Value</mark>, <mark aria-details="dollar-value" data-annotation-id="2">$8b of net borrowing (leverage), and $7b of liquidity</mark> on hand.
+          li Alameda failed to sufficiently hedge its market exposure. Over the course of 2022, a series of large broad market crashes came–in stocks and in crypto–leading to a ~80% decrease in the market value of its assets.
+          li In November 2022, an extreme, quick, targeted crash <mark aria-details="cz-blame" data-annotation-id="3">precipitated by the CEO of Binance</mark> made Alameda insolvent.
+    .right
+      .content
+        #net-assets.annotation(role='comment', data-annotation-id='1')
+          p This simply doesn't jibe with the fact that, per their own reporting in 2021 tax returns, FTX and Alameda appear to have been wildly unprofitable enterprises,<sup><a href="#footnote-7">7</a></sup> even during periods of crypto mania when it seemed nearly impossible to lose money.
+          p Later on in the blog post, SBF reveals that he's still incorporating completely illiquid tokens when estimating Alameda's net assets.
+        #dollar-value.annotation(role='comment', data-annotation-id='2') SBF is apparently leaving it to the reader to <a href="https://blog.mollywhite.net/cryptocurrency-market-caps-and-notional-value/" target="_blank">mentally insert scare quotes around all of these dollar symbols</a> and the word
+        #cz-blame.annotation(role='comment', data-annotation-id='3') We already know that the insolvency predated November, and was entirely a predicament of their own making,<sup><a href="#footnote-1">1</a></sup> <sup><a href="#footnote-2">2</a></sup> but SBF's certainly got the tenacity of a kid with a face smeared in chocolate continuing to not only claim they have no idea what happened to the candy in the jar, but blame it on someone else. <a href="https://en.wikipedia.org/wiki/Changpeng_Zhao" target="_blank">CZ</a> must have eaten it all.
+
+  .group
+    .left
+      .content And then <mark aria-details="contagion">Alameda’s contagion spread to FTX and other places,</mark> similarly to how Three Arrows etc. ultimately impacted Voyager, Genesis, Celsius, BlockFi, Gemini, and others.
+
+    .right
+      .content
+        #contagion.annotation(role='comment')
+          p It's certainly accurate that this <a href="https://www.mollywhite.net/etc/ftx-contagion" target="_blank">FTX/Alameda contagion has spread far and wide</a>, but SBF is again claiming that everything was fine and dandy at FTX up until the November Alameda explosion, as if FTX hadn't been lending billions in customer funds—amounts exeeding FTX's total lifetime revenue—to Alameda in exchange for a pile of <s>magic beans</s> $FTT tokens.<sup><a href="#footnote-8">8</a></sup> <sup><a href="#footnote-9">9</a></sup>
+          p SBF also notably fails to mention that this same contagion impacted FTX and Alameda. Even though they may have escaped direct exposure to Three Arrows Capital, the fallout from this collapse resulted in lenders recalling billions of dollars in loans from Alameda. The SEC identifies this as one event that caused SBF to direct FTX to "divert billions more in customer assets to Alameda".<sup><a href="#footnote-2">2</a></sup>
+
+  .group
+    .left
+      .content Despite this, <mark aria-details="scb-recovery" data-annotation-id="1"><a href="https://twitter.com/WatcherGuru/status/1608743171282063362" target="_blank">very</a></mark> <mark aria-details="wsj-recovery" data-annotation-id="2"><a href="https://www.wsj.com/articles/ftx-says-it-has-located-more-than-5-billion-in-cash-liquid-assets-11673452986" target="_blank">substantial recovery</a></mark> remains potentially available.
+
+    .right
+      .content
+        #scb-recovery.annotation(role='comment', data-annotation-id='1')
+          p This links to a tweet about a press release by the Securities Commission of the Bahamas, where they claimed to have seized FTX crypto assets "valued at more than US$3.5 billion".<sup><a href="#footnote-10">10</a></sup>
+          p The US legal team overseeing the FTX bankruptcy described this estimation as reckless in the extreme, saying that if the seized assets are what they believe them to be, the Bahamian authorities are talking about illiquid assets (primarily $FTT) likely sellable at $167&nbsp;million at the very most.<sup><a href="#footnote-11">11</a></sup>
+        #wsj-recovery.annotation(role='comment', data-annotation-id='2') This link is at least a bit more reliable, pointing to the US legal team's announcement in court on January 11 that they had recovered $5&nbsp;billion in cash and liquid assets. However, the attorneys were also careful to tell the judge that the total shortfall remains unclear.
+
+  .group
+    .left
+      .content <mark aria-details="ftx-us-solvency">FTX US remains fully solvent and should be able to return all customers’ funds.</mark>
+
+    .right
+      .content
+        #ftx-us-solvency.annotation(role='comment')
+          p That's his story, and he's sticking to it.
+          p Meanwhile, FTX's new CEO overseeing the bankruptcy, John J. Ray III, has testified in front of Congress that there is "clearly not" evidence backing SBF's various statements that FTX US is completely solvent.<sup><a href="#footnote-12">12</a></sup>
+          p The CFTC complaint says that FTX executives were not able to establish that FTX was solvent on November 7, shortly before the collapse. "Bankman-Fried quickly indicated that he would fill the hole at FTX US from liquidation of Alameda assets," says the complaint<sup><a href="#footnote-13">13</a></sup>—holes being things that only tend to exist at insolvent companies.
+
+  .group
+    .left
+      .content <mark aria-details="ftx-intl-assets" data-annotation-id="1">FTX International has many billions of dollars of assets</mark>, and <mark aria-details="dedicating-assets" data-annotation-id="2">I am dedicating nearly all of my personal assets to customers</mark>.
+
+    .right
+      .content
+        #ftx-intl-assets.annotation(role='comment', data-annotation-id='1') Many billions of assets sounds great, but it's less great when there are many <i>more</i> billions of liabilities. I also question SBF's definitions of words in this sentence, including "has", "many", and "dollars".
+        #dedicating-assets.annotation(role='comment', data-annotation-id='2')
+          p How selfless. Except that on January 5, he filed an objection to the FTX debtors' motion to retain control over ~$450&nbsp;million in Robinhood shares, arguing instead that the shares belonged to him personally (not the bankruptcy estate, which would eventually disburse them to creditors) and should be available for his legal defense.<sup><a href="#footnote-14">14</a></sup> Nevermind that the shares were acquired thanks to $546&nbsp;million in personal loans from Alameda Research,<sup><a href="#footnote-15">15</a></sup> who themselves were improperly borrowing customer funds from FTX.
+          p The argument here is, I guess, is "give me the shares and then I will give the money I don't use on my legal defense to customers, <i>I promise</i>".
+          p SBF has also previously claimed that he only had $100,000, that he didn't know how he was going to pay for his legal representation, and that "basically everything I had was just tied up in the company", so something's not adding up here.<sup><a href="#footnote-16">16</a></sup>
+
+  .group
+    .left
+      .content
+        h2 Notes
+        p This post is about <b>FTX International’s</b> (in)solvency.
+        p It’s not about <b>FTX US</b>, because FTX US is fully solvent and always has been
+    .right
+      .content.empty
+
+  .group
+    .left
+      .content.no-margin
+        p When I passed FTX US off to Mr. Ray and the Chapter 11 team, it had around +$350m net cash on hand beyond customer balances. <mark aria-details="ftx-segregation">Its funds and customers were segregated from FTX International.</mark>
+    .right
+      .content
+        #ftx-segregation.annotation(role='comment') Conspicuously missing: any explanation of why FTX's current management isn't so sure of this.<sup><a href="#footnote-17">17</a></sup> He also fails to argue why, in the face of overwhelming evidence (including his own admissions<sup><a href="#footnote-18">18</a></sup>) that FTX was improperly commingling funds left and right, anyone should believe that they were doing things properly over at FTX US.
+
+  .group
+    .left
+      .content
+        p It’s ridiculous that FTX US users haven’t been made whole and gotten their funds back yet.
+        p Here is my record of FTX US’s balance sheet as of when I handed it off:
+
+    .right
+      .content.empty
+
+  .group
+    .left
+      .content.no-margin
+        .in-text-image
+          mark.image-mark(aria-details='balance-sheet')
+            a(href='https://mollywhite.net/storage/ftx-us-balance-sheet.webp', target='_blank')
+              img(src='https://mollywhite.net/storage/ftx-us-balance-sheet.webp')
+    .right
+      .content
+        #balance-sheet.annotation(role='comment')
+          p This is another one of those fun things that SBF likes to refer to as a "balance sheet" that is actually nothing like a balance sheet.
+          blockquote.twitter-tweet
+            p(lang='en', dir='ltr') Dear <a href="https://twitter.com/SBF_FTX?ref_src=twsrc%5Etfw">@SBF_FTX</a>. This is not a balance sheet. A balance sheet doesn&#39;t record &quot;balances&quot;, it records assets on one side of the sheet and liabilities plus equity on the other. The &quot;balance&quot; is whether the totals on the two sides agree. <a href="https://twitter.com/hashtag/basicaccounting?src=hash&amp;ref_src=twsrc%5Etfw">#basicaccounting</a> <a href="https://t.co/WqabBjmLli">pic.twitter.com/WqabBjmLli</a>
+            | &mdash; Frances &#39;Cassandra&#39; Coppola (@Frances_Coppola) <a href="https://twitter.com/Frances_Coppola/status/1616517936226729987?ref_src=twsrc%5Etfw">January 20, 2023</a>
+          p SBF seeks to show that FTX US was solvent when he resigned as CEO, but doesn't address whether more than $185&nbsp;million in assets were madly shuffled (at his direction) into FTX several days prior to fill a shortfall, as alleged by the CFTC.<sup><a href="#footnote-19">19</a></sup>
+
+  .group
+    .left
+      .content
+        span.diff-add (I believe that the same likely applies to purely spot customers of FTX International.)
+
+    .right
+      .content
+        .annotation(role='comment') This sentence was added to the post sometime between 5:02am January 15 and 11:53pm January 16 (Pacific Time), three to four days after SBF <a href="https://web.archive.org/web/20230112130606/https://sambf.substack.com/p/ftx-pre-mortem-overview" target="_blank">originally published</a> it.
+
+  .group
+    .left
+      .content
+        mark(aria-details='ftx-intl') FTX International was a non-US exchange. It was run outside the US, regulated outside the US, incorporated outside the US, and took non-US customers.
+
+    .right
+      .content
+        #ftx-intl.annotation(role='comment')
+          p This, along with the repeated claims of FTX US's solvency, seems to me to be the primary thrust of SBF's argument here. "Sure, maybe things went pear-shaped at FTX International [as a result of massive fraud], but FTX <i>US</i> was fine, I'll give the money back, and then you won't have jurisdiction to prosecute me".
+          p Even if we suspend disbelief for a moment and take SBF at his word that FTX US is solvent and could repay customers at any moment, I still don't think this holds water. US prosecutors seem to be pretty good at finding jurisdiction if they wish, and this high-profile case where a substantial number of Americans are clamoring for the justice department to <i>do something, dammit</i> seems like a case where they would. John J. Ray III has also already confirmed that there were some US citizens using FTX International,<sup><a href="#footnote-20">20</a></sup> so that would likely help with jurisdiction issues.
+
+  .group
+    .left
+      .content
+        p
+          mark(aria-details='bahamas-hq') (In fact, it was primarily headquartered, run from, and incorporated in The Bahamas, as FTX Digital Markets LTD.)
+    .right
+      .content
+        #bahamas-hq.annotation(role='comment')
+          p This is the same argument that Bahamian liquidators were using to try to argue that the bankruptcy should be primarily handled there.<sup><a href="#footnote-21">21</a></sup> SBF wants that too.
+          p The US legal team has gone so far as to accuse the Bahamian government and liquidation team as being in cahoots with SBF: "the Debtors continue to uncover information indicating that the [joint provisional liquidators] and the Bahamian government colluded to deplete the Debtors’ estate assets."<sup><a href="#footnote-22">22</a></sup>
+          p They've objected to the idea that FTX Digital Markets was the primary nexus of FTX, referring to it as "a virtual nullity within the FTX group": "It was nothing more than a short-lived provider of limited 'match-making' services for customer-to-customer transactions, on the cryptocurrency exchange built, owned, and operated by Debtor FTX Trading, its immediate corporate parent. FTX DM operated for just under six months, from May 13, 2022 to November 10, 2022. Over 90% of customers who used the FTX.com exchange were customers before FTX DM even became operational. Once operational, FTX DM never earned a dollar of third-party revenue."<sup><a href="#footnote-21">21</a></sup>
+
+  .group
+    .left
+      .content
+        p US customers were onboarded to the (still solvent) FTX US exchange.
+    .right
+      .content.empty 
+
+  .group
+    .left
+      .content.no-margin
+        p Senators have <a href="https://news.bloomberglaw.com/business-and-practice/ftx-bankruptcy-law-firm-is-wrong-fit-for-role-four-senators-say" target="_blank">raised concerns</a> about a potential conflict of interest from Sullivan & Crowell (S&C). Contrary to S&C’s statement that they “had a limited and largely transactional relationship with FTX”, S&C was one of FTX International’s two primary law firms prior to bankruptcy, and were FTX US’s primary law firm. FTX US’ GC came from S&C, they worked with FTX US in its most important regulatory application, they worked with FTX International on some of its most important regulatory concerns, and they worked with FTX US on its most important transaction. When I would visit NYC, I would sometimes work out of S&C’s office.
+
+    .right
+      .content
+        .annotation(role='comment')
+          p There are certainly reasonable concerns about Sullivan & Cromwell's involvement with the FTX bankruptcy given their past work with FTX (where they presumably should have spotted some of the <i>massive fraud</i> happening, or at least the lack of controls to ensure it didn't). On January 20 (subsequent to the publication of this blog post by SBF), Judge Dorsey ultimately overruled objections to their retention by two individual FTX creditors.<sup><a href="#footnote-23">23</a></sup>
+          p The GC (general counsel) that SBF is avoiding naming here is Ryne Miller.
+
+  .group
+    .left
+      .content S&C and the GC were the primary parties strong-arming and threatening me into naming the candidate they themselves chose as CEO of FTX--including for a solvent entity in FTX US--who then filed for Chapter 11 and chose S&C as counsel to the debtor entities.
+    .right
+      .content
+        .annotation(role='comment')
+          p SBF has claimed several times—including in his planned Congressional testimony—that he was forced to declare bankruptcy by Sullivan & Cromwell.<sup><a href="#footnote-24">24</a></sup> In the draft, he says he believes this is due to the fees that S&C could earn from a bankruptcy, citing $700&nbsp;million in legal fees that went to law firms including S&C in the Enron bankruptcy.<sup><a href="#footnote-25">25</a></sup>
+          p However, the idea that everything would be just fine if he'd never resigned and brought in the bankruptcy team is ludicrous. It's wild for him to argue that the issue is the bankruptcy, not all the fraud.
+
+  .group
+    .left
+      .content Despite its insolvency, and despite processing roughly $5b of withdrawals over its last few days of operation, FTX International <a href="https://twitter.com/WatcherGuru/status/1608743171282063362" target="_blank">retains</a> <a href="https://www.wsj.com/articles/ftx-says-it-has-located-more-than-5-billion-in-cash-liquid-assets-11673452986" target="_blank">significant assets</a>–roughly $8b of <mark aria-details="varying-liquidity" data-annotation-id="1">assets of varying liquidity</mark> as of when Mr. Ray took over.
+
+    .right
+      .content
+        .annotation(role='comment')
+          p This presumably includes FTT and various other tokens, which were not just "illiquid", but whose price was intentionally and fraudulently manipulated by Caroline Ellison at SBF's direction (as alleged by the SEC).<sup><a href="#footnote-26">26</a></sup>
+          p Any claim by SBF where he describes his former companies' assets denominated in USD should be treated with extreme skepticism, given his past willingness to claim that FTX at one time had $FTT worth <i>$5.9&nbsp;billion real US dollars</i>, despite the token having nowhere near the kind of liquidity that could support that.<sup><a href="#footnote-27">27</a></sup>
+
+  .group
+    .left
+      .content In addition to that, <mark aria-details="funding-offers" data-annotation-id="1">there were numerous potential funding offers</mark>–including signed LOIs post chapter 11 filing totaling over $4b. I believe that, had FTX International been given a few weeks, <mark aria-details="utilized-illiquid-assets" data-annotation-id="2">it could likely have utilized its illiquid assets</mark> and equity to raise enough financing to make customers substantially whole.
+    .right
+      .content
+        #funding-offers.annotation(role='comment', data-annotation-id='1') We know about one signed LOI (letter of intent), which was from Binance.<sup><a href="#footnote-28">28</a></sup> They ran screaming after one day of due diligence. While it might be believable that there was early interest in an acquisition (though questionable how many interested companies would have that kind of firepower), all hopes of bailout-by-acquisition went out the window when companies discovered they would first be spending billions of dollars to pay back all the money SBF & co. stole.
+        #utilized-illiquid-assets.annotation(role='comment', data-annotation-id='2') No one wanted your pile of artificially pumped $FTT then, either, Sam.
+
+  .group
+    .left
+      .content Since S&C pressured FTX into Chapter 11 filings, however, <mark aria-details="pathways" data-annotation-id="1">I worry that those pathways may have been abandoned</mark>. Even now, <mark aria-details="substantially-whole" data-annotation-id="2">I believe that if FTX International were to reboot, there would be a real possibility of customers being made substantially whole.</mark> <mark class="diff-add" aria-details="spot-whole" data-annotation-id="3">And, further, I believe that all customers with purely spot trading activity should, and easily could, be made fully whole, with assets already on hand.</mark>
+    .right
+      .content
+        #pathways.annotation(role='comment', data-annotation-id='1') Can't imagine why the restructuring teams might have abandoned a plan that requires first asking companies, "hey, would you be interested in pouring around $10&nbsp;billion into this gaping hole?"
+        #substantially-whole.annotation(role='comment', data-annotation-id='2')
+          p "I <i>believe</i> that if FTX International were to reboot, there would be a <i>real possibility</i> of customers being made <i>substantially</i> whole."
+          p Couch that a little more, won't you? The money's gone.
+        #spot-whole.annotation(role='comment', data-annotation-id='3')
+          p This sentence was added to the post sometime between 5:02am January 15 and 11:53pm January 16 (Pacific Time), three to four days after SBF originally published it.
+          p SBF himself has admitted that assets of customers who were solely spot trading were not segregated from assets of those trading with leverage (as they were supposed to be),<sup><a href="#footnote-18">18</a></sup> so this statement appears purely based on the belief that the debtors could scrape together enough assets from somewhere to prioritize making the spot traders whole first.
+
+  .group
+    .left
+      .content
+        p While FTX’s liquidity had started off in 2019 as largely dependent on Alameda, by 2022 it had greatly diversified, <mark aria-details="alameda-volume" data-annotation-id="1">with Alameda falling to around 2% of volume on FTX.
+        .in-text-image
+          mark.image-mark(aria-details='alameda-volume-chart', data-annotation-id='2')
+            a(href='https://mollywhite.net/storage/alameda-percentage.webp', target='_blank')
+              img(src='https://mollywhite.net/storage/alameda-percentage.webp')
+
+    .right
+      .content
+        #alameda-volume.annotation(role='comment', data-annotation-id='1') I'm honestly not sure I follow the argument here. "Look, Alameda made up such a small percentage of FTX's trades... and yet was still able to completely torpedo the company"? Yeah, that's what happens when you decide to set up a backdoor to lend practically limitless capital to the trading firm whose strategy appeared to be 1) making shady loans to employees and 2) lighting the money on fire.
+        #alameda-volume-chart.annotation(role='comment', data-annotation-id='2') Via Bennett Tomlin at <i>Protos</i>: "The chart also reveals that, at the beginning, Alameda Research was half of FTX’s volume. I for one am extremely curious to know how Alameda Research ensured that it never violated wash trade rules when it was that large of a proportion of volume. I mean, it’s not like SBF would end up confessing to crimes he hadn’t even been charged with, right?"<sup><a href="#footnote-29">29</a></sup>
+
+  .group
+    .left
+      .content I didn’t steal funds, and I certainly didn’t stash billions away. <mark aria-details="backstop-ftx-customers" data-annotation-id="1">Nearly all of my assets were and still are utilizable to backstop FTX customers.</mark> I have, for instance, offered to contribute <mark aria-details="robinhood-shares" data-annotation-id="2">nearly all of my personal shares in Robinhood</mark> to customers–or 100%, if the Chapter 11 team would honor <mark aria-details="legal-indemnification" data-annotation-id="3">my D&O legal expense indemnification</mark>.
+
+    .right
+      .content
+        #backstop-ftx-customers.annotation(role='comment', data-annotation-id='1') Nearly all of your assets... which were stolen from FTX customers. This statement may well come true, assuming he is found guilty and his assets are seized and ultimately disbursed.
+        #robinhood-shares.annotation(role='comment', data-annotation-id='2')
+          p "My personal shares" being the shares which were, again, acquired thanks to $546&nbsp;million in personal loans from Alameda Research, who themselves were improperly borrowing customer funds from FTX.<sup><a href="#footnote-16">16</a></sup>
+          p The same shares that were signed over to BlockFi in a desperate move to try to get them not to recall $600&nbsp;million in loans to Alameda amidst the FTX collapse, in an agreement by Caroline Ellison that SBF reportedly knew about and encouraged.<sup><a href="#footnote-30">30</a></sup>
+        #legal-indemnification.annotation(role='comment', data-annotation-id='3') SBF is referring here to directors' and officers' indemnification, which would require FTX to pay his legal fees and various other costs. These agreements do not typically apply in cases where the officer committed blatant and massive fraud.
+
+  .group
+    .left
+      .content
+        p <mark aria-details="profitable" data-annotation-id="1">FTX International and Alameda were both legitimately and independently profitable businesses in 2021,</mark> each making billions.
+        .in-text-image
+          mark.image-mark(aria-details='ftx-revenue-chart', data-annotation-id='2')
+            a(href='https://mollywhite.net/storage/ftx-revenue.webp', target='_blank')
+              img(src='https://mollywhite.net/storage/ftx-revenue.webp')
+
+    .right
+      .content
+        #profitable.annotation(role='comment', data-annotation-id='1') Again, FTX's and Alameda's 2021 tax returns suggest they were massively unprofitable.<sup><a href="#footnote-7">7</a></sup>
+        #ftx-revenue-chart.annotation(role='comment', data-annotation-id='2')
+          p A revenue chart is not terribly useful without information on expenses, or their outstanding liabilities.
+          p Furthermore, this chart shows FTX bringing in between $2 and $4&nbsp;million per day in the past year or so. If we look at the $8&nbsp;billion hole estimated to exist in the FTX balance sheet, even if FTX was consistently making $4M a day, it would take them more than <i>five years</i> to plug a hole of that size.
+
+  .group
+    .left
+      .content
+        span.diff-add My personal consumption was a tiny fraction of my earnings, and <mark aria-details="investments-from-earnings" data-annotation-id="1">my consumption, donations, and investments combined were less than—and came from—earnings</mark>. Furthermore, FTX’s sponsorships and company real estate were way less than its revenue, and way less than the amount it raised. Nonetheless, nearly all of my personal investments are going to customers. <mark aria-details="branding-marketing-spend" data-annotation-id="2">FTX, as a profitable private company, spent a small fraction of its revenue and the amount it had raised on branding and marketing;</mark> by contrast, Fanduels, Draft Kings, Coinbase, and Robinhood–all publicly listed, unprofitable companies–each spent far more than FTX did on marketing and branding. <mark aria-details="real-estate-coinbase" data-annotation-id="3">And the totality of the real estate purchases made by FTX–purchases made to entice a highly competitive workforce to move from the Bay Area and New York–represent roughly 10% of the amount Coinbase spends <i>every year</i> on its workforce..
+
+    .right
+      .content
+        .annotation(role='comment') This paragraph was added to the post sometime between 11:21pm January 15 and 1:53am January 16 (Pacific Time), three days after SBF originally published it.
+        #investments-from-earnings.annotation(role='comment', data-annotation-id='1')
+          p In an Antiguan court filing, SBF attests that he and Gary Wang borrowed $546&nbsp;million from Alameda in order to buy shares in Robinhood.<sup><a href="#footnote-16">16</a></sup> In a filing in the US bankruptcy case, SBF argues the shares belong to him, and that he should be allowed to dip into them to pay for his criminal defense.<sup><a href="#footnote-14">14</a></sup>
+          p If SBF is not outright lying (and he almost certainly is), then he is engaging in some Olympic-level mental gymnastics along the lines of "the investments of a shell company I created, for which I own 90% of the shares, and into whose assets I can dip to pay my own personal expenses, are not <i>technically</i> 'my investments'".
+        #branding-marketing-spend.annotation(role='comment', data-annotation-id='2') This is an odd redirection. No one really cares about FTX's branding and marketing spend, they care about the fraud! "<a href="https://en.wikipedia.org/wiki/Whataboutism" target="_blank">But Coinbase spends a lot on marketing too!</a>" isn't all that compelling of an argument unless Coinbase was <i>also</i> dipping into customer funds to do it.
+        #real-estate-coinbase.annotation(role='comment', data-annotation-id='3')
+          p FTX reportedly spent around $256&nbsp;million on real estate in The Bahamas.<sup><a href="#footnote-31">31</a></sup> If SBF thought that's 10% of what Coinbase pays its employees, then he estimated Coinbase spends $2.56&nbsp;billion on its employees per year.
+          p Except SBF did a tweet thread last summer about Coinbase's most recent (Q2 2022) earnings report, where he estimated Coinbase spends $4.4&nbsp;billion annually on employees.<sup><a href="#footnote-32">32</a></sup> So is he saying that FTX actually spent $440&nbsp;million on real estate? Or has he revised his Coinbase estimate (which was quite high—he was estimating an average of around $884,000 per year in compensation for all employees)? The other possibility is that he was saying Coinbase spends $2.56&nbsp;billion a year <i>specifically</i> on real estate for employees, but that seems like an outlandish claim even by SBF's standards.
+          p Setting aside that the numbers don't add up, it's weird to try to justify spending by comparing your company's expenses on real estate for employees to <i>total</i> employee expenses for a company that also has 10 times as many employees (which was more like 17 times as many earlier this year, before Coinbase performed two rounds of layoffs).<sup><a href="#footnote-33">33</a></sup>
+
+  .group
+    .left
+      .content And then Alameda lost about 80 percent of its assets’ value over the course of 2022, due to a series of market crashes–<mark aria-details="as-did-3ac" data-annotation-id="1">as did Three Arrows Capital (3AC)</mark> and other crypto firms last year–and after that its assets fell even more from a <mark aria-details="targeted-attack" data-annotation-id="2">targeted attack</mark>. FTX was impacted by Alameda’s decline, as <mark aria-details="voyager-3ac" data-annotation-id="3">Voyager and others were earlier by 3AC and others</mark>.
+
+    .right
+      .content
+        #as-did-3ac.annotation(role='comment', data-annotation-id='1') If I was going to try to pick out a crypto firm that suffered large losses in an attempt to say "look, it was happening to everyone!", I might not pick the one whose founders have allegedly been in hiding for the last six months.<sup><a href="#footnote-34">34</a></sup>
+        #targeted-attack.annotation(role='comment', data-annotation-id='2') SBF is once again suggesting that CZ brought down FTX in a "targeted attack".
+        #voyager-3ac.annotation(role='comment', data-annotation-id='3')
+          p Voyager was "impacted" by 3AC's collapse because 3AC defaulted on a massive loan. FTX was "impacted" by Alameda's decline because they had fraudulently loaned billions of dollars of customer assets to Alameda in exchange for magic beans.
+          p But yeah, for sure!
+
+  .group
+    .left
+      .content
+        span.diff-add Employees–both current and former–have been caught up in what happened, and that’s not fair to them. A huge number of them did nothing but what they thought was right, and were–and still are–fighting for FTX’s customers every day. <mark aria-details="employees-fighting" data-annotation-id="1">And even many of those who are not–who are instead fighting against what I think the interest of customers is</mark>–are caught up in a shitstorm they didn’t ask for or create, doing what they think is right; and I wish nothing but the best for them.
+    .right
+      .content
+        .annotation(role='comment') This paragraph and the one following it were added to the post sometime between 11:21pm January 15 and 1:53am January 16 (Pacific Time), three days after SBF originally published it.
+        #employees-fighting.annotation(role='comment', data-annotation-id='1') Would these be the ones cooperating with the investigations by any chance?
+
+  .group
+    .left
+      .content
+        span.diff-add There are a large number of regulators and administrators who have put in a huge amount of work over the past few months trying to understand FTX and figure out what is in the best interest of customers/creditors. My hat goes off to them. Someday, maybe someone will tell their story, even if they insist they don’t care about public recognition of the amount of energy they’ve put into doing what’s right.
+    .right
+      .content
+        .annotation(role='comment') "Fuck regulators, they just make everything worse." – SBF, November 15, 2022<sup><a href="#footnote-35">35</a></sup>
+
+  .group
+    .left
+      .content Note that, in many places here, I’m still forced to make approximations. Many of my personal passwords are still being held by the Chapter 11 team–to say nothing about data. <mark aria-details="ch-11-data">If the Chapter 11 team wants to add their data to the conversation, I would welcome that.</mark>
+    .right
+      .content
+        #ch-11-data.annotation(role='comment') If SBF thinks FTX customers would be outraged at the idea of the bankruptcy team depleting their assets via bankruptcy fees, imagine how they'd feel if they found out those fees were going towards feeding SBF data for his new Substack.
+
+  .group
+    .left
+      .content
+        mark(aria-details='havent-run-alameda') Also–I haven’t run Alameda for the past few years.
+
+    .right
+      .content
+        #havent-run-alameda.annotation(role='comment')
+          p SBF seems to still be hoping that he can pin all of this on Caroline Ellison, Alameda's CEO. Unfortunately for SBF, both she and Gary Wang (FTX co-CEO) are cooperating with authorities, and have testified that SBF was deeply involved in Alameda operations even after he claims he had stepped away.
+          p The CFTC claimed in its complaint that SBF "maintained direct decision-making authority over all of Alameda's major trading, investment, and financial decisions" and had "regular, often daily participation in various in-person and mobile chat communications with senior personnel at Alameda".<sup><a href="#footnote-36">36</a></sup> The SEC made similar allegations, claiming that SBF "remained the ultimate decision-maker" after stepping down as CEO, and that he "directed investment and operational decisions, frequently communicated with Alameda employees, and had full access to Alameda's records and databases."<sup><a href="#footnote-37">37</a></sup>
+
+  .group
+    .left
+      .content
+        p So much of this is pieced together post-hoc, coming from models and approximations, generally based on data that I had prior to resigning as CEO and modeling and estimations based on that data.
+        h2 Overview of what happened
+        h3 2021
+    .right
+      .content.empty
+
+  .group
+    .left
+      .content.no-margin
+        p Over the course of 2021, Alameda's Net Asset Value skyrocketed, to roughly $100b marked to market by the end of the year by my model. <mark aria-details="even-if">Even if you ignore assets like SRM that had much larger fully diluted than circulating supplies,</mark> I think it was still roughly $50b.
+
+    .right
+      .content
+        .annotation(role='comment') What do you mean "even if"??? It should be a given that you ignore assets that could never be liquidated at even a small fraction of their supposed "value". It's alarming that SBF is still incorporating these assets when outlining his company's supposed financial state, even when he acknowledges they're throwing off his estimates by a full $50&nbsp;billion.
+
+  .group
+    .left
+      .content
+        p And over the course of 2021, Alameda’s positions grew, too.
+        p In particular, I think it had about $8b of net borrowing, which I believe was spent on:
+        ol.alpha-paren
+          li ~$1b interest payments to lenders
+          li ~$3b buying out Binance from FTX’s cap table
+          li ~$4b venture investments
+
+        p (By ‘net borrowing’, I mean, basically, borrowing minus liquid assets on hand that could be used to return the loans. This net borrowing in 2021 came primarily from third party borrow-lending desks–Genesis, Celsius, Voyager, etc., rather than from margin trading on FTX.)
+        p So by the start of 2022, I believe that Alameda’s balance sheet looked roughly like the following:
+    .right
+      .content.empty
+
+  .group
+    .left
+      .content
+        .in-text-image
+          mark.image-mark(aria-details='alameda-balance-start-2022')
+            a(
+              href='https://mollywhite.net/storage/alameda-balance-start-2022.webp',
+              target='_blank'
+            )
+              img(src='https://mollywhite.net/storage/alameda-balance-start-2022.webp')
+
+    .right
+      .content
+        .annotation(role='comment')
+          p We know from the leaked balance sheet published by the <i>Financial Times</i> in November that SBF's definition of "less liquid" is... very generous.<sup><a href="#footnote-27">27</a></sup> Among the assets he listed there as "less liquid" was FTT, an <i>extremely</i> illiquid token that was created by FTX, and whose price was actively manipulated by Alameda Research at SBF's direction (as alleged by the SEC).<sup><a href="#footnote-26">26</a></sup>
+          p Other tokens SBF listed as "less liquid" were SRM, OXY, MAPS, and FIDA, which are all referred to as "Samcoins" because they were so tightly linked to SBF and his companies. Alameda held far more of those tokens than were in circulation, making it impossible for Alameda to liquidate substantial amounts of those tokens for anywhere near market price.<sup><a href="#footnote-38">38</a></sup>
+          p We can see from this estimation that the significant majority of Alameda's assets were "less liquid" or "illiquid" tokens, many of which were closely tied to, if not actively manipulated, by Alameda—hardly the solid financial footing SBF is trying to portray.
+          p All of his math, and his statements about how reasonable Alameda's positions were, are predicated on the idea that these magic beans cooked up by FTX itself were worth billions of dollars.
+
+  .group
+    .left
+      .content
+        ol.alpha-paren
+          li ~$100b NAV
+          li ~$12b liquidity from 3rd party desks (Genesis, etc.)
+          li ~$10b more liquidity it likely could have gotten from them
+          li ~1.06x leverage
+        p In that context, the ~$8b illiquid position (with tens of billions of dollars of available credit/margin from third party lenders) seemed reasonable and not very risky.
+
+    .right
+      .content.empty
+
+  .group
+    .left
+      .content.no-margin
+        p <mark aria-details="sol-cover-borrowing" data-annotation-id="1">I think that Alameda’s SOL alone was enough to cover the net borrowing.</mark> And it was coming from third party borrow-lending desks, <mark aria-details="i-was-told" data-annotation-id="2">who were all–I was told–sent accurate balance sheets from Alameda.</mark>
+    .right
+      .content
+        #sol-cover-borrowing.annotation(role='comment', data-annotation-id='1') This is ultimately somewhat unimportant, since it's simply a rhetorical attempt by SBF to describe how reasonable he thought Alameda's position was, but: in the leaked balance sheet published by the <i>Financial Times</i>, SBF had estimated Alameda's SOL tokens as worth $2.25&nbsp;billion <i>before</i> the events surrounding the crash—certainly not enough to cover $8&nbsp;billion.<sup><a href="#footnote-27">27</a></sup>
+        #i-was-told.annotation(role='comment', data-annotation-id='2')
+          p Once again attempting to distance himself from Alameda with "I was told".
+          p It's clear that SBF's definition of "accurate" differs from most people's. SBF seems to think that if you tell someone that you have $1,000, and then later you say "...in monopoly money", it was still an accurate and defensible statement.
+          p It's not yet clear to what extent counterparties to FTX and Alameda understood that those businesses were propped up on illiquid tokens that they themselves had created, but there may be some blame to be laid with the counterparties as well. The SEC is already investigating whether FTX investors performed proper due diligence;<sup><a href="#footnote-39">39</a></sup> it would not be unreasonable to expect similar questions to be posed to their lending partners. Genesis, Voyager, and Celsius are <i>all</i> undergoing bankruptcy proceedings at the moment, and I am sure their many creditors will be interested to know those firms properly evaluated lending risk when extending loans that ultimately resulted in bankruptcy. Indeed, Celsius CEO Alex Mashinsky described the company's lending strategy to customers as low-risk, and those are among the statements over which he is now facing criminal fraud charges. Those criminal charges specifically call out Mashinsky's decision to lend a total of around $1&nbsp;billion to Alameda, the fact that much of Alameda's assets were held in FTT, and his decision to accept FTT as collateral for the loans.<sup><a href="#footnote-40">40</a></sup>
+
+  .group
+    .left
+      .content
+        p I think its position on FTX International was reasonable at the time–about $1.3b by my model, collateralized with <mark aria-details="tens-of-billions" data-annotation-id="1">tens of billions of dollars of assets</mark>–and <mark aria-details="gaap-audit" data-annotation-id="2">FTX successfully passed a GAAP audit as of then.</mark>
+        .in-text-image
+          a(href='https://mollywhite.net/storage/ftx-auditors-report.webp', target='_blank')
+            img(
+              src='https://mollywhite.net/storage/ftx-auditors-report.webp',
+              alt='Independent Auditor\'s Report To the Board of Directors and Shareholders of FTX Trading Ltd. Opinion We have audited the accompanying consolidated financial statements of FTX Trading Ltd. and subsidiaries, which comprise the consolidated balance sheets as of December 31, 2021 and 2020, and the related consolidated statements of comprehensive income, shareholders\' equity, and cash flows for the years then ended, and the related notes to the financial statements, collectively referred to as \'the financial statements\'. In our opinion, the financial statements referred to above present fairly, in all material respects, the financial position of FTX Trading Ltd. and subsidiaries as of December 31, 2021 and 2020, and the results of their operations and their cash flows for the years then ended in accordance with accounting principles generally accepted in the United States of America.'
+            )
+
+    .right
+      .content
+        #tens-of-billions.annotation(role='comment', data-annotation-id='1') Conspicuously missing: any mention of what these assets were. The CFTC has helpfully filled in the blanks for us, though: "[Alameda] CEO [Caroline Ellison] indicated that FTX had always allowed Alameda to borrow customer funds, and that FTX did not require collateral from Alameda, though in practice the collateral was Alameda's FTT."<sup><a href="#footnote-41">41</a></sup>
+        #gaap-audit.annotation(role='comment', data-annotation-id='2')
+          p GAAP refers to "generally accepted accounting principles". FTX US was audited by Armanino, and the offshore FTX groups were audited by Prager Metis. It's not clear why two different firms would perform the audits. "With the benefit of hindsight, we can see it perhaps suggested that Bankman-Fried didn’t want any firm to see the whole picture," says <a href="https://en.wikipedia.org/wiki/Francine_McKenna" target="_blank">Francine McKenna</a>, an investigative journalist, professor, and accounting expert. Neither Armanino nor Prager Metis is a "<a href="https://en.wikipedia.org/wiki/Big_Four_accounting_firms" target="_blank">Big Four</a>" accounting firm, and McKenna describes them as "two small outfits, not even on the next tier to the Big Four".<sup><a href="#footnote-42">42</a></sup> Armanino has since announced they will no longer audit crypto clients.<sup><a href="#footnote-43">43</a></sup>
+          p McKenna detailed a list of red flags that probably ought to have been noticed by the auditors, including including hiring two separate auditing firms, lack of scrutiny into FTX's internal accounting and reporting controls, lack of federal income taxes paid despite reported profits, and the "number of complex, roundtrip and utterly confounding related-party transactions documented in just these two years".<sup><a href="#footnote-42">42</a></sup>
+
+  .group
+    .left
+      .content
+        p As of the end of 2021, then, <mark aria-details="94-crash">it would have taken a ~94% market crash to drag Alameda underwater!</mark> And not just in SRM and assets like it–Alameda was still massively overcollateralized if you ignore those. I think that its SOL position alone was larger than its leverage.
+
+    .right
+      .content
+        #94-crash.annotation(role='comment')
+          p Or massive fraud. Fraud probably would've worked then too.
+          p SBF likes to talk about all the things Alameda did or didn't do, because it's a useful way to distract from the fact that <i>Alameda had free reign to wreak havoc on FTX</i> thanks to the effectively unlimited line of credit that he extended to the company. Alameda should never have had access to FTX customer funds, nor the ability to bring the whole company down with its bad trades (which should have been getting liquidated like anyone else)—<i>that's</i> the important part.
+          p SBF did shady stuff in the hopes that nothing bad would happen at Alameda, and no one would notice. Now that that's blown up in his face, he's trying to redirect focus to Alameda's bad trades rather than all the shady stuff he did.
+
+  .group
+    .left
+      .content
+        p But Alameda failed to sufficiently hedge against the risk of an extreme market crash: the hundred billion of assets had only a few billion dollars of hedges. It had a net leverage–[net position - hedges]/NAV–of roughly 1.06x; it was long the market.
+        p As a result, Alameda was in theory exposed to an extreme market crash–but it would take something like a 94% crash to bankrupt it.
+        h3 2022 Market Crashes
+        p Alameda, then, entered 2022 with roughly:
+        ol
+          li $100b NAV
+          li $8b net borrow
+          li 1.06x leverage
+          li Tens of billions of dollars of liquidity
+        p Then, over the course of the year, markets crash–again and again and again. And Alameda repeatedly fails to sufficiently hedge its position until mid summer.
+
+    .right
+      .content.empty
+
+  .group
+    .left
+      .content.no-margin
+        ul.dashed.no-margin
+          li BTC crashed 30%
+          li BTC crashed another 30%
+          li BTC crashed another 30%
+          li rising interest rates curtailed global financial liquidity
+          li <mark aria-details="luna-crash" data-annotation-id="1">Luna went to $0
+          li 3AC blew out
+          li <mark aria-details="alameda-co-ceo-quit" data-annotation-id="2">Alameda’s co-CEO quit</mark>
+          li Voyager blew out
+          li BlockFi almost blew out
+          li Celsius blew out
+          li Genesis started shutting down
+          li Alameda’s borrow/lending liquidity went from ~$20b in late 2021 to ~$2b by late 2022
+
+    .right
+      .content
+        #luna-crash.annotation(role='comment', data-annotation-id='1') The <i>New York Times</i> recently reported that New York federal prosecutors are looking into whether SBF manipulated prices of TerraUSD and Luna for his own benefit, ultimately leading to the Terra/Luna crash.<sup><a href="#footnote-45">45</a></sup>
+        #alameda-co-ceo-quit.annotation(role='comment', data-annotation-id='2') This is kind of a weird thing to call out amidst what is otherwise a list of major financial impacts to Alameda or the crypto market as a whole. It seems he is trying to suggest that CEO Caroline Ellison was solely responsible for Alameda's failure spiral, and the loss of co-CEO Sam Trabucco allowed it to happen. This is consistent with SBF's apparent attempts to pin the whole thing on Ellison.
+  .group
+    .left
+      .content And so Alameda’s assets get hit, <mark aria-details="again-again">again and again and again</mark>. But this part isn’t specific to Alameda’s assets. Bitcoin, Ethereum, Tesla, and Facebook are all down more than 60% on the year; Coinbase and Robinhood are down about 85% from their peaks last year.
+    .right
+      .content
+        #again-again.annotation(role='comment')
+          p Wow, that sure sounds like a lot of opportunities in which FTX could have looked into what was happening with Alameda's positions and reduced their risk instead of digging a deeper hole!
+
+          p Per the SEC: "At the same time that Bankman-Fried was positioning himself as a hero in the industry, however, the plummeting value of crypto assets was impacting Alameda, and as a result impacting FTX. As discussed above, as a result of the same market conditions impacting BlockFi’s liquidity, many of Alameda’s lenders demanded repayment of loans they had made to Alameda. Bankman-Fried directed Alameda to draw down billions of dollars from its 'line of credit' from FTX to repay some of its loans—money that came from FTX’s spot market funded by FTX customers. Thus, in the summer of 2022, Bankman-Fried knew, or was reckless in not knowing, that FTX was in a precarious financial condition. However, he continued to spend hundreds of millions of dollars to purchase and support other crypto companies, and allowed Alameda to use FTX customer funds to repay its debts. In addition, Bankman-Fried and other FTX executives continued to withdraw customer funds in the form of the poorly documented and undisclosed 'loans' described above."<sup><a href="#footnote-44">44</a></sup>
+
+  .group
+    .left
+      .content
+        .elide
+          p.note SBF goes on for a while about Alameda's assets, does some whataboutism about the general downturn in crypto and stock markets, and suggests that a year-long period was apparently not enough time to discover that Alameda had become more highly leveraged then he realized.
+          p.note.no-margin It's ultimately unimportant given that it's not Alameda's specific trades that were the big problem, and I've already discussed the issues with how SBF estimates Alameda's assets' value, so I've omitted it.
+        h3 Margin Trading
+    .right
+      .content.empty
+
+  .group
+    .left
+      .content.no-margin Over the course of 2022, a number of crypto platforms became insolvent due to margin positions blowing out, likely including <mark aria-details="insolvent-platforms">Voyager, Celsius, BlockFi, Genesis, Gemini, and ultimately FTX</mark>.
+
+    .right
+      .content
+        #insolvent-platforms.annotation(role='comment')
+          p Crucially, FTX is the only crypto platform in this list that was <i>not a crypto lender</i>.
+          p Customers of Voyager, Celsius, BlockFi, Genesis, and Gemini understood that they were handing over their funds to the company to lend to other entities, and they accepted that there is some risk that comes with that. There are absolutely open questions surrounding all of these platforms, some of which may result in criminal charges, but crucially, it was not news to these customers that their funds were being used for lending.
+          p On the other hand, FTX's terms of service promised customers that "Title to your Digital Assets shall at all times remain with you and shall not transfer to FTX Trading... None of the Digital Assets in your Account are the property of, or shall or may be loaned to, FTX Trading; FTX Trading does not represent or treat Digital Assets in User's Accounts as belonging to FTX Trading."<sup><a href="#footnote-46">46</a></sup>
+
+  .group
+    .left
+      .content
+        p <mark aria-details="common" data-annotation-id="1">This is a fairly common on margin platforms;</mark> among others, it’s happened on:
+        p Traditional Finance:
+        ul
+          li <a href="https://www.reuters.com/world/asia-pacific/geopolitics-has-hurt-trading-ipos-hong-kong-says-bourse-ceo-2022-03-29/" target="_blank">LME</a>
+          li <mark aria-details="mf-global" data-annotation-id="2"><a href="https://en.wikipedia.org/wiki/MF_Global#Corzine's_possible_role_in_the_firm's_collapse" target="_blank">MF Global</a></mark>
+          li <a href="https://en.wikipedia.org/wiki/Long-Term_Capital_Management" target="_blank">LTCM</a>
+          li <a href="https://en.wikipedia.org/wiki/Bankruptcy_of_Lehman_Brothers" target="_blank">Lehman</a>
+        p Crypto:
+        ul
+          li <a href="https://finance.yahoo.com/news/okex-bitcoin-cash-futures-debacle-133402296.html" target="_blank">OKEx</a>
+          li OKEx <a href="https://www.coindesk.com/markets/2018/08/03/okex-confirms-9-million-clawback-after-enormous-bitcoin-future-fails/" target="_blank">again</a>, and basically every week for a year
+          li <a href="https://www.coindesk.com/business/2022/06/30/coinflex-withdrawals-remain-halted-as-recovery-token-talks-continue/" target="_blank">CoinFlex</a>
+          li <a href="https://ethereumworldnews.com/emx-exchange-halts-trading-of-usoil-perp-after-crude-oil-crash/'" target="_blank">EMX</a>
+          li Voyager, Celsius, BlockFi, Genesis, Gemini, etc.
+
+    .right
+      .content
+        #common.annotation(role='comment', data-annotation-id='1')
+          p It's true that when you offer highly leveraged trading (as FTX did), there is a risk that sudden and major market movements can get you into a sticky situation.
+          p However, if you're running a highly leveraged trading business, <i>and</i> you wax poetic at every opportunity about your top-notch risk management engine and careful controls, and then the business collapses because you don't have those things, that is still fraud. The SEC seems to feel the same way.<sup><a href="#footnote-47">47</a></sup>
+          p Crucially, though, it was not a sudden drop in the broad crypto markets that caused FTX to collapse—in fact, Bitcoin had been trading pretty flat for months before FTX collapsed (causing Bitcoin to tank on November 7–9, not the other way around). It was the collapse of tokens that were so tightly tied to FTX that they effectively represented sentiment in FTX's stability, and which SBF had used to prop up the whole operation, that brought down FTX. And the token collapse itself was kicked off by the leak of an Alameda balance sheet on November 2.<sup><a href="#footnote-48">48</a></sup> Basically, FTX collapsed because people learned what was going on at FTX.
+        #mf-global.annotation(role='comment', data-annotation-id='2') I wondered if SBF was aware that MF Global's CEO, Jon Corzine, had been accused of malfeasance surrounding the MF Global collapse, until I noticed that SBF seems to have (inadvertently?) linked to the specific section of the Wikipedia article titled "Corzine's possible role in the firm's collapse". That section explains that Corzine paid a large fine and was banned from CFTC markets after the collapse, settling charges that he failed to prevent employees from using customer funds to shore up liquidity.<sup><a href="#footnote-49">49</a></sup>
+
+  .group
+    .left
+      .content
+        h3 The November Crash
+        p <mark aria-details="fateful-tweet">Then came CZ’s <a href="https://twitter.com/cz_binance/status/1589283421704290306" target="_blank">fateful tweet</a>, following an extremely effective months-long PR campaign against FTX–and the crash.</mark>
+
+    .right
+      .content
+        #fateful-tweet.annotation(role='comment')
+          p Perhaps someday SBF will take a moment to wonder how it came to be that FTX was so fragile that a single tweet from CZ could bring it crashing down.
+          p As for CZ's "extremely effective months-long PR campaign", his various jabs at FTX did not seem terribly different from the standard crypto infighting, or the types of tweets SBF occasionally lobbed at CZ.<sup><a href="#footnote-50">50</a></sup>
+
+  .group
+    .left
+      .content
+        p Up until that final crash in November, QQQ had moved roughly half as much as Alameda’s portfolio, and BTC/ETH had moved roughly 80% as much–meaning that Alameda’s hedges (QQQ/BTC/ETH), to the extent they existed, had worked. Unfortunately the hedges hadn’t been sufficiently large until after the 3AC crash–but as of October 2022, <mark aria-details="hedges-large-enough">they finally were.</mark>
+        p But the November crash was a targeted attack on assets held by Alameda, not a broad market move. Over the few days in November, Alameda’s assets fell roughly 50%; BTC fell about 15%--only 30% as much as Alameda’s assets–and QQQ didn’t move at all. As a result, the larger hedge that Alameda had finally put on that summer didn’t end up helping. It would have for every previous crash that year–but not for this one.
+    .right
+      .content
+        #hedges-large-enough.annotation(role='comment')
+          p <i>Were they?</i> Matt Levine:
+          blockquote
+            p [T]o hedge the market risk that that stuff would lose value, it shorted “some combination of BTC, ETH, and QQQ,” that is, an exchange-traded fund of Nasdaq stocks. If the market — Solana and FTT and Bitcoin and the Nasdaq — went up, Alameda would make money on its positions but lose money on its hedges. If the market — all that stuff — went down, Alameda would lose money on its positions but be cushioned by its hedges.
+            p If Solana and FTT went down a ton, but Bitcoin and the Nasdaq did not, Alameda would get vaporized and the hedges wouldn’t help. The hedges were only as good as their correlation to Alameda’s assets. ...
+            p FTX loaned billions of dollars to Alameda against assets that could, and did, evaporate because <i>CZ tweeted mean things about them</i>. Oh but Alameda was hedged! It hedged by shorting <i>Apple</i>. It could only go bankrupt if its assets lost their value — because of a mean tweet — but Apple did not. What were the chances of that? Incredibly high! Come on."<sup><a href="#footnote-51">51</a></sup>
+
+  .group
+    .left
+      .content
+        p Over the course of November 7th and 8th, things went from stressful but mostly under control to clearly insolvent.
+        p By November 10th, 2022, Alameda’s balance sheet had only ~$8b of (only semi-liquid) assets left, versus roughly the same ~$8b of liquid liabilities:
+        .in-text-image
+          a(href='https://mollywhite.net/storage/alameda-balance-nov-10.webp', target='_blank')
+            img(src='https://mollywhite.net/storage/alameda-balance-nov-10.webp')
+        p And a run on the bank required immediate liquidity—liquidity that Alameda no longer had.
+
+    .right
+      .content.empty 
+
+  .group
+    .left
+      .content.no-margin <mark aria-details="credit-suisse">Credit Suisse fell nearly 50% this autumn on the threat of a run on the bank. At the end of the day, its run on the bank fell short.</mark> FTX’s didn’t.
+
+    .right
+      .content
+        #credit-suisse.annotation(role='comment')
+          p A major reason that Credit Suisse didn't go under was that, being a fully regulated bank, they were required to hold high-quality, liquid assets that would support larger-than-usual withdrawals.<sup><a href="#footnote-52">52</a></sup>
+          p No such regulation applied to FTX, and they clearly were not doing so.
+          p Putting that aside, though, FTX's customers who were not trading with leverage expected that FTX was simply holding on to their crypto for them—not sending it off to Alameda to trade with. A "bank run" (exchange run?) <i>should not have been possible</i>, because FTX should have just been holding on to customer crypto.
+
+  .group
+    .left
+      .content
+        p And so, as Alameda became illiquid, FTX International did as well, because Alameda had a margin position open on FTX; and the run on the bank turned that illiquidity into insolvency.
+        p Meaning that FTX joined Voyager, Celsius, BlockFi, Genesis, Gemini, and others that experienced collateral damage from the liquidity crunch of their borrowers.
+
+    .right
+      .content.empty
+
+  .group
+    .left
+      .content.no-margin
+        p All of which is to say: <mark aria-details="no-theft" >no funds were stolen.</mark> Alameda lost money due to a market crash it was not adequately hedged for–as Three Arrows and others have this year. And FTX was impacted, as Voyager and others were earlier.
+    .right
+      .content
+        #no-theft.annotation(role='comment')
+          p If you promise to do nothing besides hold on to your customers' funds, and then you break that promise, that is stealing.
+          p If you take out billions in "loans" from your company that you never pay back, that is stealing.
+
+  .group
+    .left
+      .content
+        h3 Coda
+        p Even then, I think <mark aria-details="raise-liquidity" data-annotation-id="1">it’s likely that FTX could have made all customers whole if a concerted effort had been made to raise liquidity.</mark>
+        p <mark aria-details="funding-offers" data-annotation-id="2">There were billions of dollars of funding offers when Mr. Ray took over, and more than $4b that came in after.</mark>
+    .right
+      .content
+        #raise-liquidity.annotation(role='comment', data-annotation-id='1')
+          p This was not a liquidity problem, this was a solvency problem. If FTX had plenty of assets that were just not sufficiently liquid to meet withdrawals, then they feasibly could have raised liquidity (or paused withdrawals, as some exchanges are wont to do), and things would have been a-ok.
+          p But to raise funds, FTX would have to either a) show potential investors a balance sheet with a massive, multi-billion dollar hole in it, and say "hey can we have your money to throw into this hole too?" or b) lie to them.
+        #funding-offers.annotation(role='comment', data-annotation-id='2') Yeah, and I have a girlfriend who you haven't met because she goes to a different school. No, you can't see a picture.
+
+  .group
+    .left
+      .content
+        p If FTX had been given a few weeks to raise the necessary liquidity, I believe it would have been able to make customers substantially whole. I didn’t realize at the time that Sullivan & Cromwell—via pressure to instate Mr. Ray and file Chapter 11, including for solvent companies like FTX US–would potentially quash those efforts. I still think that, if FTX International were to reboot today, there would be a real possibility of making customers substantially whole. And even without that, there are significant assets available for customers.
+        p I’ve been, regrettably, slow to respond to public misperceptions and material misstatements. It took me some time to piece together what I could–I don’t have access to much of the relevant data, much of which is for a company (Alameda) I wasn’t running at the time.
+    .right
+      .content.empty
+
+  .group
+    .left
+      .content.no-margin
+        p I had been planning to give my first substantive account of what happened in testimony to the US House Financial Services Committee on December 13th. Unfortunately, the DOJ moved to arrest me the night before, preempting my testimony with an entirely different news cycle. <mark aria-details="congressional-testimony">For what it’s worth, a draft of the testimony I planned to give leaked out <a href="https://www.forbes.com/sites/stevenehrlich/2022/12/13/exclusive-transcript-the-full-testimony-sbf-planned-to-give-to-congress/?sh=662149f33c47" target="_blank">here</a>.</mark>
+    .right
+      .content
+        #congressional-testimony.annotation(role='comment') It blows my mind that SBF is linking to and apparently standing by this dumpster fire of a "testimony", in which he devotes an entire page to addressing conspiracy theories about Ukraine, allegations that he's abused drugs, and speculation that he's Jewish.
+
+  .group.last
+    .left
+      .content 
+        |
+        |
+        p I have a lot more to say–about why Alameda failed to hedge, what happened with FTX US, what led to the Chapter 11 process, S&C, and more. But at least this is a start.
+    .right
+      .content.empty
+
+  .outro
+    h2 Footnotes
+    ol.footnotes
+      li#footnote-1 <a href="https://www.courtlistener.com/docket/66631227/1/commodity-futures-trading-commission-v-bankman-fried/" target="_blank">Complaint</a> ¶ 73, <i>Commodity Futures Trading Commission v. Bankman-Fried et al.</i>, No. 1:22-cv-10503 (SDNY Dec. 13, 2022). ECF No. 1.
+      li#footnote-2 <a href="https://www.courtlistener.com/docket/66631003/1/securities-and-exchange-commission-v-bankman-fried/" target="_blank">Complaint</a> ¶ 4, <i>Securities and Exchange Commission v. Bankman-Fried et al.</i>, No. 1:22-cv-10501 (SDNY Dec. 13, 2022). ECF No. 1. ("When prices of crypto assets plummeted in May 2022, Alameda’s lenders demanded repayment on billions of dollars of loans. Despite the fact that Alameda had, by this point, already taken billions of dollars of FTX customer assets, it was unable to satisfy its loan obligations. Bankman-Fried directed FTX to divert billions more in customer assets to Alameda to ensure that Alameda maintained its lending relationships, and that money could continue to flow in from lenders and other investors.")
+      li#footnote-3 According to a statement by FTX attorney Andrew Dietderich in the bankruptcy court hearing on January 13, 2023.
+      li#footnote-4 Kadhim Shubber, <a href="https://www.ft.com/content/0babff4f-2212-41a4-844e-bbd09b1ef245" target="_blank"><i>Celsius Network reveals $1.2bn shortfall in bankruptcy filing</i></a>, Fin. Times, July 14, 2022.
+      li#footnote-5 <a href="https://cases.stretto.com/public/x193/11753/PLEADINGS/1175307062280000000036.pdf" target="_blank">Declaration of Stephen Ehrlich in Support of Chapter 11 Petitions and First Day Motions</a> Ex. G, <i>In re Voyager Digital Holdings, Inc. et al.</i>, No. 22-10943-MEW (Bankr. SDNY Jul. 6, 2022). ECF No. 15.
+      li#footnote-6 Matthew Goldstein &amp; David Yaffe-Bellany, <a href="https://www.nytimes.com/2023/01/17/business/ftx-assets.html" target="_blank"><i>In Hunt for FTX Assets, Lawyers Locate Billions in Cash and Crypto</i></a>, N.Y. Times, Jan. 17, 2023.
+      li#footnote-7 Jeff Kauflin, <a href="https://www.forbes.com/sites/jeffkauflin/2022/11/21/ftx-and-alameda-research-lost-37-billion-before-2022-bankruptcy-filing-shows/?sh=2541831d2ce0" target="_blank"><i>Despite Boasting Of Big Profits, FTX And Alameda Lost $3.7 Billion Before 2022</i></a>, Forbes, Nov. 21, 2022.
+      li#footnote-8 <a href="https://www.courtlistener.com/docket/66631227/1/commodity-futures-trading-commission-v-bankman-fried/" target="_blank">Complaint</a>, <i>supra</i> note 1, ¶ 60. ("Alameda relied on its significant holdings of FTT and similar illiquid tokens, valued at the market value of the asset without discount, as collateral to support a number of large loans from various digital asset lending platforms.")
+      li#footnote-9 <a href="https://www.courtlistener.com/docket/66631003/1/securities-and-exchange-commission-v-bankman-fried/" target="_blank">Complaint</a>, <i>supra</i> note 2, ¶ 29. ("[T]he collateral Alameda deposited on FTX consisted largely of illiquid, FTX-affiliated tokens, including FTT.")
+      li#footnote-10 Press release, Securities Commission of The Bahamas, <a href="https://www.scb.gov.bs/wp-content/uploads/2022/12/SCB-seeks-court-direction-Press-Release-29Dec22-Final.pdf" target="_blank"><i>Securities Commission of The Bahamas Seeks Court Direction Regarding Disclosure of Information</i></a> (Dec. 29, 2022).
+      li#footnote-11 <a href="https://www.courtlistener.com/docket/65748821/335/ftx-trading-ltd/" target="_blank"> Debtors' Objection to Emergency Motion of the Joint Provisional Liquidators of FTX Digital Markets Ltd. (I) for Relief from Automatic Stay and (II) to Compel Turnover of Electronic Records Under Sections 542, 1519(a)(3), 1521(a)(7) and 1522 of the Bankruptcy Code</a> at 6 n. 9, <i>In re FTX Trading Ltd. et al.</i>, No. 22-11068-JTD (Bankr. D. Del. Dec. 30, 2022). ECF No. 335.
+      li#footnote-12 <a href="https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=408483" target="_blank"><i>Investigating the Collapse of FTX, Part I: Hearing Before the H. Comm. on Fin. Services</i></a>, 117th Cong. (2022) (statement of John J. Ray III, Chief Executive Officer, FTX Group at <a href="https://youtu.be/rWAnrigAO3I?t=8357" target="_blank">2:19:17</a>).
+      li#footnote-13 <a href="https://www.courtlistener.com/docket/66631227/1/commodity-futures-trading-commission-v-bankman-fried/" target="_blank">Complaint</a>, <i>supra</i> note 1, ¶ 95.
+      li#footnote-14 <a href="https://www.courtlistener.com/docket/65748821/387/ftx-trading-ltd/" target="_blank">Opposition to FTX Debtors' Motion To Enforce The Automatic Stay Or, In The Alternative, Extend The Automatic Stay</a>, <i>In re FTX Trading Ltd. et al.</i>, No. 22-11068-JTD (Bankr. D. Del. Jan. 5, 2023). ECF No. 387.
+      li#footnote-15 <a href="https://www.courtlistener.com/docket/66542282/19/blockfi-inc-v-emergent-fidelity-technologies-ltd/" target="_blank">Emergency Motion for Extension of Time to Respond to Complaint and Turnover Motion and for Continuance of Hearing and Pretrial Conference</a>, <a href="https://www.courtlistener.com/docket/66542282/19/7/blockfi-inc-v-emergent-fidelity-technologies-ltd/" target="_blank">Exhibit 5</a> at 3 ¶ 9, <i>BlockFi Inc. v. Emergent Fidelity Technologies Ltd. (In re BlockFi Inc. et al.)</i>, No. 22-01382-MBK (Bankr. D.N.J. Nov. 28, 2022). ECF No. 19-7.
+      li#footnote-16 Lucinda Shen, <a href="https://www.axios.com/2022/11/29/sam-bankman-fried-100000-ftx-cftc-regulation" target="_blank"><i>Exclusive: Sam Bankman-Fried says he's down to $100,000</i></a>, Axios, Nov. 29, 2022.
+      li#footnote-17 Ray, <i>supra</i> note 12, at <a href="https://youtu.be/rWAnrigAO3I?t=4637" target="_blank">1:17:17</a>.
+      li#footnote-18 <a href="https://www.youtube.com/watch?v=4o_jPzBZSIo" target="_blank">Audio interview</a> by Stephen "Coffeezilla" Findeisen with Sam Bankman-Fried, at <a href="https://youtu.be/4o_jPzBZSIo?t=584" target="_blank">9:44</a>. (December 1, 2022).
+      li#footnote-19 <a href="https://www.courtlistener.com/docket/66631227/1/commodity-futures-trading-commission-v-bankman-fried/" target="_blank">Complaint</a>, <i>supra</i> note 1, ¶ 94–95. ("The FTX executives ultimately identified a shortfall they did not understand and were unable to quantify on FTX US. Bankman-Fried quickly indicated that he would fill the hole at FTX US from liquidation of Alameda assets. On November 8, Bankman-Fried directed Alameda traders to prioritize meeting FTX US capital requirements and to send excess capital to FTX US. On information and belief, Alameda sent in excess of $185 million to FTX US to fill its shortfall.")
+      li#footnote-20 Ray, <i>supra</i> note 12, at <a href="https://youtu.be/rWAnrigAO3I?t=4532" target="_blank">1:15:32</a>.
+      li#footnote-21 <a href="https://www.courtlistener.com/docket/65748821/335/ftx-trading-ltd/" target="_blank">Debtors' Objection to Emergency Motion of the Joint Provisional Liquidators of FTX Digital Markets</a>, <i>supra</i> note 11, ¶ 4.
+      li#footnote-22 <i>Id.</i>, ¶ 74.
+      li#footnote-23 <a href="https://www.courtlistener.com/docket/65748821/553/ftx-trading-ltd/" target="_blank">Order Authorizing the Retention and Employment of Sullivan & Cromwell LLP as Counsel to the Debtors and Debtors-in-Possession Nunc Pro Tunc to the Petition Date</a>, <i>In re FTX Trading Ltd. et al.</i>, No. 22-11068-JTD (Bankr. D. Del. Jan. 20, 2023). ECF No. 553.
+      li#footnote-24 Sam Bankman-Fried, <a href="https://www.forbes.com/sites/stevenehrlich/2022/12/13/exclusive-transcript-the-full-testimony-sbf-planned-to-give-to-congress" target="_blank">written draft of testimony</a> for <a href="https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=408483" target="_blank"><i>Investigating the Collapse of FTX, Part I: Hearing Before the H. Comm. on Fin. Services</i></a>, 117th Cong. (December 13, 2022) (not delivered, published by <i>Forbes</i>).
+      li#footnote-25 <a href="https://www.latimes.com/archives/la-xpm-2007-nov-22-fi-enronfees22-story.html" target="_blank"><i>Enron case legal tab: $700 million</i></a>, L.A. Times, Nov. 22, 2007.
+      li#footnote-26 <a href="https://www.courtlistener.com/docket/66676576/1/securities-and-exchange-commission-v-ellison/" target="_blank">Complaint</a> ¶ 74, <i>Securities and Exchange Commission v. Ellison and Wang</i>, No. 1:22-cv-10794 (SDNY Dec. 21, 2022). ECF No. 1. ("Ellison, at Bankman-Fried’s direction, caused Alameda to manipulate the price of FTT by purchasing large quantities of FTT on the open market to prop up its price.")
+      li#footnote-27 <a href="https://www.ft.com/content/0c2a55b6-d34c-4685-8a8d-3c9628f1f185" target="_blank"><i>FTX balance sheet, revealed</i></a>, Fin. Times, Nov. 12, 2022.
+      li#footnote-28 Binance (@binance), Twitter (<a href="https://twitter.com/binance/status/1590449161069268992" target="_blank">Nov. 9, 2022, 4:00PM</a>). ("As a result of corporate due diligence, as well as the latest news reports regarding mishandled customer funds and alleged US agency investigations, we have decided that we will not pursue the potential acquisition of FTX.com.")
+      li#footnote-29 Bennett Tomlin, <a href="https://web.archive.org/web/20230113165125/https://newsletter.protos.com/issues/sbf-is-being-deceitful-again-1515182" target="_blank"><i>SBF is being deceitful again</i></a>, Protos, Jan. 13, 2023.
+      li#footnote-30 <a href="https://www.courtlistener.com/docket/65748821/291/ftx-trading-ltd/" target="_blank">Debtors' Motion to Enforce the Automatic Stay or, in the Alternative, Extend the Automatic Stay</a> ¶ 4, <i>In re FTX Trading Ltd.</i>, No. 22-11068-JTD (Bankr. D. Del. Dec. 22, 2022). ECF No. 291. ("With news of FTX’s imminent collapse making headlines worldwide, just two days before the Debtors (including FTX Trading and Alameda) filed for bankruptcy, BlockFi scrambled to protect itself from impending losses on antecedent loans by threatening to seek remedies against Alameda if Alameda did not pledge additional collateral for those loans. In response to those threats, and despite the perilous financial position of Alameda and the other Debtors, Alameda’s then-CEO Caroline Ellison, with knowledge and encouragement from Mr. Bankman-Fried, purportedly agreed to pledge over $1 billion worth of additional Alameda assets to secure Alameda’s outstanding loan obligations to BlockFi. The Robinhood Shares were included in these pledged assets by Alameda’s then-CEO, despite the fact that the Robinhood Shares were nominally held by Emergent, because Alameda had then, and continues to have, a property interest in the Robinhood Shares.")
+      li#footnote-31 <a href="https://www.courtlistener.com/docket/65748821/213/ftx-trading-ltd/" target="_blank">Motion to Dismiss Case Filed by Joint Provisional Liquidators of FTX Digital Markets Ltd.</a>, ¶ 14, <i>In re FTX Trading Ltd.</i>, No. 22-11068-JTD (Bankr. D. Del. Dec. 12, 2022). ECF No. 213. ("The total amount recorded as owed by FTX Property Holdings to FTX Digital was, as of October 5, 2022, at least $256.3 million.")
+      li#footnote-32 Sam Bankman-Fried (@SBF_FTX), Twitter (<a href="https://twitter.com/SBF_FTX/status/1557113357269979136" target="_blank">Aug. 9, 2022, 5:15PM</a>). ("b) $4.4b of employee comp").
+      li#footnote-33 Declan Harty, <a href="https://fortune.com/2022/06/18/ftx-sam-bankman-fried-coinbase-brian-armstrong-crypto-layoffs/" target="_blank"><i>A tale of two crypto strategies: While Coinbase added thousands of jobs, Sam Bankman-Fried’s FTX stayed lean with just 300 employees—and now plans to capitalize on the carnage</i></a>, Fortune, June 18, 2022.
+      li#footnote-34 Muyao Shen & Jeremy Hill, <a href="https://www.bloomberg.com/news/articles/2023-01-05/3ac-liquidators-demand-documents-from-founders-via-twitter" target="_blank"><i>Three Arrows Capital Liquidators Demand Documents Via Twitter</i></a>, Bloomberg, Jan. 5, 2023. ("[T]he pair’s whereabouts are unknown and they are not fully cooperating with 3AC’s unwinding, the advisers have said.")
+      li#footnote-35 Kelsey Piper, <a href="https://www.vox.com/future-perfect/23462333/sam-bankman-fried-ftx-cryptocurrency-effective-altruism-crypto-bahamas-philanthropy" target="_blank"><i>Sam Bankman-Fried tries to explain himself</i></a>, Vox, Nov. 16, 2022.
+      li#footnote-36 <a href="https://www.courtlistener.com/docket/66631227/1/commodity-futures-trading-commission-v-bankman-fried/" target="_blank">Complaint</a>, <i>supra</i> note 1, ¶ 29.
+      li#footnote-37 <a href="https://www.courtlistener.com/docket/66631003/1/securities-and-exchange-commission-v-bankman-fried/" target="_blank">Complaint</a>, <i>supra</i> note 2, ¶ 18.
+      li#footnote-38 <a href="https://dirtybubblemedia.substack.com/p/is-alameda-research-insolvent" target="_blank"><i>Is Alameda Research Insolvent?</i></a>, Dirty Bubble Media, Nov. 4, 2022.
+      li#footnote-39 Chris Prentice, <a href="https://www.reuters.com/technology/us-securities-regulator-probes-ftx-investors-due-diligence-sources-2023-01-05/" target="_blank"><i>U.S. securities regulator probes FTX investors' due diligence -sources</i></a>, Reuters, Jan. 6, 2022.
+      li#footnote-41 <a href="https://iapps.courts.state.ny.us/nyscef/ViewDocument?docIndex=Yj_PLUS_/uYHkV3JGHjLd9zArSQ==" target="_blank">Complaint</a>, ¶ 2, 61, <i>People of the State of New York, by Letitia James, Attorney General of the State of New York v. Alex Mashinsky</i>, Index No. 450040/2023, NYSCEF No. 2 (NY Sup. Ct. NY Cnty. Jan. 5, 2023).
+      li#footnote-41 <a href="https://www.courtlistener.com/docket/66631227/1/commodity-futures-trading-commission-v-bankman-fried/" target="_blank">CFTC Complaint</a>, <i>supra</i> note 1, ¶ 104.
+      li#footnote-42 Francine McKenna, <a href="https://www.coindesk.com/layer2/2022/11/18/a-complete-failure-of-corporate-controls-what-investors-and-accountants-missed-in-ftxs-audits/"><i>'A Complete Failure of Corporate Controls': What Investors and Accountants Missed in FTX’s Audits</i></a>, CoinDesk, Nov. 18, 2022.
+      li#footnote-43 Emily Mason, <a href="https://www.forbes.com/sites/emilymason/2022/12/15/ftx-accounting-firm-armanino-ends-crypto-audit-practice/" target="_blank"><i>FTX.US Accounting Firm Armanino Ends Crypto Audit Practice</i></a>, Forbes, Dec. 15, 2022.
+      li#footnote-44 <a href="https://www.courtlistener.com/docket/66631003/1/securities-and-exchange-commission-v-bankman-fried/" target="_blank">Complaint</a>, <i>supra</i> note 2, ¶ 71–72.
+      li#footnote-45 Emily Flitter, David Yaffe-Bellany & Matthew Goldstein, <a href="https://www.nytimes.com/2022/12/07/business/ftx-sbf-crypto-market-investigation.html" target="_blank"><i>FTX Founder Sam Bankman-Fried Is Said to Face Market Manipulation Inquiry</i></a>, N.Y. Times, Dec. 7, 2022.
+      li#footnote-46 <a href="https://web.archive.org/web/20221108192005/https://help.ftx.com/hc/article_attachments/9719619779348/FTX_Terms_of_Service.pdf" target="_blank"><i>FTX Terms of Service</i></a>, FTX (May 13, 2022).
+      li#footnote-47 <a href="https://www.courtlistener.com/docket/66631003/1/securities-and-exchange-commission-v-bankman-fried/" target="_blank">Complaint</a>, <i>supra</i> note 2, ¶ 3. ("[Bankman-Fried] repeatedly cast FTX as an innovative and conservative trailblazer in the crypto markets. He told investors and prospective investors that FTX had top-notch, sophisticated automated risk measures in place to protect customer assets, that those assets were safe and secure, and that Alameda was just another platform customer with no special privileges. These statements were false and misleading.")
+      li#footnote-48 Ian Allison, <a href="https://www.coindesk.com/business/2022/11/02/divisions-in-sam-bankman-frieds-crypto-empire-blur-on-his-trading-titan-alamedas-balance-sheet/" target="_blank"><i>Divisions in Sam Bankman-Fried’s Crypto Empire Blur on His Trading Titan Alameda’s Balance Sheet</i></a>, CoinDesk, Nov. 2, 2022.
+      li#footnote-49 Jonathan Stempel, <a href="https://www.reuters.com/article/us-mfglobal-corzine-idUSKBN14P251" target="_blank"><i>Corzine in $5 million settlement with US CFTC over MF Global collapse</i></a>, Reuters, January 5, 2017.
+      li#footnote-50 Sam Bankman-Fried (@SBF_FTX), Twitter (Oct. 30, 3:49am) (deleted, archived at <a href="https://www.rebellionresearch.com/sbfs-deleted-tweets-courtesy-of-the-tie-research" target="_blank">Rebellion Research</a>). ("@rsalame7926 @cz_binance excited to see him repping the industry in DC going forward! uh, he is allowed to go to DC, right?")
+      li#footnote-51 Matt Levine, <a href="https://www.bloomberg.com/opinion/articles/2023-01-12/jpmorgan-says-frank-was-fraud" target="_blank"><i>JPMorgan Says Frank Was Fraud</i></a>, Bloomberg, Jan. 12, 2023.
+      li#footnote-52 Marc Rubinstein, <a href="https://www.washingtonpost.com/business/bank-runs-just-arent-what-they-used-to-be/2022/12/08/5ffe44d4-76be-11ed-a199-927b334b939f_story.html" target="_blank"><i>Bank Runs Just Aren’t What They Used to Be</i></a>, Washington Post, Dec. 8, 2022.
+
+block pre-javascript
+  script(async, src='https://platform.twitter.com/widgets.js', charset='utf-8')

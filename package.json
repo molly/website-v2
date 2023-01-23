@@ -10,7 +10,7 @@
     "build:js": "rimraf dist/js && mkdir dist/js && cp -r src/js/* dist/js",
     "build:misc": "cp -r src/misc/* dist/ && mkdir dist/images && cp -r src/images/* dist/images && cp src/images/icons/favicon.ico dist/",
     "build": "npm run clean && npm run build:html && npm run build:css && npm run build:js && npm run build:misc",
-    "watch:html": "pug --pretty --watch src/pug/pages/annotations/*.pug --out dist/annotations",
+    "watch:annotations": "pug --pretty --watch src/pug/pages/annotations/*.pug --out dist/annotations",
     "watch:css": "sass --watch src/sass/:dist/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

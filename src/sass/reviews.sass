@@ -1,5 +1,11 @@
 $highlight: #fff589
 $transparent-highlight: transparentize($highlight, 0.5)
+$green: #e4ffe0
+$highlighted-green: #ebffb8
+
+@counter-style alpha-paren
+  system: extends lower-alpha
+  suffix: ') '
 
 .review
   body
@@ -8,9 +14,6 @@ $transparent-highlight: transparentize($highlight, 0.5)
   h2, h3, h4, h5
     font-family: Arial, Helvetica, sans-serif
     margin: 0
-
-  h3
-    text-transform: uppercase
 
   a:hover
     background-color: transparent
@@ -53,9 +56,8 @@ $transparent-highlight: transparentize($highlight, 0.5)
     &.first
       border-top: 1px solid #ddd
 
-      .left, .right
-        .content
-          padding-top: 20px
+      .left .content
+        padding-top: 20px
 
     &.last
       border-bottom: 1px solid #ddd
@@ -72,7 +74,7 @@ $transparent-highlight: transparentize($highlight, 0.5)
       .content
         background-color: inherit
         box-shadow: none
-        padding: 0 20px 26.4px 20px
+        padding: 0 0 1em 0
 
         &.empty
           padding: 0
@@ -86,7 +88,6 @@ $transparent-highlight: transparentize($highlight, 0.5)
   .content
     h3, h4
       font-family: Arial, Helvetica, sans-serif
-      margin: 0 0 20px 0
 
     p
       margin-top: 0
@@ -97,8 +98,14 @@ $transparent-highlight: transparentize($highlight, 0.5)
         margin-block-end: 0
 
     ul, ol
-      margin: 0
+      margin: 0 0 1em 0
       padding-inline-start: 1em
+
+    .in-text-image
+      margin: 0
+
+  .footnotes
+    font-size: 80%
 
   mark
     background-color: $transparent-highlight
@@ -108,6 +115,16 @@ $transparent-highlight: transparentize($highlight, 0.5)
       background-color: $highlight
 
     &.selected
+      background-color: $highlight
+
+    &.image-mark
+      background-color: transparent
+
+  .diff-add mark, mark.diff-add
+    background-color: $highlighted-green
+
+    &:hover
+      cursor: pointer
       background-color: $highlight
 
   mark[data-annotation-id]
@@ -130,8 +147,10 @@ $transparent-highlight: transparentize($highlight, 0.5)
 
   .content
     > .annotation, .content, .annotation-group
-      &:not(:first-child)
-        margin-top: 10px
+      margin-top: 0
+
+  .diff-add
+    background-color: $green
 
   .annotation
     background-color: white
@@ -189,6 +208,31 @@ $transparent-highlight: transparentize($highlight, 0.5)
   .annotation-group .annotation.thread
     margin-left: 10px
 
+  .elide
+    border-top: 1px dashed #ddd
+    border-bottom: 1px dashed #ddd
+    padding: 1em 0
+    margin: 1em 0
+    text-align: center
+
+  .note
+    color: #666
+    font-style: italic
+    font-size: 85%
+
+  blockquote
+    font-style: italic
+
+    i
+      font-style: normal
+
+  // Misc list styles
+  ul.dashed
+    list-style-type: "- "
+
+  ol.alpha-paren
+    list-style: alpha-paren
+
   @for $i from 2 through 10
     .annotation-group .annotation.thread-#{$i}
       margin-left: #{10 * ($i)}px
@@ -224,6 +268,17 @@ $transparent-highlight: transparentize($highlight, 0.5)
       .left .content
         float: right
 
+      &.first .right .content
+        padding-top: 20px
+
+    .content
+      > .annotation, .content, .annotation-group
+        &:not(:first-child)
+          margin-top: 0.8em
+
+        &:last-child
+          margin-bottom: 0.8em
+
   // Smaller than 750px
   @media screen and (max-width: 750px)
     .group
@@ -235,14 +290,14 @@ $transparent-highlight: transparentize($highlight, 0.5)
           padding-right: 40px
 
       .left .content
-        padding-top: 26.4px
+        margin-top: 1em
 
     .annotation
       font-family: Arial, Helvetica, sans-serif
       font-size: 90%
 
-    .content > .annotation, .annotation-group
-      margin-top: 20px
+    .content > .annotation, .content > .annotation-group
+      margin-top: 1em
 
   // Smaller than 480px
   @media screen and (max-width: 480px)
@@ -259,3 +314,11 @@ $transparent-highlight: transparentize($highlight, 0.5)
 
   .annotation:hover
     cursor: auto !important
+
+.latecomers-guide
+  h3
+    text-transform: uppercase
+
+  .content
+    h3, h4
+      margin: 0 0 20px 0
