@@ -1,0 +1,17 @@
+extends ../../templates/base.pug
+
+block vars
+  - var htmlClass = 'annotations';
+
+block head
+  include ../../mixins/titleAndDescription.pug
+  +titleAndDescription('Annotations', "Molly White's annotation projects")
+
+block body
+  .content-box
+    h2 Annotations
+    ul
+      li
+        a(href='https://www.mollywhite.net/annotations/latecomers-guide-to-crypto') The Edited Latecomer's Guide To Crypto
+      li
+        a(href='https://www.mollywhite.net/annotations/sbf-ftx-pre-mortem-overview') Annotated: Sam Bankman-Fried's "FTX Pre-Mortem Overview"
