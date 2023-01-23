@@ -7,10 +7,13 @@ block head
   include ../../mixins/titleAndDescription.pug
   +titleAndDescription('Annotated: Sam Bankman-Fried\'s "FTX Pre-Mortem Overview"', "Annotating Sam Bankman-Fried's attempts to explain the FTX collapse.")
   meta(name='author', content='Molly White')
-  meta(property='og:image', content='')
-  meta(property='og:image:alt', content='')
-  meta(property='og:image:width', content='')
-  meta(property='og:image:height', content='')
+  meta(property='og:image', content='https://mollywhite.net/storage/annotated-sbf.webp')
+  meta(
+    property='og:image:alt',
+    content='Screenshot of the annotations page, showing a highlighted sentence with several comments.'
+  )
+  meta(property='og:image:width', content='2516')
+  meta(property='og:image:height', content='1258')
   meta(
     property='og:url',
     content='https://www.mollywhite.net/annotations/sbf-ftx-pre-mortem-overview'
@@ -22,15 +25,18 @@ block head
     name='twitter:description',
     content='Annotating Sam Bankman-Fried\'s attempts to explain the FTX collapse.'
   )
-  meta(name='twitter:image', content='')
-  meta(name='twitter:image:alt', content='')
+  meta(name='twitter:image', content='https://mollywhite.net/storage/annotated-sbf.webp')
+  meta(
+    name='twitter:image:alt',
+    content='Screenshot of the annotations page, showing a highlighted sentence with several comments.'
+  )
   script(type='application/ld+json').
     {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
       "headline": "Annotated: Sam Bankman-Fried's \"FTX Pre-Mortem Overview\"",
-      "image": [""],
-      "datePublished": "",
+      "image": ["https://mollywhite.net/storage/annotated-sbf.webp"],
+      "datePublished": "2023-01-22T12:00:00-04:00",
       "author": [
         {
           "@type": "Person",
@@ -45,11 +51,12 @@ block body
     .byline
       | By Sam Bankman-Fried, <a href="https://sambf.substack.com/p/ftx-pre-mortem-overview" target="_blank">originally published</a> on <a href="https://sambf.substack.com/" target="_blank">his Substack blog</a> on January&nbsp;12,&nbsp;2023
     .byline
-      | Annotations by Molly White. Published January 14, 2023.
+      | Annotations by Molly White. Published January 22, 2023.
 
   .intro
-    p Something about SBF posting his way through it. Something about how he seems to be clinging to the narrative that FTX US is okay, presumably in hopes that if that could somehow turn out to be true, he might evade the US DOJ's ire.
-
+    p Sam Bankman-Fried has apparently decided to fill his time spent confined to his parents' Palo Alto home with blogging, apparently in the hopes that he can just blog his way out of the massive criminal and civil penalties he's facing.
+    p Although many of his statements here repeat things he's said elsewhere, I think it is useful to be able to analyze some of the story he's trying to spin all in one place, rather than cobbling his narrative together from various interviews and statements.
+    p It's remarkable the extent to which SBF outright lies, or twists his version of his events to distort reality in his favor. I don't intend to annotate further posts from him—which I suspect will be many—but instead hope that this will be sufficient to give some idea of just how thoroughly misleading his statements are, allowing you to apply proper skepticism to further posts in this vein.
   .group.first
     .left
       .content
@@ -669,9 +676,7 @@ block body
 
   .group.last
     .left
-      .content 
-        |
-        |
+      .content
         p I have a lot more to say–about why Alameda failed to hedge, what happened with FTX US, what led to the Chapter 11 process, S&C, and more. But at least this is a start.
     .right
       .content.empty
