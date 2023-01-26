@@ -1,5 +1,8 @@
 @import tokens
 
+html
+  overflow-x: hidden
+
 .home
   body
     background-color: $background-color
@@ -45,6 +48,7 @@ fieldset
 
 .navigation
   background-color: $main-color
+  box-sizing: border-box
   padding: 5px 5px 50px 5px
 
   .logo
@@ -79,6 +83,7 @@ fieldset
       padding: 0 5px
 
   .internal-links, .external-links
+    box-sizing: border-box
     padding-right: 10px
     padding-left: 10px
 
@@ -366,7 +371,6 @@ dd
     .links
       flex-direction: column
       align-items: center
-      padding-top: 10px
 
       .separated
         padding: 0
@@ -402,7 +406,7 @@ dd
     font-weight: $body-font-weight-heavier
 
   .navigation
-    min-height: 30px
+    min-height: 40px
     padding-bottom: 5px
     border-bottom: 1px solid $mid-grey
 
@@ -413,6 +417,9 @@ dd
       display: block
 
     .links
+      position: absolute
+      top: 40px
+      background-color: $main-color
       max-height: 0px
       overflow: hidden
       transition: max-height 0.3s
